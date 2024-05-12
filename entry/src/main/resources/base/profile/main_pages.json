@@ -5,6 +5,7 @@
     "pages/BaseComponents/RowComponent",
     "pages/BaseComponents/ColumnComponent",
     "pages/BaseComponents/BaiDuCase",
-    "pages/BaseComponents/FlexComponent"
+    "pages/BaseComponents/FlexComponent",
+    "pages/BaseComponents/GridComponent"
   ]
 }

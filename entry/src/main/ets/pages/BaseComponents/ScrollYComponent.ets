@@ -2,6 +2,7 @@
 @Component
 struct ScrollYComponent {
   @State middleHeight: number = 0
+  scroller: Scroller = new Scroller()
 
   build() {
     Column() {
@@ -9,7 +10,11 @@ struct ScrollYComponent {
         .width('100%')
         .height(60)
         .backgroundColor(Color.Orange)
-      Scroll() {
+        .onClick(() => {
+          this.scroller.scrollEdge(Edge.Bottom) // Todo: 3.1预览器没效果
+        })
+
+      Scroll(this.scroller) {
         Column() {
           ScrollItem()
           ScrollItem()
@@ -29,10 +34,15 @@ struct ScrollYComponent {
       }
       .width('100%')
       .height(this.middleHeight)
+      .scrollBarColor(Color.Orange)
+
       Row()
         .width('100%')
         .height(60)
         .backgroundColor(Color.Orange)
+        .onClick(() => {
+          this.scroller.scrollEdge(Edge.Top)
+        })
     }
     .height('100%')
     .justifyContent(FlexAlign.SpaceBetween)

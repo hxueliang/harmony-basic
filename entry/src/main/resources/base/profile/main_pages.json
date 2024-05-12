@@ -1,6 +1,7 @@
 {
   "src": [
     "pages/Index",
-    "pages/MeiTuan"
+    "pages/MeiTuan",
+    "pages/BaseComponents/RowComponent"
   ]
 }

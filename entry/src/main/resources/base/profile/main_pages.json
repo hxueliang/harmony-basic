@@ -6,6 +6,7 @@
     "pages/BaseComponents/ColumnComponent",
     "pages/BaseComponents/BaiDuCase",
     "pages/BaseComponents/FlexComponent",
-    "pages/BaseComponents/GridComponent"
+    "pages/BaseComponents/GridComponent",
+    "pages/BaseComponents/ScrollYComponent"
   ]
 }

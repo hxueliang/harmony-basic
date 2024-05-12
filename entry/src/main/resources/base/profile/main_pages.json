@@ -3,6 +3,7 @@
     "pages/Index",
     "pages/MeiTuan",
     "pages/BaseComponents/RowComponent",
-    "pages/BaseComponents/ColumnComponent"
+    "pages/BaseComponents/ColumnComponent",
+    "pages/BaseComponents/BaiDuCase"
   ]
 }

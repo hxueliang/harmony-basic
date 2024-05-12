@@ -1,9 +1,11 @@
 @Entry
 @Component
 struct ScrollXComponent {
+  scroller: Scroller = new Scroller()
+
   build() {
     Column({ space: 20 }) {
-      Scroll() {
+      Scroll(this.scroller) {
         Row({ space: 10 }) {
           Actor()
           Actor()
@@ -12,9 +14,16 @@ struct ScrollXComponent {
           Actor()
         }
       }
+      .scrollable(ScrollDirection.Horizontal)
       Row({ space: 20 }) {
         Button('滚动左')
+          .onClick(() => {
+            this.scroller.scrollEdge(Edge.Start) // Todo: 3.1预览器无效果
+          })
         Button('滚动右')
+          .onClick(() => {
+            this.scroller.scrollEdge(Edge.End)
+          })
       }
     }
     .backgroundColor(Color.Pink)

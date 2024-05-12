@@ -2,6 +2,7 @@
   "src": [
     "pages/Index",
     "pages/MeiTuan",
-    "pages/BaseComponents/RowComponent"
+    "pages/BaseComponents/RowComponent",
+    "pages/BaseComponents/ColumnComponent"
   ]
 }

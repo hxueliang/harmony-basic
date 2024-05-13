@@ -11,7 +11,7 @@ struct ScrollYComponent {
         .height(60)
         .backgroundColor(Color.Orange)
         .onClick(() => {
-          this.scroller.scrollEdge(Edge.Bottom) // Todo: 3.1预览器没效果
+          this.scroller.scrollEdge(Edge.Bottom)
         })
 
       Scroll(this.scroller) {

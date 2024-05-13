@@ -18,7 +18,7 @@ struct ScrollXComponent {
       Row({ space: 20 }) {
         Button('滚动左')
           .onClick(() => {
-            this.scroller.scrollEdge(Edge.Start) // Todo: 3.1预览器无效果
+            this.scroller.scrollEdge(Edge.Start)
           })
         Button('滚动右')
           .onClick(() => {

@@ -27,7 +27,7 @@ struct BaiDuCase {
           .type(ButtonType.Normal)
           .fontWeight(FontWeight.Bold)
           .backgroundColor('#5272ea')
-          .borderRadius({ // Todo: 3.1的预览器没效果
+          .borderRadius({
             topRight: 8,
             bottomRight: 8,
           })

@@ -1,6 +1,8 @@
 @Entry
 @Component
 struct Mvvm {
+  @State isSelectCheckbox: Boolean = false
+
   build() {
     Grid() {
       GridItem() {
@@ -8,6 +10,14 @@ struct Mvvm {
           Text('Checkbox')
 
           Checkbox()
+            .select($$this.isSelectCheckbox)
+
+          Text(this.isSelectCheckbox + '')
+
+          Button('改值')
+            .onClick(() => {
+              this.isSelectCheckbox = !this.isSelectCheckbox
+            })
         }
       }
       .backgroundColor(Color.Pink)

@@ -22,6 +22,22 @@ struct Mvvm {
       }
       .backgroundColor(Color.Pink)
       .height(200)
+
+      GridItem() {
+        Column() {
+          Text('Search')
+
+          Search()
+
+          Text('')
+
+          Button('改值')
+            .onClick(() => {
+            })
+        }
+      }
+      .backgroundColor(Color.Pink)
+      .height(200)
     }
     .width('100%')
     .height('100%')

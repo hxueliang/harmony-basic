@@ -3,6 +3,8 @@
 struct Mvvm {
   @State isSelectCheckbox: Boolean = false
   @State searchValue: String = ''
+  @State textInputValue: String = ''
+  @State textAreaValue: String = ''
 
   build() {
     Grid() {
@@ -47,12 +49,15 @@ struct Mvvm {
         Column() {
           Text('TextInput')
 
-          TextInput()
+          TextInput({
+            text: $$this.textInputValue
+          })
 
-          Text('')
+          Text(this.textInputValue + '')
 
           Button('改值')
             .onClick(() => {
+              this.textInputValue += '0'
             })
         }
       }
@@ -63,13 +68,16 @@ struct Mvvm {
         Column() {
           Text('TextArea')
 
-          TextArea()
+          TextArea({
+            text: $$this.textAreaValue
+          })
             .maxLength(5)
 
-          Text('')
+          Text(this.textAreaValue + '')
 
           Button('改值')
             .onClick(() => {
+              this.textAreaValue += '1'
             })
         }
       }

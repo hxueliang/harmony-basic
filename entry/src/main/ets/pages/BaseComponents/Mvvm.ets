@@ -2,6 +2,7 @@
 @Component
 struct Mvvm {
   @State isSelectCheckbox: Boolean = false
+  @State searchValue: String = ''
 
   build() {
     Grid() {
@@ -27,12 +28,15 @@ struct Mvvm {
         Column() {
           Text('Search')
 
-          Search()
+          Search({
+            value: $$this.searchValue
+          })
 
-          Text('')
+          Text(this.searchValue + '')
 
           Button('改值')
             .onClick(() => {
+              this.searchValue += "0"
             })
         }
       }

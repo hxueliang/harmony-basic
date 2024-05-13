@@ -8,6 +8,7 @@
     "pages/BaseComponents/FlexComponent",
     "pages/BaseComponents/GridComponent",
     "pages/BaseComponents/ScrollYComponent",
-    "pages/BaseComponents/ScrollXComponent"
+    "pages/BaseComponents/ScrollXComponent",
+    "pages/BaseComponents/Mvvm"
   ]
 }

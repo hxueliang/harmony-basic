@@ -42,6 +42,39 @@ struct Mvvm {
       }
       .backgroundColor(Color.Pink)
       .height(200)
+
+      GridItem() {
+        Column() {
+          Text('TextInput')
+
+          TextInput()
+
+          Text('')
+
+          Button('改值')
+            .onClick(() => {
+            })
+        }
+      }
+      .backgroundColor(Color.Pink)
+      .height(200)
+
+      GridItem() {
+        Column() {
+          Text('TextArea')
+
+          TextArea()
+            .maxLength(5)
+
+          Text('')
+
+          Button('改值')
+            .onClick(() => {
+            })
+        }
+      }
+      .backgroundColor(Color.Pink)
+      .height(200)
     }
     .width('100%')
     .height('100%')

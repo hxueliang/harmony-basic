@@ -52,6 +52,36 @@ struct StateNestData {
         }
         .layoutWeight(1)
       }
+
+      // 修改按钮
+      Row({ space: 20 }) {
+        Button('修改一第层数据')
+          .onClick(() => {
+            // 修改一第层数据，视图自动更新
+            this.p.name += '1'
+            this.p.age++
+            this.p.sex = this.p.sex === '男' ? '女' : '男'
+          })
+        Button('修改二第层数据')
+          .onClick(() => {
+            // 修改二第层数据
+
+            /** 方式1【不推荐】：直接更新第二层数据，数据已经更新，但视图不更新 */
+            // this.p.address.area = '海珠区'
+
+            /** 方式2【不推荐】：全量更新第一层数据，因为next版本不支持...语法，所以不变用更新的字段也需要书写 */
+            // this.p.address = new IAddressModel({
+            //   province: this.p.address.province,
+            //   city: this.p.address.city,
+            //   area: '海珠区'
+            // })
+
+            /** 方式3【推荐】：全量更新第一层数据，只修改变更的数据 */
+            let area = this.p.address.area === '天河区' ? '海珠区' : '天河区'
+            this.p.address.area = area
+            this.p.address = new IAddressModel(this.p.address)
+          })
+      }
     }
     .width('100%')
     .height('100%')

@@ -10,6 +10,7 @@
     "pages/BaseComponents/ScrollYComponent",
     "pages/BaseComponents/ScrollXComponent",
     "pages/BaseComponents/Mvvm",
-    "pages/BaseComponents/EventBinding"
+    "pages/BaseComponents/EventBinding",
+    "pages/BaseComponents/StateNestData"
   ]
 }

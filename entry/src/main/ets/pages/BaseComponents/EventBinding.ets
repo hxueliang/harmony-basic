@@ -15,6 +15,10 @@ struct EventBinding {
     promptAction.showToast({ message: '用户名或密码错误' })
   }
 
+  getLoginBtnEnabled() {
+    return !!this.userName.trim() && !!this.password
+  }
+
   build() {
     Row() {
       Column({ space: 12 }) {
@@ -33,6 +37,7 @@ struct EventBinding {
           .onSubmit(() => this.login())
         Button('登录')
           .width('100%')
+          .enabled(this.getLoginBtnEnabled())
           .onClick(() => this.login())
       }
       .width('100%')

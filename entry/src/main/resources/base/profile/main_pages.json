@@ -12,6 +12,7 @@
     "pages/BaseComponents/Mvvm",
     "pages/BaseComponents/EventBinding",
     "pages/BaseComponents/StateNestData",
-    "pages/StyleDemo/ChainedMode"
+    "pages/StyleDemo/ChainedMode",
+    "pages/StyleDemo/ImageResource"
   ]
 }

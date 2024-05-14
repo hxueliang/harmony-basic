@@ -7,6 +7,10 @@ struct ChainedMode {
     Row() {
       Column() {
         Text(this.message)
+          .width('100%')
+          .fontSize(50)
+          .fontColor(Color.Blue)
+          .textAlign(TextAlign.Center)
       }
       .width('100%')
     }

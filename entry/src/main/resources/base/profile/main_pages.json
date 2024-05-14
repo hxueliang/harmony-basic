@@ -11,6 +11,7 @@
     "pages/BaseComponents/ScrollXComponent",
     "pages/BaseComponents/Mvvm",
     "pages/BaseComponents/EventBinding",
-    "pages/BaseComponents/StateNestData"
+    "pages/BaseComponents/StateNestData",
+    "pages/StyleDemo/ChainedMode"
   ]
 }

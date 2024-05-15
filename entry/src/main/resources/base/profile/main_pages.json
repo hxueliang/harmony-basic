@@ -14,6 +14,7 @@
     "pages/BaseComponents/StateNestData",
     "pages/StyleDemo/ChainedMode",
     "pages/StyleDemo/ImageResource",
-    "pages/StyleDemo/ZHCase"
+    "pages/StyleDemo/ZHCase",
+    "pages/StyleDemo/StackHeader"
   ]
 }

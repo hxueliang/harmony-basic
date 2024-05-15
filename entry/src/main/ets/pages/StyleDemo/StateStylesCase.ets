@@ -17,6 +17,14 @@ struct StateStylesCase {
         color: '#ccc',
         width: 1
       })
+      .stateStyles({
+        // 正常态
+        normal: { .backgroundColor(Color.White) },
+        // 按下态
+        pressed: { .backgroundColor('#f0f0f0') },
+        // 暂用态
+        disabled: { .backgroundColor('#999') },
+      })
 
       Button('点击')
         .onClick(() => {
@@ -28,10 +36,18 @@ struct StateStylesCase {
           color: '#eee',
           width: 1
         })
+        .stateStyles({
+          normal: { .borderColor('#eee') },
+          focused: { .borderColor(Color.Red) }
+        })
       TextInput({ placeholder: '请输入密码' })
         .border({
           color: '#eee',
           width: 1
+        })
+        .stateStyles({
+          normal: { .borderColor('#eee') },
+          focused: { .borderColor (Color.Red) }
         })
     }
     .padding(20)

@@ -18,6 +18,7 @@
     "pages/StyleDemo/StackHeader",
     "pages/StyleDemo/StylesModifier",
     "pages/StyleDemo/ExtendModifier",
-    "pages/StyleDemo/StateStylesCase"
+    "pages/StyleDemo/StateStylesCase",
+    "pages/StyleDemo/ConditionalRendering"
   ]
 }

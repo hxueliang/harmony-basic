@@ -17,6 +17,7 @@
     "pages/StyleDemo/ZHCase",
     "pages/StyleDemo/StackHeader",
     "pages/StyleDemo/StylesModifier",
-    "pages/StyleDemo/ExtendModifier"
+    "pages/StyleDemo/ExtendModifier",
+    "pages/StyleDemo/StateStylesCase"
   ]
 }

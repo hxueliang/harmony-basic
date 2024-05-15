@@ -15,6 +15,7 @@
     "pages/StyleDemo/ChainedMode",
     "pages/StyleDemo/ImageResource",
     "pages/StyleDemo/ZHCase",
-    "pages/StyleDemo/StackHeader"
+    "pages/StyleDemo/StackHeader",
+    "pages/StyleDemo/StylesModifier"
   ]
 }

@@ -19,6 +19,7 @@
     "pages/StyleDemo/StylesModifier",
     "pages/StyleDemo/ExtendModifier",
     "pages/StyleDemo/StateStylesCase",
-    "pages/StyleDemo/ConditionalRendering"
+    "pages/StyleDemo/ConditionalRendering",
+    "pages/StyleDemo/ImportExport"
   ]
 }

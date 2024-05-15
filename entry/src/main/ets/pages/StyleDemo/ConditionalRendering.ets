@@ -10,7 +10,10 @@ struct ConditionalRendering {
       GridItem() {
         Column() {
           Text('if')
-          Image($rawfile('image/mouse.jpeg'))
+          if (this.showLeftImage) {
+            // 隐藏后不占页面空间
+            Image($rawfile('image/mouse.jpeg'))
+          }
           Toggle({
             type: ToggleType.Switch,
             isOn: $$this.showLeftImage,
@@ -21,6 +24,7 @@ struct ConditionalRendering {
         Column() {
           Text('Hidden')
           Image($rawfile('image/mouse.jpeg'))
+            .visibility(this.showCenterImage ? Visibility.Visible : Visibility.Hidden)
           Toggle({
             type: ToggleType.Checkbox,
             isOn: $$this.showCenterImage,
@@ -31,6 +35,7 @@ struct ConditionalRendering {
         Column() {
           Text('None')
           Image($rawfile('image/mouse.jpeg'))
+            .visibility(this.showRightImage ? Visibility.Visible : Visibility.None)
           Toggle({
             type: ToggleType.Checkbox,
             isOn: $$this.showRightImage,

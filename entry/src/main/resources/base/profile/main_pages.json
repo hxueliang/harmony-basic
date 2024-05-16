@@ -20,6 +20,7 @@
     "pages/StyleDemo/ExtendModifier",
     "pages/StyleDemo/StateStylesCase",
     "pages/StyleDemo/ConditionalRendering",
-    "pages/StyleDemo/ImportExport"
+    "pages/StyleDemo/ImportExport",
+    "pages/StyleDemo/CustomLoading"
   ]
 }

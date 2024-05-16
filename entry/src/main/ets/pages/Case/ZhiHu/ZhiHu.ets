@@ -1,4 +1,4 @@
-import { ZhCommentItem, ZhNavBar } from './components'
+import { ZhCommentItem, ZhCommentRepay, ZhNavBar } from './components'
 import { ReplyItemModel } from './models'
 
 @Entry
@@ -103,6 +103,7 @@ struct ZhiHu {
         })
       }
       .layoutWeight(1)
+      ZhCommentRepay()
     }
   }
 }

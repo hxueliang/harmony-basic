@@ -1,8 +1,31 @@
 @Preview
 @Component
 struct HmLoading {
+  @State value: number = 0
+
+  timer:number = -1
+
+  aboutToAppear(): void {
+    setInterval(() => {
+      this.value++
+      if(this.value === 100) {
+        this.value = 0
+      }
+    }, 5)
+  }
+
+  aboutToDisappear(): void {
+    clearInterval(this.timer)
+  }
+
   build() {
-    Text('Loading')
+    Progress({
+      value: this.value,
+      total: 100,
+      type: ProgressType.Ring,
+    })
+      .width(30)
+      .aspectRatio(1)
   }
 }
 

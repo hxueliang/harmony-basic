@@ -22,6 +22,7 @@
     "pages/StyleDemo/ConditionalRendering",
     "pages/StyleDemo/ImportExport",
     "pages/StyleDemo/CustomLoading",
-    "pages/StyleDemo/ForEachDemo"
+    "pages/StyleDemo/ForEachDemo",
+    "pages/StyleDemo/ForEachGoods"
   ]
 }

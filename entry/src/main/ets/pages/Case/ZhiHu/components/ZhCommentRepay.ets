@@ -1,11 +1,28 @@
 @Component
 struct ZhCommentRepay {
+  @State inputValue: string = ''
+  onSubmit: (content: string) => void = () => {
+  }
+
+  publishComment() {
+    if (this.inputValue) {
+      this.onSubmit(this.inputValue)
+      this.inputValue = ''
+    }
+  }
+
   build() {
     Row({ space: 10 }) {
-      TextInput()
+      TextInput({ text: $$this.inputValue })
         .layoutWeight(1)
         .height(40)
+        .onSubmit(() => {
+          this.publishComment()
+        })
       Button('发布')
+        .onClick(() => {
+          this.publishComment()
+        })
     }
     .width('100%')
     .height(60)

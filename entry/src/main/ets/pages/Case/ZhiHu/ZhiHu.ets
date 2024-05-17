@@ -66,6 +66,7 @@ struct ZhiHu {
       likeFlag: false
     })
   ]
+  scroller: Scroller = new Scroller()
 
   onChangeLike(item: ReplyItemModel, index?: number) {
     item.likeFlag ? item.likeNum-- : item.likeNum++
@@ -73,6 +74,24 @@ struct ZhiHu {
     if (typeof index === 'number') {
       this.commentList[index] = new ReplyItemModel(item)
     }
+  }
+
+  publishComment(content: string) {
+    const time = new Date()
+    const month = (time.getMonth() + 1).toString().padStart(2, '0')
+    const date = time.getDate().toString().padStart(2, '0')
+
+    this.commentList.unshift(new ReplyItemModel({
+      id: Math.random(),
+      avatar: $rawfile('image/mouse.jpeg'),
+      author: 'hxl',
+      content,
+      time: `${month}-${date}`,
+      area: '广州',
+      likeNum: 0,
+      likeFlag: false
+    }))
+    this.scroller.scrollEdge(Edge.Top)
   }
 
   build() {
@@ -104,7 +123,7 @@ struct ZhiHu {
           })
       }
 
-      List() {
+      List({ scroller: this.scroller }) {
         ForEach(this.commentList, (item: ReplyItemModel, index) => {
           ListItem() {
             ZhCommentItem({
@@ -118,7 +137,11 @@ struct ZhiHu {
       }
       .layoutWeight(1)
 
-      ZhCommentRepay()
+      ZhCommentRepay({
+        onSubmit: (content: string) => {
+          this.publishComment(content)
+        }
+      })
     }
   }
 }

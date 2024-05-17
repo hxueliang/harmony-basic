@@ -24,6 +24,7 @@
     "pages/StyleDemo/CustomLoading",
     "pages/StyleDemo/ForEachDemo",
     "pages/StyleDemo/ForEachGoods",
-    "pages/Case/ZhiHu/ZhiHu"
+    "pages/Case/ZhiHu/ZhiHu",
+    "pages/StyleDemo/BuilderModifier"
   ]
 }

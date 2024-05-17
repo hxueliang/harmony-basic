@@ -3,6 +3,8 @@ import { ReplyItem, ReplyItemModel } from '../models'
 @Component
 struct ZhCommentItem {
   item: ReplyItemModel = new ReplyItemModel({} as ReplyItem)
+  onChangeLike: () => void = () => {
+  }
 
   build() {
     Row({ space: 16 }) {
@@ -26,13 +28,14 @@ struct ZhCommentItem {
           Row({ space: 5 }) {
             Image($r('app.media.ic_public_like'))
               .width(12)
-              .fillColor('#ccc')
+              .fillColor(this.item.likeFlag ? Color.Red : '#ccc')
             Text(this.item.likeNum.toString())
-              .fontColor('#ccc')
+              .fontColor(this.item.likeFlag ? Color.Red : '#ccc')
           }
         }
         .width('100%')
         .justifyContent(FlexAlign.SpaceBetween)
+        .onClick(() => this.onChangeLike())
       }
       .layoutWeight(1)
       .alignItems(HorizontalAlign.Start)

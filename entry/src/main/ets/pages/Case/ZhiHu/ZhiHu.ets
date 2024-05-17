@@ -14,7 +14,7 @@ struct ZhiHu {
       area: '海南',
       likeNum: 34,
       likeFlag: false
-    }) ,
+    }),
     new ReplyItemModel({
       id: 2,
       avatar: 'https://pic1.zhimg.com/v2-5a3f5190369ae59c12bee33abfe0c5cc_xl.jpg?source=32738c0c',
@@ -67,6 +67,14 @@ struct ZhiHu {
     })
   ]
 
+  onChangeLike(item: ReplyItemModel, index?: number) {
+    item.likeFlag ? item.likeNum-- : item.likeNum++
+    item.likeFlag = !item.likeFlag
+    if (typeof index === 'number') {
+      this.commentList[index] = new ReplyItemModel(item)
+    }
+  }
+
   build() {
     Column() {
       ZhNavBar({ title: '评论回复' })
@@ -80,7 +88,7 @@ struct ZhiHu {
           area: '广州',
           likeNum: 35,
           likeFlag: false
-        })
+        },)
       })
       Divider().strokeWidth(6)
       Row() {
@@ -95,14 +103,21 @@ struct ZhiHu {
             left: 20
           })
       }
+
       List() {
-        ForEach(this.commentList, (item: ReplyItemModel) => {
+        ForEach(this.commentList, (item: ReplyItemModel, index) => {
           ListItem() {
-            ZhCommentItem({ item })
+            ZhCommentItem({
+              item,
+              onChangeLike: () => {
+                this.onChangeLike(item, index)
+              }
+            })
           }
-        })
+        }, (item: ReplyItemModel) => item.id + '_' + item.likeNum)
       }
       .layoutWeight(1)
+
       ZhCommentRepay()
     }
   }

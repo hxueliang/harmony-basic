@@ -25,6 +25,7 @@
     "pages/StyleDemo/ForEachDemo",
     "pages/StyleDemo/ForEachGoods",
     "pages/Case/ZhiHu/ZhiHu",
-    "pages/StyleDemo/BuilderModifier"
+    "pages/StyleDemo/BuilderModifier",
+    "pages/StyleDemo/models/BuilderModifierCase"
   ]
 }

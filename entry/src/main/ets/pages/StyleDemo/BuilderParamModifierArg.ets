@@ -1,3 +1,4 @@
+import { HmList } from './components/HmList'
 import { GoodItem } from './models'
 
 @Entry
@@ -76,8 +77,37 @@ struct BuilderParamModifierArg {
     }
   ]
 
+  @Builder
+  renderItem(item: GoodItem) {
+    Row({ space: 20 }) {
+      Image(item.goods_img)
+        .width(110)
+        .height(160)
+        .borderRadius(8)
+      Column() {
+        Text(item.goods_name)
+          .fontWeight(900)
+          .maxLines(3)
+          .textOverflow({ overflow: TextOverflow.Ellipsis })
+        Text('￥' + item.goods_price)
+          .fontColor(Color.Red)
+          .fontWeight(900)
+      }
+      .layoutWeight(1)
+      .height(160)
+      .justifyContent(FlexAlign.SpaceBetween)
+      .alignItems(HorizontalAlign.Start)
+    }
+  }
+
   build() {
     Column() {
+      HmList({
+        list: this.list,
+        renderItem: (item: object) => {
+          this.renderItem(item as GoodItem)
+        }
+      })
     }
   }
 }

@@ -2,13 +2,13 @@ import { GoodItem } from '../models'
 
 @Component
 struct HmList {
-  @State list: GoodItem[] = []
+  @State list: object[] = []
   @BuilderParam
   renderItem: (item: object) => void
 
   build() {
     List({ space: 12 }) {
-      ForEach(this.list, (item: GoodItem) => {
+      ForEach(this.list, (item: object) => {
         ListItem() {
           this.renderItem(item)
         }

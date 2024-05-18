@@ -28,6 +28,7 @@
     "pages/StyleDemo/BuilderModifier",
     "pages/StyleDemo/models/BuilderModifierCase",
     "pages/StyleDemo/WaterFlowDemo",
-    "pages/StyleDemo/BuilderModifierArg"
+    "pages/StyleDemo/BuilderModifierArg",
+    "pages/StyleDemo/BuilderParamModifier"
   ]
 }

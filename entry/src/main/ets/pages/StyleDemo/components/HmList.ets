@@ -10,7 +10,9 @@ struct HmList {
     List({ space: 12 }) {
       ForEach(this.list, (item: object) => {
         ListItem() {
-          this.renderItem(item)
+          if (this.renderItem) {
+            this.renderItem(item)
+          }
         }
       })
     }

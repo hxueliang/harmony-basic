@@ -30,6 +30,7 @@
     "pages/StyleDemo/WaterFlowDemo",
     "pages/StyleDemo/BuilderModifierArg",
     "pages/StyleDemo/BuilderParamModifier",
-    "pages/StyleDemo/BuilderParamModifierDialog"
+    "pages/StyleDemo/BuilderParamModifierDialog",
+    "pages/StyleDemo/BuilderParamModifierArg"
   ]
 }

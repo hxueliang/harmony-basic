@@ -1,8 +1,10 @@
 import { GoodItem } from './models'
+import { promptAction } from '@kit.ArkUI'
 
 @Entry
 @Component
 struct WaterFlowDemo {
+  @State loading: boolean = false
   @State list: GoodItem[] = [
     {
       "id": 1,
@@ -76,7 +78,8 @@ struct WaterFlowDemo {
     }
   ]
 
-  @Builder getFlowItem(item: GoodItem, index: number) {
+  @Builder
+  getFlowItem(item: GoodItem, index: number) {
     Column({ space: 8 }) {
       Image(item.goods_img)
         .borderRadius(8)
@@ -86,14 +89,45 @@ struct WaterFlowDemo {
     }
   }
 
+  @Builder
+  getFooter() {
+    Column() {
+      LoadingProgress()
+        .width(40)
+      Text('加载中')
+    }
+    .width('100%')
+  }
+
+  getMore() {
+    return new Promise<boolean>((resolve, reject) => {
+      setTimeout(() => {
+        this.list.push(...this.list.slice(0, 9))
+        resolve(true)
+      }, 1000)
+    })
+  }
+
   build() {
-    WaterFlow() {
+    WaterFlow({ footer: this.getFooter() }) {
       ForEach(this.list, (item: GoodItem, index: number) => {
         FlowItem() {
           this.getFlowItem(item, index)
         }
       })
     }
+    .onReachEnd(() => {
+      if (!this.loading) {
+        try {
+          this.loading = true
+          this.getMore()
+        } catch (error) {
+          console.log(error)
+        } finally {
+          this.loading = false
+        }
+      }
+    })
     .columnsTemplate('1fr 1fr')
     .padding(20)
     .columnsGap(20)

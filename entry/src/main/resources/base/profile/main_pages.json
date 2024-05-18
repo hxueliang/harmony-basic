@@ -27,6 +27,7 @@
     "pages/Case/ZhiHu/ZhiHu",
     "pages/StyleDemo/BuilderModifier",
     "pages/StyleDemo/models/BuilderModifierCase",
-    "pages/StyleDemo/WaterFlowDemo"
+    "pages/StyleDemo/WaterFlowDemo",
+    "pages/StyleDemo/BuilderModifierArg"
   ]
 }

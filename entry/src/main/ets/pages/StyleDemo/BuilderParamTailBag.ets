@@ -5,7 +5,13 @@ import { HmPanel } from './components/HmPanel'
 struct BuilderParamTailBag {
   build() {
     Column({ space: 10 }) {
-      HmPanel({ heightPanel: 240, bgPanel: Color.Orange })
+      HmPanel({ heightPanel: 240, bgPanel: Color.Orange }) {
+        Button('1')
+        Button('1')
+        Button('1')
+        Text('1')
+        Text('1')
+      }
       HmPanel({ heightPanel: 160, bgPanel: Color.Pink })
       HmPanel()
     }

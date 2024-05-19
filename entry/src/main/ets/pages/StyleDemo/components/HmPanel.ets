@@ -3,8 +3,14 @@ struct HmPanel {
   @State heightPanel: number = 300
   @State bgPanel: ResourceColor = '#ccc'
 
+  @BuilderParam
+  header: () => void
+
   build() {
     Column() {
+      if (this.header) {
+        this.header()
+      }
     }
     .width('100%')
     .height(this.heightPanel)

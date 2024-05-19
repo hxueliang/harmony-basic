@@ -2,7 +2,7 @@
 @Component
 struct PhotoAlbum {
   @State showPopup: boolean = false
-  @State canSelect: number = 2
+  @State canSelect: number = 3
   @State list: string[] = [
     'assets/image/goods/1.webp',
     'assets/image/goods/2.webp',
@@ -40,9 +40,20 @@ struct PhotoAlbum {
 
 @Component
 struct PhotoAlbumPopup {
+  @State selectPhotos: string[] = []
   @Prop list: string[] = []
   @Prop canSelect: number = 9
   close: () => void = () => {
+  }
+
+  /**
+   * 否是选中当前图片
+   * @param photoUrl 图片地址
+   * @returns
+   */
+  getSelectState(photoUrl: string) {
+    const index = this.selectPhotos.findIndex(url => url === photoUrl)
+    return index > -1
   }
 
   build() {
@@ -50,9 +61,40 @@ struct PhotoAlbumPopup {
       Grid() {
         ForEach(this.list, (item: string) => {
           GridItem() {
-            Image(item)
-              .aspectRatio(1)
+            Stack() {
+              Image(item)
+                .aspectRatio(1)
+
+              if (this.getSelectState(item)) {
+                Row() {
+                  Image($r('app.media.ic_public_select_photo'))
+                    .width(28)
+                    .margin({
+                      right: 5,
+                      bottom: 5,
+                    })
+                    .borderRadius(14)
+                    .border({
+                      color: Color.White,
+                      width: 2,
+                    })
+                }
+                .width('100%')
+                .aspectRatio(1)
+                .alignItems(VerticalAlign.Bottom)
+                .justifyContent(FlexAlign.End)
+                .backgroundColor('rgba(200, 200, 200, 0.5)')
+              }
+            }
           }
+          .onClick(() => {
+            const index = this.selectPhotos.findIndex(url => url === item)
+            if (index > -1) {
+              this.selectPhotos.splice(index, 1)
+            } else if (this.selectPhotos.length < this.canSelect) {
+              this.selectPhotos.push(item)
+            }
+          })
         })
       }
       .columnsTemplate('1fr 1fr 1fr')
@@ -67,7 +109,7 @@ struct PhotoAlbumPopup {
           .onClick(() => {
             this.close()
           })
-        Text('可选择' + this.canSelect)
+        Text(`已选${this.selectPhotos.length}张 / 可选${this.canSelect}张`)
         Button('确定')
       }
       .width('100%')

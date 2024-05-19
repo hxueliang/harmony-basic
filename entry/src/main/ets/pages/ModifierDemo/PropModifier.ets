@@ -20,12 +20,13 @@ struct PropModifier {
 
 @Component
 struct PropChild {
-  @State pNum: number = 0
-  
+  @Prop pNum: number = 0
+
   build() {
     Row() {
       Text('子组件：' + this.pNum)
         .fontSize(24)
+        .onClick(() => this.pNum++)
     }
   }
 }

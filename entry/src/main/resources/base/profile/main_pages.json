@@ -33,6 +33,7 @@
     "pages/ModifierDemo/BuilderParamModifierDialog",
     "pages/ModifierDemo/BuilderParamModifierArg",
     "pages/ModifierDemo/BuilderParamTailBag",
-    "pages/ModifierDemo/PropModifier"
+    "pages/ModifierDemo/PropModifier",
+    "pages/Case/PhotoAlbum/PhotoAlbum"
   ]
 }

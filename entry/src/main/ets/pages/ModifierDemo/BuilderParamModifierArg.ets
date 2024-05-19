@@ -1,5 +1,5 @@
-import { HmList } from './components/HmList'
-import { GoodItem } from './models'
+import { HmList } from '../StyleDemo/components/HmList'
+import { GoodItem } from '../StyleDemo/models/index'
 
 @Entry
 @Component

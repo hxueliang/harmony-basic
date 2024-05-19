@@ -25,13 +25,13 @@
     "pages/StyleDemo/ForEachDemo",
     "pages/StyleDemo/ForEachGoods",
     "pages/Case/ZhiHu/ZhiHu",
-    "pages/StyleDemo/BuilderModifier",
-    "pages/StyleDemo/models/BuilderModifierCase",
+    "pages/ModifierDemo/BuilderModifier",
+    "pages/ModifierDemo/BuilderModifierCase",
     "pages/StyleDemo/WaterFlowDemo",
-    "pages/StyleDemo/BuilderModifierArg",
-    "pages/StyleDemo/BuilderParamModifier",
-    "pages/StyleDemo/BuilderParamModifierDialog",
-    "pages/StyleDemo/BuilderParamModifierArg",
-    "pages/StyleDemo/BuilderParamTailBag"
+    "pages/ModifierDemo/BuilderModifierArg",
+    "pages/ModifierDemo/BuilderParamModifier",
+    "pages/ModifierDemo/BuilderParamModifierDialog",
+    "pages/ModifierDemo/BuilderParamModifierArg",
+    "pages/ModifierDemo/BuilderParamTailBag"
   ]
 }

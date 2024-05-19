@@ -1,4 +1,4 @@
-import { HmPanel } from './components/HmPanel'
+import { HmPanel } from '../StyleDemo/components/HmPanel'
 
 @Entry
 @Component

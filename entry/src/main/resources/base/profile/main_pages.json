@@ -31,6 +31,7 @@
     "pages/StyleDemo/BuilderModifierArg",
     "pages/StyleDemo/BuilderParamModifier",
     "pages/StyleDemo/BuilderParamModifierDialog",
-    "pages/StyleDemo/BuilderParamModifierArg"
+    "pages/StyleDemo/BuilderParamModifierArg",
+    "pages/StyleDemo/BuilderParamTailBag"
   ]
 }

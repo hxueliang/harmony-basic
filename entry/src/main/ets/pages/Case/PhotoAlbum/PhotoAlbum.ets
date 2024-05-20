@@ -15,20 +15,37 @@ struct PhotoAlbum {
     'assets/image/goods/9.webp',
     'assets/image/goods/10.webp',
   ]
+  @State selectPhoto: string[] = []
 
   build() {
-    Column() {
+    Column({ space: 10 }) {
       Button('选择图片')
         .margin({ top: 20 })
         .onClick(() => {
           this.showPopup = true
         })
 
+      Grid() {
+        ForEach(this.selectPhoto, (imgUrl: string) => {
+          GridItem() {
+            Image(imgUrl)
+              .aspectRatio(1)
+          }
+        })
+      }
+      .columnsTemplate('1fr 1fr')
+      .columnsGap(2)
+      .rowsGap(2)
+
       if (this.showPopup) {
         PhotoAlbumPopup({
           list: this.list,
           canSelect: this.canSelect,
           close: () => {
+            this.showPopup = false
+          },
+          finish: (list: string[]) => {
+            this.selectPhoto.push(...list)
             this.showPopup = false
           }
         })
@@ -44,6 +61,8 @@ struct PhotoAlbumPopup {
   @Prop list: string[] = []
   @Prop canSelect: number = 9
   close: () => void = () => {
+  }
+  finish: (list: string[]) => void = () => {
   }
 
   /**
@@ -111,6 +130,9 @@ struct PhotoAlbumPopup {
           })
         Text(`已选${this.selectPhotos.length}张 / 可选${this.canSelect}张`)
         Button('确定')
+          .onClick(() => {
+            this.finish(this.selectPhotos)
+          })
       }
       .width('100%')
       .height(60)

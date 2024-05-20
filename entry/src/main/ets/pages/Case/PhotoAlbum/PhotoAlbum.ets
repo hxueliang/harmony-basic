@@ -16,6 +16,16 @@ struct PhotoAlbum {
     'assets/image/goods/10.webp',
   ]
   @State selectPhoto: string[] = []
+  /** 图片预览选中的图片地址 */
+  selectUrl: string = ''
+  /** 预览图片的对话框 */
+  previewDialog: CustomDialogController = new CustomDialogController({
+    // 接收一个@CustomDialog修饰的结构体
+    builder: PreviewPhoto({
+      url: this.selectUrl
+    }),
+    customStyle: true,
+  })
 
   build() {
     Column({ space: 10 }) {
@@ -30,6 +40,10 @@ struct PhotoAlbum {
           GridItem() {
             Image(imgUrl)
               .aspectRatio(1)
+              .onClick(() => {
+                this.selectUrl = imgUrl
+                this.previewDialog.open()
+              })
           }
         })
       }
@@ -141,5 +155,23 @@ struct PhotoAlbumPopup {
     }
     .position({ x: 0, y: 0 })
     .justifyContent(FlexAlign.SpaceBetween)
+  }
+}
+
+@CustomDialog
+struct PreviewPhoto {
+  controller: CustomDialogController
+  url: string = ''
+
+  build() {
+    Column() {
+      Image(this.url)
+        .width('100%')
+    }
+    .position({ y: 0 })
+    .width('100%')
+    .height('100%')
+    .justifyContent(FlexAlign.Center)
+    .backgroundColor(Color.Black)
   }
 }

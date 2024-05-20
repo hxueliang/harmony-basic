@@ -40,7 +40,7 @@ struct LinkModifier {
       GridItem() {
         LinkChild({
           pNum: this.pNum,
-          lNum: this.lNum,
+          lNum: $lNum,
         })
       }
     }

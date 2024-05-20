@@ -27,6 +27,23 @@ struct PhotoAlbum {
     customStyle: true,
   })
 
+  @Builder
+  getSheetBuilder() {
+    Column() {
+      PhotoAlbumPopup({
+        list: this.list,
+        canSelect: this.canSelect,
+        close: () => {
+          this.showPopup = false
+        },
+        finish: (list: string[]) => {
+          this.selectPhoto.push(...list)
+          this.showPopup = false
+        }
+      })
+    }
+  }
+
   build() {
     Column({ space: 10 }) {
       Button('选择图片')
@@ -50,22 +67,12 @@ struct PhotoAlbum {
       .columnsTemplate('1fr 1fr')
       .columnsGap(2)
       .rowsGap(2)
-
-      if (this.showPopup) {
-        PhotoAlbumPopup({
-          list: this.list,
-          canSelect: this.canSelect,
-          close: () => {
-            this.showPopup = false
-          },
-          finish: (list: string[]) => {
-            this.selectPhoto.push(...list)
-            this.showPopup = false
-          }
-        })
-      }
     }
     .width('100%')
+    .bindSheet($$this.showPopup, this.getSheetBuilder(), {
+      showClose: false,
+      height: '80%'
+    })
   }
 }
 
@@ -153,7 +160,8 @@ struct PhotoAlbumPopup {
       .padding({ left: 10, right: 10 })
       .justifyContent(FlexAlign.SpaceBetween)
     }
-    .position({ x: 0, y: 0 })
+    // bindSheet中的builder函数不能使用position属性，会影响事件的绑定
+    // .position({ x: 0, y: 0 })
     .justifyContent(FlexAlign.SpaceBetween)
   }
 }

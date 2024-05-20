@@ -13,6 +13,7 @@ function textStyle() {
 @Component
 struct LinkModifier {
   @State pNum: number = 0
+  @State lNum: number = 0
 
   build() {
     Grid() {
@@ -30,11 +31,16 @@ struct LinkModifier {
             .onClick(() => {
               this.pNum++
             })
+          Text(this.lNum.toString()).textStyle()
+            .onClick(() => {
+              this.lNum++
+            })
         }
       }
       GridItem() {
         LinkChild({
           pNum: this.pNum,
+          lNum: this.lNum,
         })
       }
     }
@@ -47,6 +53,7 @@ struct LinkModifier {
 @Component
 struct LinkChild {
   @Prop pNum: number = 0
+  @Link lNum: number
 
   build() {
     Column({ space: 10 }) {
@@ -54,6 +61,10 @@ struct LinkChild {
       Text(this.pNum.toString()).textStyle()
         .onClick(() => {
           this.pNum++
+        })
+      Text(this.lNum.toString()).textStyle()
+        .onClick(() => {
+          this.lNum++
         })
     }
   }

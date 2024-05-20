@@ -182,6 +182,9 @@ struct PreviewPhoto {
         })
       }
       .index($$this.selectIndex)
+      .onClick(() => {
+        this.controller.close()
+      })
     }
     // 不能使用position属性，会影响Swiper划动事件
     // .position({ y: 0 })

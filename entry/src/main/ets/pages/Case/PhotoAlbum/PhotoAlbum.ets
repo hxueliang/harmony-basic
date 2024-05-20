@@ -16,13 +16,14 @@ struct PhotoAlbum {
     'assets/image/goods/10.webp',
   ]
   @State selectPhoto: string[] = []
-  /** 图片预览选中的图片地址 */
-  selectUrl: string = ''
+  /** 图片预览选中的图片index */
+  @State selectIndex: number = 0
   /** 预览图片的对话框 */
   previewDialog: CustomDialogController = new CustomDialogController({
     // 接收一个@CustomDialog修饰的结构体
     builder: PreviewPhoto({
-      url: this.selectUrl
+      urls: this.selectPhoto,
+      selectIndex: this.selectIndex,
     }),
     customStyle: true,
   })
@@ -53,12 +54,12 @@ struct PhotoAlbum {
         })
 
       Grid() {
-        ForEach(this.selectPhoto, (imgUrl: string) => {
+        ForEach(this.selectPhoto, (imgUrl: string, index: number) => {
           GridItem() {
             Image(imgUrl)
               .aspectRatio(1)
               .onClick(() => {
-                this.selectUrl = imgUrl
+                this.selectIndex = index
                 this.previewDialog.open()
               })
           }
@@ -168,15 +169,22 @@ struct PhotoAlbumPopup {
 
 @CustomDialog
 struct PreviewPhoto {
+  @State selectIndex: number = 0
   controller: CustomDialogController
-  url: string = ''
+  urls: string[] = []
 
   build() {
     Column() {
-      Image(this.url)
-        .width('100%')
+      Swiper() {
+        ForEach(this.urls, (url: string) => {
+          Image(url)
+            .width('100%')
+        })
+      }
+      .index($$this.selectIndex)
     }
-    .position({ y: 0 })
+    // 不能使用position属性，会影响Swiper划动事件
+    // .position({ y: 0 })
     .width('100%')
     .height('100%')
     .justifyContent(FlexAlign.Center)

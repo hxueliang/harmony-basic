@@ -40,6 +40,7 @@
     "pages/ModifierDemo/ProvideAndConsumeModifier",
     "pages/Case/BrushProblem/BpLogin",
     "pages/Case/BrushProblem/BpMain",
-    "pages/ModifierDemo/WatchModifier"
+    "pages/ModifierDemo/WatchModifier",
+    "pages/Case/BrushProblem/BpOnlineSimulation"
   ]
 }

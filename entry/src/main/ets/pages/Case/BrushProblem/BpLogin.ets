@@ -1,9 +1,27 @@
+import { promptAction, router } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct BpLogin {
   @State phone: string = ''
   @State code: string = ''
   @State agree: boolean = false
+
+  getLoginBtnEnabled() {
+    return !!(this.phone && this.code && this.agree)
+  }
+
+  goLogin() {
+    if (this.phone === '13812341234' && this.code === '123123') {
+      router.pushUrl({
+        url: 'pages/Case/BrushProblem/BpMain',
+      })
+    } else {
+      promptAction.showToast({
+        message: '手机号或验证码错误',
+      })
+    }
+  }
 
   build() {
     Column() {
@@ -26,6 +44,10 @@ struct BpLogin {
         Button('登录')
           .width('100%')
           .height(48)
+          .enabled(this.getLoginBtnEnabled())
+          .onClick(() => {
+            this.goLogin()
+          })
       }
       .layoutWeight(1)
       .margin({

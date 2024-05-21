@@ -40,12 +40,37 @@ struct HmCard {
       List({ space: 20 }) {
         ForEach(this.list, (item: CardItem) => {
           ListItem() {
-            Text(JSON.stringify(item))
+            HmCardItem({
+              item,
+            })
           }
         })
       }
     }
     .padding(20)
+  }
+}
+
+@Component
+struct HmCardItem {
+  @Prop item: CardItem
+
+  build() {
+    Row() {
+      Column({ space: 10 }) {
+        Text(this.item.goods_name)
+          .fontSize(30)
+        Text(this.item.goods_price.toString())
+          .fontSize(16)
+          .fontColor(Color.Red)
+      }
+
+      Text(this.item.goods_count.toString())
+        .fontSize(30)
+    }
+    .width('100%')
+    .alignItems(VerticalAlign.Center)
+    .justifyContent(FlexAlign.SpaceBetween)
   }
 }
 

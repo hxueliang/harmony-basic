@@ -35,6 +35,16 @@ struct LinkModifierCase {
 struct HmCard {
   @Link list: CardItem[]
 
+  changeGoodsCount(type: 'add' | 'cut', item: CardItem) {
+    if (type === 'add') {
+      item.goods_count++
+    } else {
+      item.goods_count && item.goods_count--
+    }
+    const index = this.list.findIndex(obj => obj.id === item.id)
+    this.list.splice(index, 1, item)
+  }
+
   build() {
     Column() {
       List({ space: 20 }) {
@@ -42,6 +52,9 @@ struct HmCard {
           ListItem() {
             HmCardItem({
               item,
+              changeGoodsCount: (type: 'add' | 'cut') => {
+                this.changeGoodsCount(type, item)
+              }
             })
           }
         })
@@ -54,6 +67,8 @@ struct HmCard {
 @Component
 struct HmCardItem {
   @Prop item: CardItem
+  changeGoodsCount: (type: 'add' | 'cut') => void = () => {
+  }
 
   build() {
     Row() {
@@ -67,6 +82,9 @@ struct HmCardItem {
 
       ChangeCount({
         count: this.item.goods_count,
+        addOrCut: (type: 'add' | 'cut') => {
+          this.changeGoodsCount(type)
+        },
       })
     }
     .width('100%')
@@ -78,12 +96,15 @@ struct HmCardItem {
 @Component
 struct ChangeCount {
   @Prop count: number
+  addOrCut: (type: 'add' | 'cut') => void = () => {
+  }
 
   build() {
     Row({ space: 5 }) {
       Text('-')
         .getChangeCountTextStyle()
         .onClick(() => {
+          this.addOrCut('cut')
         })
       Text(this.count.toString())
         .fontSize(30)
@@ -92,6 +113,7 @@ struct ChangeCount {
       Text('+')
         .getChangeCountTextStyle()
         .onClick(() => {
+          this.addOrCut('add')
         })
     }
   }

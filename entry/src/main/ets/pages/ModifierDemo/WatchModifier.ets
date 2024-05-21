@@ -6,6 +6,8 @@ struct WatchModifier {
   @State
   @Watch('changeNumber')
   number: number = 0
+  @State
+  age: number = 18
 
   changeNumber() {
     promptAction.showToast({
@@ -15,14 +17,40 @@ struct WatchModifier {
 
   build() {
     Row() {
-      Column() {
+      Column({ space: 20 }) {
         Button(`父组件number：${this.number}`)
           .onClick(() => {
             this.number++
           })
+        Button(`父组件age：${this.age}`)
+          .onClick(() => {
+            this.age++
+          })
+        WatchChild({
+          age: this.age,
+        })
       }
       .width('100%')
     }
     .height('100%')
+  }
+}
+
+@Component
+struct WatchChild {
+  @Prop
+  @Watch('changeAge')
+  age: number
+
+  changeAge() {
+    promptAction.showToast({
+      message: `子组件监听@Prop age：${this.age}`
+    })
+  }
+
+  build() {
+    Column() {
+      Button(`子组件：${this.age}`)
+    }
   }
 }

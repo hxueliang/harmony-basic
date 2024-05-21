@@ -35,6 +35,7 @@
     "pages/ModifierDemo/BuilderParamTailBag",
     "pages/ModifierDemo/PropModifier",
     "pages/Case/PhotoAlbum/PhotoAlbum",
-    "pages/ModifierDemo/LinkModifier"
+    "pages/ModifierDemo/LinkModifier",
+    "pages/ModifierDemo/LinkModifierCase"
   ]
 }

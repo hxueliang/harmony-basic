@@ -1,0 +1,57 @@
+@Entry
+@Component
+struct LinkModifierCase {
+  @State list: CardItem[] = [
+    {
+      id: 1,
+      goods_name: '酸菜鱼',
+      goods_price: 99.9,
+      goods_count: 0,
+    },
+    {
+      id: 2,
+      goods_name: '麻辣烫',
+      goods_price: 29.9,
+      goods_count: 0,
+    },
+    {
+      id: 1,
+      goods_name: '红烧肉',
+      goods_price: 50,
+      goods_count: 0,
+    },
+  ]
+
+  build() {
+    Column() {
+      HmCard({
+        list: this.list,
+      })
+    }
+  }
+}
+
+@Component
+struct HmCard {
+  @Link list: CardItem[]
+
+  build() {
+    Column() {
+      List({ space: 20 }) {
+        ForEach(this.list, (item: CardItem) => {
+          ListItem() {
+            Text(JSON.stringify(item))
+          }
+        })
+      }
+    }
+    .padding(20)
+  }
+}
+
+interface CardItem {
+  id: number,
+  goods_name: string,
+  goods_price: number,
+  goods_count: number,
+}

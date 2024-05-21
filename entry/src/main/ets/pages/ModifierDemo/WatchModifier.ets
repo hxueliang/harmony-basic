@@ -8,6 +8,8 @@ struct WatchModifier {
   number: number = 0
   @State
   age: number = 18
+  @State
+  message: string = '你好'
 
   changeNumber() {
     promptAction.showToast({
@@ -26,8 +28,14 @@ struct WatchModifier {
           .onClick(() => {
             this.age++
           })
+
+        Button(`父组件message：${this.message}`)
+          .onClick(() => {
+            this.message += '1'
+          })
         WatchChild({
           age: this.age,
+          message: $message,
         })
       }
       .width('100%')
@@ -41,10 +49,19 @@ struct WatchChild {
   @Prop
   @Watch('changeAge')
   age: number
+  @Link
+  @Watch('changeMessage')
+  message: string
 
   changeAge() {
     promptAction.showToast({
       message: `子组件监听@Prop age：${this.age}`
+    })
+  }
+
+  changeMessage() {
+    promptAction.showToast({
+      message: `子组件监听@Link message：${this.message}`
     })
   }
 

@@ -36,6 +36,7 @@
     "pages/ModifierDemo/PropModifier",
     "pages/Case/PhotoAlbum/PhotoAlbum",
     "pages/ModifierDemo/LinkModifier",
-    "pages/ModifierDemo/LinkModifierCase"
+    "pages/ModifierDemo/LinkModifierCase",
+    "pages/ModifierDemo/ProvideAndConsumeModifier"
   ]
 }

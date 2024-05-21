@@ -65,13 +65,50 @@ struct HmCardItem {
           .fontColor(Color.Red)
       }
 
-      Text(this.item.goods_count.toString())
-        .fontSize(30)
+      ChangeCount({
+        count: this.item.goods_count,
+      })
     }
     .width('100%')
     .alignItems(VerticalAlign.Center)
     .justifyContent(FlexAlign.SpaceBetween)
   }
+}
+
+@Component
+struct ChangeCount {
+  @Prop count: number
+
+  build() {
+    Row({ space: 5 }) {
+      Text('-')
+        .getChangeCountTextStyle()
+        .onClick(() => {
+        })
+      Text(this.count.toString())
+        .fontSize(30)
+        .width(40)
+        .textAlign(TextAlign.Center)
+      Text('+')
+        .getChangeCountTextStyle()
+        .onClick(() => {
+        })
+    }
+  }
+}
+
+@Extend(Text)
+function getChangeCountTextStyle() {
+  .width(36)
+  .aspectRatio(1)
+  .lineHeight(36)
+  .border({
+    width: 1,
+    color: Color.Gray
+  })
+  .borderRadius(20)
+  .fontSize(40)
+  .textAlign(TextAlign.Center)
 }
 
 interface CardItem {

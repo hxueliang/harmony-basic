@@ -9,14 +9,14 @@ struct WatchModifier {
 
   changeNumber() {
     promptAction.showToast({
-      message: `父组件监听number：${this.number}`
+      message: `父组件监听@State number：${this.number}`
     })
   }
 
   build() {
     Row() {
       Column() {
-        Button(`父组件：${this.number}`)
+        Button(`父组件number：${this.number}`)
           .onClick(() => {
             this.number++
           })

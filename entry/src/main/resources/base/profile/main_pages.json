@@ -37,6 +37,7 @@
     "pages/Case/PhotoAlbum/PhotoAlbum",
     "pages/ModifierDemo/LinkModifier",
     "pages/ModifierDemo/LinkModifierCase",
-    "pages/ModifierDemo/ProvideAndConsumeModifier"
+    "pages/ModifierDemo/ProvideAndConsumeModifier",
+    "pages/Case/BrushProblem/BpLogin"
   ]
 }

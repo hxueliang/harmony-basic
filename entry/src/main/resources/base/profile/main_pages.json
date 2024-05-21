@@ -38,6 +38,7 @@
     "pages/ModifierDemo/LinkModifier",
     "pages/ModifierDemo/LinkModifierCase",
     "pages/ModifierDemo/ProvideAndConsumeModifier",
-    "pages/Case/BrushProblem/BpLogin"
+    "pages/Case/BrushProblem/BpLogin",
+    "pages/Case/BrushProblem/BpMain"
   ]
 }

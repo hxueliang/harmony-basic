@@ -1,6 +1,12 @@
+import { OptionItemModel, QuestionInfo, QuestionInfoModel } from './models'
+import { promptAction } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct BpOnlineSimulation {
+  @State
+  list: QuestionInfo[] = []
+
   @Styles
   getContextPadding() {
     .padding({
@@ -44,6 +50,20 @@ struct BpOnlineSimulation {
     .getTopStyle()
   }
 
+  aboutToAppear(): void {
+    this.getList()
+  }
+
+  async getList() {
+    try {
+      this.list = await getListApi()
+    } catch (error) {
+      promptAction.showToast({
+        message: '获取题目失败'
+      })
+    }
+  }
+
   build() {
     Column({ space: 10 }) {
       // 顶部
@@ -58,7 +78,7 @@ struct BpOnlineSimulation {
 
       // 中部
       Column() {
-
+        Text(JSON.stringify(this.list))
       }
       .layoutWeight(1)
 
@@ -83,4 +103,79 @@ function getTopStyle() {
 function getImageStyle(width: number = 20) {
   .width(width)
   .aspectRatio(1)
+}
+
+function getListApi() {
+  return new Promise<QuestionInfoModel[]>((resolve) => {
+    setTimeout(() => {
+      resolve([
+        new QuestionInfoModel({
+          id: 1,
+          title: '下面说法正确的是',
+          options: [
+            new OptionItemModel({
+              letter: 'A',
+              optionsTitle: '鸿蒙和openHarmony是一回事',
+            }),
+            new OptionItemModel({
+              letter: 'B',
+              optionsTitle: '鸿蒙的装饰器不可以做响应式',
+            }),
+            new OptionItemModel({
+              letter: 'C',
+              optionsTitle: 'arkTS借鉴了TS的语法',
+            }),
+            new OptionItemModel({
+              letter: 'D',
+              optionsTitle: '鸿蒙4.0已经面世1年了',
+            }),
+          ]
+        }),
+        new QuestionInfoModel({
+          id: 2,
+          title: '哪个修饰符不具备响应式',
+          options: [
+            new OptionItemModel({
+              letter: 'A',
+              optionsTitle: 'State',
+            }),
+            new OptionItemModel({
+              letter: 'B',
+              optionsTitle: 'Prop',
+            }),
+            new OptionItemModel({
+              letter: 'C',
+              optionsTitle: 'Link',
+            }),
+            new OptionItemModel({
+              letter: 'D',
+              optionsTitle: 'Preview',
+            }),
+          ]
+        }),
+        new QuestionInfoModel({
+          id: 3,
+          title: 'Link的用法下面哪个语法是正确的',
+          options: [
+            new OptionItemModel({
+              letter: 'A',
+              optionsTitle: '$$this.xxx',
+            }),
+            new OptionItemModel({
+              letter: 'B',
+              optionsTitle: '$xxx',
+            }),
+            new OptionItemModel({
+              letter: 'C',
+              optionsTitle: '$this.xxx',
+            }),
+            new OptionItemModel({
+              letter: 'D',
+              optionsTitle: '$$xxx',
+            }),
+          ]
+        }),
+      ])
+    }, 300)
+  })
 }

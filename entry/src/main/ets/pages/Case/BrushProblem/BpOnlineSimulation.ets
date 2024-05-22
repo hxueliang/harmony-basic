@@ -1,4 +1,4 @@
-import { OptionItemModel, QuestionInfo, QuestionInfoModel } from './models'
+import { OptionItem, OptionItemModel, QuestionInfo, QuestionInfoModel } from './models'
 import { promptAction } from '@kit.ArkUI'
 
 @Entry
@@ -6,6 +6,8 @@ import { promptAction } from '@kit.ArkUI'
 struct BpOnlineSimulation {
   @State
   list: QuestionInfo[] = []
+  @State
+  questionIndex: number = 0
 
   @Styles
   getContextPadding() {
@@ -30,22 +32,61 @@ struct BpOnlineSimulation {
   }
 
   @Builder
+  getQuestionUI() {
+    Column({ space: 10 }) {
+      if (this.list.length) {
+        Text(this.questionIndex + 1 + '. ' + this.getCurrentQuestion()!.title)
+          .width('100%')
+        ForEach(this.getCurrentQuestion()!.options, (item: OptionItem) => {
+          Row({ space: 10 }) {
+            Text(item.letter + '.')
+            Text(item.optionsTitle)
+          }
+          .width('100%')
+          .backgroundColor('#f9f9f9')
+          .height(48)
+          .borderRadius(6)
+          .padding({
+            left: 16,
+            right: 16,
+          })
+        })
+      }
+    }
+    .getContextPadding()
+    .layoutWeight(1)
+    .margin({
+      top: 12,
+    })
+  }
+
+  @Builder
   getBottomUI() {
     Row() {
       Row({ space: 10 }) {
         Image($r('app.media.ic_public_left_arrow'))
           .getImageStyle(16)
+          .fillColor(this.canLastQuestion() ? Color.Black : '#ccc')
         Text('上一题')
+          .fontColor(this.canLastQuestion() ? Color.Black : '#ccc')
       }
+      .onClick(() => {
+        this.lastQuestion()
+      })
 
       Row({ space: 10 }) {
-        Text('上一题')
+        Text('下一题')
+          .fontColor(this.canNextQuestion() ? Color.Black : '#ccc')
         Image($r('app.media.ic_public_left_arrow'))
           .getImageStyle(16)
+          .fillColor(this.canNextQuestion() ? Color.Black : '#ccc')
           .rotate({
             angle: 180,
           })
       }
+      .onClick(() => {
+        this.nextQuestion()
+      })
     }
     .getTopStyle()
   }
@@ -64,6 +105,33 @@ struct BpOnlineSimulation {
     }
   }
 
+  canLastQuestion() {
+    return this.questionIndex > 0
+  }
+
+  canNextQuestion() {
+    return this.questionIndex < this.list.length - 1
+  }
+
+  lastQuestion() {
+    if (this.canLastQuestion()) {
+      this.questionIndex--
+    }
+  }
+
+  nextQuestion() {
+    if (this.canNextQuestion()) {
+      this.questionIndex++
+    }
+  }
+
+  getCurrentQuestion() {
+    if (this.list.length) {
+      return this.list[this.questionIndex]
+    }
+    return null
+  }
+
   build() {
     Column({ space: 10 }) {
       // 顶部
@@ -71,16 +139,13 @@ struct BpOnlineSimulation {
 
       // 进度条
       Progress({
-        value: 10,
-        total: 100,
+        value: this.questionIndex + 1,
+        total: this.list.length,
       })
         .getContextPadding()
 
       // 中部
-      Column() {
-        Text(JSON.stringify(this.list))
-      }
-      .layoutWeight(1)
+      this.getQuestionUI()
 
       // 底部
       this.getBottomUI()

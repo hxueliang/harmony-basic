@@ -1,4 +1,4 @@
-import { OptionItem, OptionItemModel, QuestionInfo, QuestionInfoModel } from './models'
+import { OptionItem, OptionItemModel, QuestionInfo, QuestionInfoModel, UserAnswer } from './models'
 import { promptAction } from '@kit.ArkUI'
 
 @Entry
@@ -8,6 +8,8 @@ struct BpOnlineSimulation {
   list: QuestionInfo[] = []
   @State
   questionIndex: number = 0
+  @State
+  answerMap: Record<number, UserAnswer> = {}
 
   @Styles
   getContextPadding() {
@@ -50,8 +52,12 @@ struct BpOnlineSimulation {
             left: 16,
             right: 16,
           })
+          .onClick(() => {
+            this.selectAnswer(item)
+          })
         })
       }
+      Text(JSON.stringify(this.answerMap))
     }
     .getContextPadding()
     .layoutWeight(1)
@@ -130,6 +136,17 @@ struct BpOnlineSimulation {
       return this.list[this.questionIndex]
     }
     return null
+  }
+
+  selectAnswer(option: OptionItem) {
+    const question = this.getCurrentQuestion()
+    if (question) {
+      this.answerMap[question.id] = {
+        question_id: question.id,
+        user_answer: option.letter,
+        user_id: '123456', // Todo: 暂写死
+      }
+    }
   }
 
   build() {

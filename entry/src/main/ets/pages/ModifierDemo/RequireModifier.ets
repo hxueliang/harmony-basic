@@ -4,7 +4,11 @@ struct RequireModifier {
   build() {
     Row() {
       Column() {
-        RequireChild()
+        RequireChild({
+          message: '必传的：prop'
+        }) {
+          Text('必传的：BuilderParam')
+        }
       }
       .width('100%')
     }
@@ -14,6 +18,7 @@ struct RequireModifier {
 
 @Component
 struct RequireChild {
+  @Require
   @Prop
   message: string = '默认prop'
 
@@ -22,6 +27,7 @@ struct RequireChild {
     Text('默的BuilderParam')
   }
 
+  @Require
   @BuilderParam
   getContentUI: () => void = this.defaultContent
 

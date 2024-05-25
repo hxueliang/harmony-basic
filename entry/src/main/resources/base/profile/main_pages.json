@@ -41,6 +41,7 @@
     "pages/Case/BrushProblem/BpLogin",
     "pages/Case/BrushProblem/BpMain",
     "pages/ModifierDemo/WatchModifier",
-    "pages/Case/BrushProblem/BpOnlineSimulation"
+    "pages/Case/BrushProblem/BpOnlineSimulation",
+    "pages/ModifierDemo/RequireModifier"
   ]
 }

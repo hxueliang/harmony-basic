@@ -42,10 +42,12 @@ struct BpOnlineSimulation {
         ForEach(this.getCurrentQuestion()!.options, (item: OptionItem) => {
           Row({ space: 10 }) {
             Text(item.letter + '.')
+              .fontColor(this.getColor(item))
             Text(item.optionsTitle)
+              .fontColor(this.getColor(item))
           }
           .width('100%')
-          .backgroundColor('#f9f9f9')
+          .backgroundColor(this.getColor(item, 'back'))
           .height(48)
           .borderRadius(6)
           .padding({
@@ -57,7 +59,6 @@ struct BpOnlineSimulation {
           })
         })
       }
-      Text(JSON.stringify(this.answerMap))
     }
     .getContextPadding()
     .layoutWeight(1)
@@ -109,6 +110,16 @@ struct BpOnlineSimulation {
         message: '获取题目失败'
       })
     }
+  }
+
+  getColor(option: OptionItem, type: 'front' | 'back' = 'front') {
+    const question = this.getCurrentQuestion()
+    if (question && this.answerMap[question.id]?.user_answer === option.letter) {
+      // 选中颜色
+      return type === 'front' ? Color.White : '#317ae5'
+    }
+    // 未选中颜色
+    return type === 'front' ? Color.Black : '#f9f9f9'
   }
 
   canLastQuestion() {

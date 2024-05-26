@@ -19,10 +19,10 @@ struct ObservedObjectLinkModifier {
     List({ space: 20 }) {
       ForEach(this.commentList, (item: DyCommentModel) => {
         ListItem() {
-          DyCommentItem({ item })
+          DyCommentItem({ item: item })
         }
         .onClick(() => {
-          // 无法更新视图
+          // 可以直接更新第二层数据，同时实现视图更新
           item.like_count++
         })
       })
@@ -35,8 +35,8 @@ struct ObservedObjectLinkModifier {
 
 @Component
 struct DyCommentItem {
-  @Prop
-  item: DyCommentModel = new DyCommentModel({} as DyComment)
+  @ObjectLink
+  item: DyCommentModel
 
   build() {
     Row() {
@@ -55,6 +55,7 @@ interface DyComment {
   author: string
 }
 
+@Observed
 export class DyCommentModel implements DyComment {
   content: string = ''
   like_count: number = 0

@@ -68,14 +68,6 @@ struct ZhiHu {
   ]
   scroller: Scroller = new Scroller()
 
-  onChangeLike(item: ReplyItemModel, index?: number) {
-    item.likeFlag ? item.likeNum-- : item.likeNum++
-    item.likeFlag = !item.likeFlag
-    if (typeof index === 'number') {
-      this.commentList[index] = new ReplyItemModel(item)
-    }
-  }
-
   publishComment(content: string) {
     const time = new Date()
     const month = (time.getMonth() + 1).toString().padStart(2, '0')
@@ -127,10 +119,7 @@ struct ZhiHu {
         ForEach(this.commentList, (item: ReplyItemModel, index) => {
           ListItem() {
             ZhCommentItem({
-              item,
-              onChangeLike: () => {
-                this.onChangeLike(item, index)
-              }
+              item: item,
             })
           }
         }, (item: ReplyItemModel) => item.id + '_' + item.likeNum)

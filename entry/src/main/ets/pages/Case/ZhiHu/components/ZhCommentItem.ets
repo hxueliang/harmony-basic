@@ -2,8 +2,11 @@ import { ReplyItem, ReplyItemModel } from '../models'
 
 @Component
 struct ZhCommentItem {
-  item: ReplyItemModel = new ReplyItemModel({} as ReplyItem)
+  @ObjectLink
+  item: ReplyItemModel
   onChangeLike: () => void = () => {
+    this.item.likeFlag ? this.item.likeNum-- : this.item.likeNum++
+    this.item.likeFlag = !this.item.likeFlag
   }
 
   build() {

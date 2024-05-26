@@ -9,6 +9,7 @@ export interface ReplyItem {
   likeFlag: boolean | null // 当前用户是否点过赞
 }
 
+@Observed
 export class ReplyItemModel implements ReplyItem {
   avatar: ResourceStr = ''
   author: string = ''

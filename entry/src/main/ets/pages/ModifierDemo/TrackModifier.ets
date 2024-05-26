@@ -14,10 +14,10 @@ struct TrackModifier {
       Column({ space: 20 }) {
         Row() {
           Text('身份证：')
-          Text(this.user.id_card.toString())
+          // Text(this.user.id_card.toString())
         }
         .onClick(() => {
-          this.user.id_card++
+          // this.user.id_card++
         })
 
         Row() {
@@ -30,10 +30,10 @@ struct TrackModifier {
 
         Row() {
           Text('年龄：')
-          Text(this.user.age.toString())
+          // Text(this.user.age.toString())
         }
         .onClick(() => {
-          this.user.age += 1
+          // this.user.age += 1
         })
 
         Row() {
@@ -59,8 +59,10 @@ interface UserInfo {
 
 export class UserInfoModel implements UserInfo {
   id_card: number = 0
+  @Track
   name: string = ''
   age: number = 0
+  @Track
   sex: '男' | '女' = '男'
 
   constructor(model: UserInfo) {

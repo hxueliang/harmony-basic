@@ -43,6 +43,7 @@
     "pages/ModifierDemo/WatchModifier",
     "pages/Case/BrushProblem/BpOnlineSimulation",
     "pages/ModifierDemo/RequireModifier",
-    "pages/ModifierDemo/TrackModifier"
+    "pages/ModifierDemo/TrackModifier",
+    "pages/ModifierDemo/ObservedObjectLinkModifier"
   ]
 }

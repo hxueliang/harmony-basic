@@ -46,6 +46,8 @@
     "pages/ModifierDemo/TrackModifier",
     "pages/ModifierDemo/ObservedObjectLinkModifier",
     "pages/ApplicationState/LocalStorageA",
-    "pages/ApplicationState/LocalStorageB"
+    "pages/ApplicationState/LocalStorageB",
+    "pages/ApplicationState/AppStorageLogin",
+    "pages/ApplicationState/AppStorageMain"
   ]
 }

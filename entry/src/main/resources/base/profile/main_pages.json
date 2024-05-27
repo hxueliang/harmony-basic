@@ -45,7 +45,7 @@
     "pages/ModifierDemo/RequireModifier",
     "pages/ModifierDemo/TrackModifier",
     "pages/ModifierDemo/ObservedObjectLinkModifier",
-    "pages/ApplicationState/LocalStorageProp",
-    "pages/ApplicationState/LocalStorageLink"
+    "pages/ApplicationState/LocalStorageA",
+    "pages/ApplicationState/LocalStorageB"
   ]
 }

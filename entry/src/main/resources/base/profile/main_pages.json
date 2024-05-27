@@ -48,6 +48,8 @@
     "pages/ApplicationState/LocalStorageA",
     "pages/ApplicationState/LocalStorageB",
     "pages/ApplicationState/AppStorageLogin",
-    "pages/ApplicationState/AppStorageMain"
+    "pages/ApplicationState/AppStorageMain",
+    "pages/ApplicationState/PersistentStorageLogin",
+    "pages/ApplicationState/PersistentStorageMain"
   ]
 }

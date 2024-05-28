@@ -50,6 +50,7 @@
     "pages/ApplicationState/AppStorageLogin",
     "pages/ApplicationState/AppStorageMain",
     "pages/ApplicationState/PersistentStorageLogin",
-    "pages/ApplicationState/PersistentStorageMain"
+    "pages/ApplicationState/PersistentStorageMain",
+    "pages/NetworkDemo/HttpDemo"
   ]
 }

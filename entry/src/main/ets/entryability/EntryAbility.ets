@@ -18,10 +18,11 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-    let url = 'pages/ApplicationState/PersistentStorageLogin'
-    if (await TokenManager.getToken(this.context)) {
-      url = 'pages/ApplicationState/PersistentStorageMain'
-    }
+    // let url = 'pages/ApplicationState/PersistentStorageLogin'
+    // if (await TokenManager.getToken(this.context)) {
+    //   url = 'pages/ApplicationState/PersistentStorageMain'
+    // }
+    let url = 'pages/NetworkDemo/HttpDemo'
 
     windowStage.loadContent(url, (err, data) => {
       if (err.code) {

@@ -52,6 +52,7 @@
     "pages/ApplicationState/PersistentStorageLogin",
     "pages/ApplicationState/PersistentStorageMain",
     "pages/NetworkDemo/HttpDemo",
-    "pages/NetworkDemo/AxiosDemo"
+    "pages/NetworkDemo/AxiosDemo",
+    "pages/OtherDemo/TaskPool"
   ]
 }

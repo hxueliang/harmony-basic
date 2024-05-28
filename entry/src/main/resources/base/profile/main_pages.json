@@ -51,6 +51,7 @@
     "pages/ApplicationState/AppStorageMain",
     "pages/ApplicationState/PersistentStorageLogin",
     "pages/ApplicationState/PersistentStorageMain",
-    "pages/NetworkDemo/HttpDemo"
+    "pages/NetworkDemo/HttpDemo",
+    "pages/NetworkDemo/AxiosDemo"
   ]
 }

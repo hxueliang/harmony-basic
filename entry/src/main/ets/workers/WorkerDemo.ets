@@ -9,6 +9,11 @@ const workerPort: ThreadWorkerGlobalScope = worker.workerPort;
  * @param e message data
  */
 workerPort.onmessage = (e: MessageEvents) => {
+  console.log(`多线程: ${e.data}`)
+  for (let index = 0; index < 100000; index++) {
+    console.log(`多线程: ${index}`)
+  }
+  workerPort.postMessage('已经收到你的点击通知')
 }
 
 /**

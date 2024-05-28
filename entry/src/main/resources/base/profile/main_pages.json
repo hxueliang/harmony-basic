@@ -54,6 +54,7 @@
     "pages/NetworkDemo/HttpDemo",
     "pages/NetworkDemo/AxiosDemo",
     "pages/OtherDemo/TaskPool",
-    "pages/OtherDemo/WorkDemo"
+    "pages/OtherDemo/WorkDemo",
+    "pages/Case/MeiTuan/MTIndex"
   ]
 }

@@ -1,4 +1,5 @@
 import { router } from '@kit.ArkUI'
+import { TokenManager } from './utils/token'
 
 PersistentStorage.persistProp('token', '123')
 PersistentStorage.persistProp('userInfo', {})
@@ -19,6 +20,7 @@ struct PersistentStorageLogin {
         .width('100%')
         .onClick(() => {
           this.token = new Date().valueOf().toString()
+          TokenManager.setToken(this.token)
           this.userInfo = new UserInfoModel({
             name: 'hxl',
             age: 18,
@@ -35,7 +37,7 @@ struct PersistentStorageLogin {
   }
 }
 
-interface UserInfo {
+export interface UserInfo {
   name: string
   age: number
 }

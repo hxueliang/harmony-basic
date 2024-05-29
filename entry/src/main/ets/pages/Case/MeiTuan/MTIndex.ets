@@ -11,6 +11,7 @@ struct MTIndex {
         Column() {
           MTTop()
           MTMain()
+            .layoutWeight(1)
         }
         .height('100%')
 

@@ -1,20 +1,28 @@
+import { getFoodData } from '../api'
+import { Category, FoodItem } from '../models'
 import MTFoodItem from './MTFoodItem'
 
 @Component
 struct MTMain {
   @State
-  menuList: string[] = ['一人套餐', '特色烧烤', '杂粮主食']
+  menuList: Category[] = []
   @State
   currentMenuIndex: number = 0
-  @State
-  foodList: number[] = [1, 2, 3, 4, 5, 6, 7, 8]
+
+  async getFoodList() {
+    this.menuList = await getFoodData()
+  }
+
+  aboutToAppear(): void {
+    this.getFoodList()
+  }
 
   build() {
     Row() {
       List() {
-        ForEach(this.menuList, (item: string, index: number) => {
+        ForEach(this.menuList, (item: Category, index: number) => {
           ListItem() {
-            Text(item)
+            Text(item.name)
               .width('100%')
               .height(50)
               .textAlign(TextAlign.Center)
@@ -37,12 +45,12 @@ struct MTMain {
       .backgroundColor($r('app.color.search_back_color'))
 
       List() {
-        ForEach(this.foodList, (item: number, index: number) => {
+        ForEach(this.menuList[this.currentMenuIndex]?.foods || [], (item: FoodItem, index: number) => {
           ListItem() {
-            MTFoodItem()
+            MTFoodItem({ item })
           }
           .padding({
-            bottom: index === this.foodList.length - 1 ? 80 : 0
+            bottom: index === (this.menuList[this.currentMenuIndex]?.foods || []).length - 1 ? 80 : 0
           })
         })
       }

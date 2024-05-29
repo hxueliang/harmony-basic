@@ -8,7 +8,7 @@ struct MTFoodItem {
 
   build() {
     Row() {
-      Image($rawfile('image/mouse.jpeg'))
+      Image(this.item.picture)
         .width(90)
         .aspectRatio(1)
       Column({ space: 5 }) {
@@ -51,7 +51,7 @@ struct MTFoodItem {
               .fontWeight(FontWeight.Bold)
           }
 
-          MTAddCut()
+          MTAddCut({ item: this.item })
         }
         .justifyContent(FlexAlign.SpaceBetween)
         .width('100%')

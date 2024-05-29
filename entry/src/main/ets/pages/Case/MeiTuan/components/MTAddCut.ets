@@ -1,3 +1,5 @@
+import { FoodItem } from '../models'
+
 @Extend(Text)
 function textStyle() {
   .width(20)
@@ -13,10 +15,18 @@ function textStyle() {
 @Preview
 @Component
 struct MTAddCut {
+  @Consume
+  userCart: FoodItem[]
+  item: FoodItem = new FoodItem()
+
   @Styles
   imageStyle() {
     .width(10)
     .aspectRatio(1)
+  }
+
+  getCount() {
+    return this.userCart.find(item => item.id === this.item.id)?.count || 0
   }
 
   build() {
@@ -26,10 +36,12 @@ struct MTAddCut {
           .imageStyle()
       }
       .textStyle()
+      .visibility(this.getCount() ? Visibility.Visible : Visibility.Hidden)
 
-      Text('0')
+      Text(this.getCount().toString())
         .width(28)
         .textAlign(TextAlign.Center)
+        .visibility(this.getCount() ? Visibility.Visible : Visibility.Hidden)
 
       Text() {
         ImageSpan($r('app.media.ic_public_add_filled'))

@@ -1,5 +1,8 @@
 @Component
 struct MTBottom {
+  @Consume
+  showCart: boolean
+
   build() {
     Row() {
       Row() {
@@ -19,6 +22,9 @@ struct MTBottom {
         .margin({
           left: 25,
           right: 10,
+        })
+        .onClick(() => {
+          this.showCart = !this.showCart
         })
 
         Column() {

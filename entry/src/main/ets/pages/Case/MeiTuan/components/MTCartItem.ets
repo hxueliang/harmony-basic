@@ -1,3 +1,5 @@
+import MTAddCut from './MTAddCut'
+
 @Preview
 @Component
 struct MTCartItem {
@@ -15,14 +17,20 @@ struct MTCartItem {
           .textOverflow({
             overflow: TextOverflow.Ellipsis,
           })
-        Text() {
-          Span('￥')
-            .fontSize(12)
-          Span('34.32')
-            .fontSize(24)
+        Row() {
+          Text() {
+            Span('￥')
+              .fontSize(12)
+            Span('34.32')
+              .fontSize(24)
+          }
+          .fontColor($r('app.color.font_main_color'))
+          .fontWeight(FontWeight.Bold)
+
+          MTAddCut()
         }
-        .fontColor($r('app.color.font_main_color'))
-        .fontWeight(FontWeight.Bold)
+        .width('100%')
+        .justifyContent(FlexAlign.SpaceBetween)
       }
       .height(80)
       .justifyContent(FlexAlign.Start)

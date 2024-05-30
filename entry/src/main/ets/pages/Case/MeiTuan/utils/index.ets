@@ -53,6 +53,16 @@ class CartStore {
     // 线程内通信，发送信息，通知页面更新
     getContext().eventHub.emit('update_cart')
   }
+
+  /**
+   * 清空购物车
+   */
+  static clearCart() {
+    // 更新持久化数据
+    AppStorage.set('user_cart', [])
+    // 线程内通信，发送信息，通知页面更新
+    getContext().eventHub.emit('update_cart')
+  }
 }
 
 export {

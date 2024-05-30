@@ -13,6 +13,13 @@ struct MTIndex {
   showCart: boolean = false
   @Provide
   userCart: FoodItem[] = []
+  topAreaHeight: number = px2vp(AppStorage.get('topAreaHeight')) || 0
+
+  async setWindow() {
+    // 当前页面关闭全屏
+    const win = await window.getLastWindow(getContext())
+    win.setWindowLayoutFullScreen(false)
+  }
 
   async setWindowBackgroundColor() {
     const win = await window.getLastWindow(getContext())
@@ -21,6 +28,8 @@ struct MTIndex {
 
   aboutToAppear(): void {
     // this.setWindowBackgroundColor()
+    // this.setWindow()
+
     this.userCart = CartStore.getCarts()
 
     // 线程内通信，监听通知，页面更新
@@ -51,5 +60,8 @@ struct MTIndex {
     .height('100%')
     .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP])
     .backgroundColor($r('app.color.main_color'))
+    .padding({
+      top: this.topAreaHeight
+    })
   }
 }

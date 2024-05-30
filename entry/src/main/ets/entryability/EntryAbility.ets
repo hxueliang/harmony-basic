@@ -18,6 +18,13 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
+    // 应用全屏
+    const win = windowStage.getMainWindowSync()
+    win.setWindowLayoutFullScreen(true)
+    // 获取顶部区域高度
+    const topAreaHeight = win.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM).topRect.height
+    AppStorage.setOrCreate('topAreaHeight', topAreaHeight)
+
     // let url = 'pages/ApplicationState/PersistentStorageLogin'
     // if (await TokenManager.getToken(this.context)) {
     //   url = 'pages/ApplicationState/PersistentStorageMain'

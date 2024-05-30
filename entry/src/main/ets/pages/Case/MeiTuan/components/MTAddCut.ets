@@ -1,4 +1,5 @@
 import { FoodItem } from '../models'
+import { AddCutEnum, CartStore } from '../utils'
 
 @Extend(Text)
 function textStyle() {
@@ -37,6 +38,9 @@ struct MTAddCut {
       }
       .textStyle()
       .visibility(this.getCount() ? Visibility.Visible : Visibility.Hidden)
+      .onClick(() => {
+        CartStore.addCutFood(AddCutEnum.CUT, this.item)
+      })
 
       Text(this.getCount().toString())
         .width(28)
@@ -49,6 +53,9 @@ struct MTAddCut {
       }
       .textStyle()
       .backgroundColor($r('app.color.main_color'))
+      .onClick(() => {
+        CartStore.addCutFood(AddCutEnum.ADD, this.item)
+      })
     }
   }
 }

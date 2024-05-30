@@ -15,6 +15,11 @@ struct MTIndex {
 
   aboutToAppear(): void {
     this.userCart = CartStore.getCarts()
+    
+    // 线程内通信，监听通知，页面更新
+    getContext().eventHub.on('update_cart', () => {
+      this.userCart = CartStore.getCarts()
+    })
   }
 
   build() {

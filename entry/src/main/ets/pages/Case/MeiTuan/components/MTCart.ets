@@ -1,3 +1,4 @@
+import { FoodItem } from '../models'
 import MTCartItem from './MTCartItem'
 
 @Preview
@@ -5,8 +6,8 @@ import MTCartItem from './MTCartItem'
 struct MTCart {
   @Consume
   showCart: boolean
-  @State
-  list: number[] = [1, 2, 3, 4, 5]
+  @Consume
+  userCart: FoodItem[]
 
   build() {
     Column() {
@@ -22,11 +23,11 @@ struct MTCart {
         .justifyContent(FlexAlign.SpaceBetween)
 
         List({ space: 25 }) {
-          ForEach(this.list, (item: number) => {
+          ForEach(this.userCart, (item: FoodItem) => {
             ListItem() {
-              MTCartItem()
+              MTCartItem({ item })
             }
-          })
+          }, (item: FoodItem) => item.id.toString())
         }
         .height('60%')
       }

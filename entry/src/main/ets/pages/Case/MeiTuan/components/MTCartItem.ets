@@ -1,16 +1,19 @@
+import { FoodItem } from '../models'
 import MTAddCut from './MTAddCut'
 
 @Preview
 @Component
 struct MTCartItem {
+  item: FoodItem = new FoodItem()
+
   build() {
     Row({ space: 10 }) {
-      Image($rawfile('image/mouse.jpeg'))
+      Image(this.item.picture)
         .width(80)
         .aspectRatio(1)
         .borderRadius(8)
       Column({ space: 10 }) {
-        Text('小份酸汤莜面小份酸汤莜面小份酸汤莜面小份酸汤莜面小份酸汤莜面小份酸汤莜面小份酸汤莜面面面面')
+        Text(this.item.name)
           .maxLines(2)
           .fontSize(18)
           .width('100%')
@@ -21,13 +24,13 @@ struct MTCartItem {
           Text() {
             Span('￥')
               .fontSize(12)
-            Span('34.32')
+            Span(this.item.price.toString())
               .fontSize(24)
           }
           .fontColor($r('app.color.font_main_color'))
           .fontWeight(FontWeight.Bold)
 
-          MTAddCut()
+          MTAddCut({ item: this.item })
         }
         .width('100%')
         .justifyContent(FlexAlign.SpaceBetween)

@@ -4,6 +4,7 @@ import MTMain from './components/MTMain'
 import MTTop from './components/MTTop'
 import { FoodItem } from './models'
 import { CartStore } from './utils'
+import { window } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -13,9 +14,15 @@ struct MTIndex {
   @Provide
   userCart: FoodItem[] = []
 
+  async setWindowBackgroundColor() {
+    const win = await window.getLastWindow(getContext())
+    win.setWindowBackgroundColor('#f8c74e')
+  }
+
   aboutToAppear(): void {
+    this.setWindowBackgroundColor()
     this.userCart = CartStore.getCarts()
-    
+
     // 线程内通信，监听通知，页面更新
     getContext().eventHub.on('update_cart', () => {
       this.userCart = CartStore.getCarts()

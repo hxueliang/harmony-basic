@@ -20,7 +20,7 @@ struct MTIndex {
   }
 
   aboutToAppear(): void {
-    this.setWindowBackgroundColor()
+    // this.setWindowBackgroundColor()
     this.userCart = CartStore.getCarts()
 
     // 线程内通信，监听通知，页面更新
@@ -49,5 +49,7 @@ struct MTIndex {
     }
     .width('100%')
     .height('100%')
+    .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP])
+    .backgroundColor($r('app.color.main_color'))
   }
 }

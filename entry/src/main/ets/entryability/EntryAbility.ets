@@ -2,6 +2,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
 import window from '@ohos.window';
 import { AbilityConstant, Want } from '@kit.AbilityKit';
+// import { KeyboardAvoidMode } from '@kit.ArkUI';
 
 import { TokenManager } from '../pages/ApplicationState/utils/token';
 
@@ -24,6 +25,8 @@ export default class EntryAbility extends UIAbility {
     // 获取顶部区域高度
     const topAreaHeight = win.getWindowAvoidArea(window.AvoidAreaType.TYPE_SYSTEM).topRect.height
     AppStorage.setOrCreate('topAreaHeight', topAreaHeight)
+    // 键盘避让
+    // win.getUIContext().setKeyboardAvoidMode(KeyboardAvoidMode.RESIZE)
 
     // let url = 'pages/ApplicationState/PersistentStorageLogin'
     // if (await TokenManager.getToken(this.context)) {

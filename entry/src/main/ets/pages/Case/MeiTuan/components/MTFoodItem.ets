@@ -46,7 +46,7 @@ struct MTFoodItem {
             Span('¥ ')
               .fontColor($r("app.color.font_main_color"))
               .fontSize(10)
-            Span('34.23')
+            Span(this.item.price.toString())
               .fontColor($r("app.color.font_main_color"))
               .fontWeight(FontWeight.Bold)
           }

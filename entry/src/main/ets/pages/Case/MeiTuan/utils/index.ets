@@ -21,6 +21,11 @@ class CartStore {
     return AppStorage.get<FoodItem[]>('user_cart') || []
   }
 
+  /**
+   * 加减菜
+   * @param type 加菜 or 减菜
+   * @param item 菜品项
+   */
   static addCutFood(type: AddCutEnum, item: FoodItem): void {
     const list = CartStore.getCarts()
     const findFood = list.find(obj => obj.id === item.id)

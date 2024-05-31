@@ -60,6 +60,7 @@
     "pages/NavDemo/NavPathStackDemo",
     "pages/NavDemo/RouterPageA",
     "pages/NavDemo/RouterPageB",
-    "pages/NavDemo/RouterPageC"
+    "pages/NavDemo/RouterPageC",
+    "pages/NavDemo/ModuleRouterPage"
   ]
 }

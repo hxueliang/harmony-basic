@@ -57,6 +57,8 @@
     "pages/OtherDemo/WorkDemo",
     "pages/Case/MeiTuan/MTIndex",
     "pages/NavDemo/NavRouterDome",
-    "pages/NavDemo/NavPathStackDemo"
+    "pages/NavDemo/NavPathStackDemo",
+    "pages/NavDemo/RouterPageA",
+    "pages/NavDemo/RouterPageB"
   ]
 }

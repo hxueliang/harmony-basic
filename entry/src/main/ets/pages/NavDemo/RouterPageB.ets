@@ -13,7 +13,7 @@ struct RouterPageB {
 
   build() {
     Row() {
-      Column() {
+      Column({ space: 5 }) {
         Text('Page B')
           .fontSize(50)
           .fontWeight(FontWeight.Bold)
@@ -34,6 +34,21 @@ struct RouterPageB {
                   d: 4,
                 }
               })
+            })
+        }
+
+        Row() {
+          Button('push:A')
+            .onClick(() => {
+              router.pushUrl({
+                url: 'pages/NavDemo/RouterPageA'
+              })
+            })
+          Button('单例push:A')
+            .onClick(() => {
+              router.pushUrl({
+                url: 'pages/NavDemo/RouterPageA'
+              }, router.RouterMode.Single)
             })
         }
       }

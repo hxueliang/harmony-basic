@@ -82,6 +82,21 @@ struct RouterPageA {
         Row({ space: 5 }) {
           Text(JSON.stringify(router.getState()))
         }
+
+        Row({ space: 5 }) {
+          Button('push:B')
+            .onClick(() => {
+              router.pushUrl({
+                url: 'pages/NavDemo/RouterPageB'
+              })
+            })
+          Button('单例push:B')
+            .onClick(() => {
+              router.pushUrl({
+                url: 'pages/NavDemo/RouterPageB'
+              }, router.RouterMode.Single)
+            })
+        }
       }
       .width('100%')
     }

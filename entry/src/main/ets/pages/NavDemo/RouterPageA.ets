@@ -97,6 +97,15 @@ struct RouterPageA {
               }, router.RouterMode.Single)
             })
         }
+
+        Row({ space: 5 }) {
+          Button('push:C')
+            .onClick(() => {
+              router.pushUrl({
+                url: 'pages/NavDemo/RouterPageC'
+              })
+            })
+        }
       }
       .width('100%')
     }

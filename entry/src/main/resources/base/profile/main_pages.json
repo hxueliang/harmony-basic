@@ -55,6 +55,7 @@
     "pages/NetworkDemo/AxiosDemo",
     "pages/OtherDemo/TaskPool",
     "pages/OtherDemo/WorkDemo",
-    "pages/Case/MeiTuan/MTIndex"
+    "pages/Case/MeiTuan/MTIndex",
+    "pages/NavDemo/NavRouterDome"
   ]
 }

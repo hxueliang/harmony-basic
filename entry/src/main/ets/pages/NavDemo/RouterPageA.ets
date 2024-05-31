@@ -78,6 +78,10 @@ struct RouterPageA {
               })
             })
         }
+
+        Row({ space: 5 }) {
+          Text(JSON.stringify(router.getState()))
+        }
       }
       .width('100%')
     }

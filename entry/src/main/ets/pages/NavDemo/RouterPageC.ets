@@ -3,6 +3,12 @@ import { router } from '@kit.ArkUI'
 @Entry
 @Component
 struct RouterPageC {
+  aboutToAppear(): void {
+    router.showAlertBeforeBackPage({
+      message: '确定要退出吗？'
+    })
+  }
+
   build() {
     Row() {
       Column() {

@@ -1,4 +1,4 @@
-import { promptAction } from '@kit.ArkUI'
+import { promptAction, router } from '@kit.ArkUI'
 
 @Entry
 @Component
@@ -16,9 +16,15 @@ struct RouterPageA {
         Row({ space: 5 }) {
           Button('push:B')
             .onClick(() => {
+              router.pushUrl({
+                url: 'pages/NavDemo/RouterPageB'
+              })
             })
           Button('replace:B')
             .onClick(() => {
+              router.replaceUrl({
+                url: 'pages/NavDemo/RouterPageB'
+              })
             })
           Button('push含参:B')
             .onClick(() => {
@@ -28,16 +34,28 @@ struct RouterPageA {
         Row({ space: 5 }) {
           Button('push:A')
             .onClick(() => {
+              router.pushUrl({
+                url: 'pages/NavDemo/RouterPageA'
+              })
             })
           Button('replace:A')
             .onClick(() => {
+              router.replaceUrl({
+                url: 'pages/NavDemo/RouterPageA'
+              })
             })
         }
 
         Row({ space: 5 }) {
           Text('router栈长度为：')
+          Text(router.getLength())
           Button('clear')
             .onClick(() => {
+              router.clear()
+              // 刷新页面
+              router.replaceUrl({
+                url: 'pages/NavDemo/RouterPageA'
+              })
             })
         }
       }

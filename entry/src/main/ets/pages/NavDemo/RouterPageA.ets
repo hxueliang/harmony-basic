@@ -28,6 +28,17 @@ struct RouterPageA {
             })
           Button('push含参:B')
             .onClick(() => {
+              router.pushUrl({
+                url: 'pages/NavDemo/RouterPageB',
+                params: {
+                  a: 1,
+                  b: 2,
+                  c: {
+                    aa: 11,
+                    bb: 22,
+                  },
+                }
+              })
             })
         }
 

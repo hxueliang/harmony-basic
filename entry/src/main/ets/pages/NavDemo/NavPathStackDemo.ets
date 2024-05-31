@@ -6,7 +6,7 @@ import NavPathStackMy from './components/NavPathStackMy'
 @Entry
 @Component
 struct NavPathStackDemo {
-  @State
+  @Provide
   pathStack: NavPathStack = new NavPathStack()
   list: NavItem[] = [
     { name: 'Chat', title: '聊天' },

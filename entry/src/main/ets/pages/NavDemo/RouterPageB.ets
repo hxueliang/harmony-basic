@@ -20,6 +20,22 @@ struct RouterPageB {
         Row() {
           Text(`参数是${this.a}`)
         }
+
+        Row() {
+          Button('返回 无参')
+            .onClick(() => {
+              router.back()
+            })
+          Button('返回 有参')
+            .onClick(() => {
+              router.back({
+                url: 'pages/NavDemo/RouterPageA',
+                params: {
+                  d: 4,
+                }
+              })
+            })
+        }
       }
       .width('100%')
     }

@@ -7,6 +7,15 @@ struct RouterPageA {
     promptAction.showToast({ message: '加载：A' })
   }
 
+  onPageShow(): void {
+    const params = router.getParams() as IObj
+    if (params) {
+      promptAction.showToast({ message: '返回的参数是' + params.d.toString() })
+    } else {
+      promptAction.showToast({ message: '没有参数返回' })
+    }
+  }
+
   build() {
     Row() {
       Column({ space: 5 }) {
@@ -74,4 +83,8 @@ struct RouterPageA {
     }
     .height('100%')
   }
+}
+
+interface IObj {
+  d: number
 }

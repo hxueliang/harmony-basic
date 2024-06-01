@@ -5,6 +5,11 @@ import { router } from '@kit.ArkUI';
 struct ComponentLifecycleB {
   @State message: string = 'Component Lifecycle B';
 
+  aboutToAppear(): void {
+    // 绝大部分常规数据加载
+    console.log('aboutToAppear B')
+  }
+
   onPageShow(): void {
     // 时效性高的数据加载
     // 如：外卖，卖菜，网约车，等业务
@@ -13,6 +18,11 @@ struct ComponentLifecycleB {
 
   onPageHide(): void {
     console.log('hide B')
+  }
+
+  aboutToDisappear(): void {
+    // 清除定时器、线程监听、进程监听
+    console.log('aboutToDisappear B')
   }
 
   build() {

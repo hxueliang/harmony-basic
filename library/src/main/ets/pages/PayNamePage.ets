@@ -1,6 +1,6 @@
-@Entry
+@Entry({ routeName: 'pay_page' })
 @Component
-struct PayNamePage {
+export struct PayNamePage {
   @State message: string = '支付页面';
 
   build() {

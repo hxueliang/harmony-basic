@@ -1,3 +1,7 @@
+import { router } from '@kit.ArkUI';
+
+import('@ohos/library/src/main/ets/pages/PayNamePage')
+
 @Entry
 @Component
 struct ModuleRouterNamePage {
@@ -11,6 +15,9 @@ struct ModuleRouterNamePage {
           .fontWeight(FontWeight.Bold)
         Button('跳转')
           .onClick(() => {
+            router.pushNamedRoute({
+              name: 'pay_page'
+            })
           })
       }
       .width('100%')

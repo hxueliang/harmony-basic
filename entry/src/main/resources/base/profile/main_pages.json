@@ -62,6 +62,8 @@
     "pages/NavDemo/RouterPageB",
     "pages/NavDemo/RouterPageC",
     "pages/NavDemo/ModuleRouterPage",
-    "pages/NavDemo/ModuleRouterNamePage"
+    "pages/NavDemo/ModuleRouterNamePage",
+    "pages/LifecycleDemo/PageLifecycleA",
+    "pages/LifecycleDemo/PageLifecycleB"
   ]
 }

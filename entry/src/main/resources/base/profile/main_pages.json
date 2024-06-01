@@ -66,6 +66,7 @@
     "pages/LifecycleDemo/PageLifecycleA",
     "pages/LifecycleDemo/PageLifecycleB",
     "pages/LifecycleDemo/ComponentLifecycleA",
-    "pages/LifecycleDemo/ComponentLifecycleB"
+    "pages/LifecycleDemo/ComponentLifecycleB",
+    "pages/LifecycleDemo/UIAbilityLifecycle"
   ]
 }

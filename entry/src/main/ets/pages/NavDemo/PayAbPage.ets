@@ -2,6 +2,8 @@
 @Component
 struct PayAbPage {
   @State message: string = '支付Ability';
+  @StorageProp('order_id')
+  orderId: number = 0
 
   build() {
     Row() {
@@ -9,6 +11,7 @@ struct PayAbPage {
         Text(this.message)
           .fontSize(30)
           .fontWeight(FontWeight.Bold)
+        Text(this.orderId.toString())
       }
       .width('100%')
     }

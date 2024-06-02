@@ -5,10 +5,16 @@ import { window } from '@kit.ArkUI';
 export default class PayAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
+    AppStorage.setOrCreate('order_id', want.parameters!['order_id'])
   }
 
   onDestroy(): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onDestroy');
+  }
+
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    // 处理已经打开的Ability拿不到新的参数
+    AppStorage.set('order_id', want.parameters!['order_id'])
   }
 
   onWindowStageCreate(windowStage: window.WindowStage): void {

@@ -25,15 +25,48 @@ const diceImages = (() => {
 @Entry
 @Component
 struct ImageAnimatorPage {
+  @State
+  jdState: AnimationStatus = AnimationStatus.Initial
+  @State
+  diceState: AnimationStatus = AnimationStatus.Initial
+
   build() {
     Row() {
       Column({ space: 20 }) {
-        Button('启动/暂停')
-          .onClick(() => {
-          })
+        ImageAnimator()
+          .images(jdImages)
+          .state(this.jdState)
+          .fillMode(FillMode.None)
+          .duration(2000)
+          .iterations(-1)
+          .width(120)
+          .height(200)
 
         Button('启动/暂停')
           .onClick(() => {
+            const state =
+              this.jdState === AnimationStatus.Running ?
+              AnimationStatus.Paused :
+              AnimationStatus.Running
+            this.jdState = state
+          })
+
+        ImageAnimator()
+          .images(diceImages)
+          .state(this.diceState)
+          .fillMode(FillMode.None)
+          .duration(200)
+          .iterations(-1)
+          .width(80)
+          .height(80)
+
+        Button('启动/暂停')
+          .onClick(() => {
+            const state =
+              this.diceState === AnimationStatus.Running ?
+              AnimationStatus.Paused :
+              AnimationStatus.Running
+            this.diceState = state
           })
       }
       .width('100%')

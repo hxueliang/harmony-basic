@@ -77,6 +77,7 @@
     "pages/AnimationCutToDemo/ModalPage",
     "pages/AnimationCutToDemo/ComponentInPage",
     "pages/AnimationCutToDemo/SharedAPage",
-    "pages/AnimationCutToDemo/SharedBPage"
+    "pages/AnimationCutToDemo/SharedBPage",
+    "pages/GestureDemo/LongPressPage"
   ]
 }

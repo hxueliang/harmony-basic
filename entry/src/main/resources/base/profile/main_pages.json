@@ -71,6 +71,7 @@
     "pages/NavDemo/EntryAbPage",
     "pages/NavDemo/PayAbPage",
     "pages/AnimationDemo/AnimationPage",
-    "pages/AnimationDemo/AnimateToPage"
+    "pages/AnimationDemo/AnimateToPage",
+    "pages/AnimationDemo/ImageAnimatorPage"
   ]
 }

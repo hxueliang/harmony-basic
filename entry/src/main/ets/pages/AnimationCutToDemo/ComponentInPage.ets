@@ -20,6 +20,12 @@ struct ComponentInPage {
           if (this.showImage1) {
             Image($rawfile('image/mouse.jpeg'))
               .imageStyle()
+              .transition(
+                // 进出
+                TransitionEffect.OPACITY.animation({ duration: 1000 })
+                  .combine(TransitionEffect.rotate({ angle: -180 }))
+                  .combine(TransitionEffect.move(TransitionEdge.START))
+              )
           }
         }.height(120)
 
@@ -32,6 +38,18 @@ struct ComponentInPage {
           if (this.showImage2) {
             Image($rawfile('image/mouse.jpeg'))
               .imageStyle()
+              .transition(
+                TransitionEffect.asymmetric(
+                  // 进
+                  TransitionEffect.OPACITY.animation({ duration: 1000 })
+                    .combine(TransitionEffect.rotate({ angle: -180 }))
+                    .combine(TransitionEffect.move(TransitionEdge.START)),
+                  // 出
+                  TransitionEffect.OPACITY.animation({ duration: 1000 })
+                    .combine(TransitionEffect.rotate({ angle: 180 }))
+                    .combine(TransitionEffect.move(TransitionEdge.END))
+                )
+              )
           }
         }.height(120)
 

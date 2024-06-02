@@ -14,9 +14,13 @@ struct ShowHidePage {
               .fontWeight(FontWeight.Bold)
           }
         }
+        .height(50)
 
         Button('显示/隐藏')
           .onClick(() => {
+            animateTo({ duration: 1000 }, () => {
+              this.showMessage = !this.showMessage
+            })
           })
       }
       .width('100%')

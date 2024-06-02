@@ -1,3 +1,5 @@
+import { display, promptAction } from '@kit.ArkUI'
+
 @Extend(Text)
 function getTextStyles2() {
   .fontColor(Color.White)
@@ -21,6 +23,10 @@ struct GestureGroupPage {
   showVoice: boolean = false
   @State
   gestureType: GestureGroupType = GestureGroupType.NONE
+  @State
+  screenWidth: number = 0
+  @State
+  screenHeight: number = 0
 
   @Builder
   getVoiceContext() {
@@ -80,12 +86,61 @@ struct GestureGroupPage {
     .justifyContent(FlexAlign.End)
   }
 
+  aboutToAppear(): void {
+    // this.getDisplay()
+  }
+
+  async getDisplay() {
+    // 获取宽高方法二，需要似器
+    const result = await display.getAllDisplays()
+    promptAction.showToast({
+      message: px2vp(result[0].width).toString()
+    })
+    this.screenWidth = px2vp(result[0].width)
+    this.screenHeight = px2vp(result[0].height)
+  }
+
   build() {
     Column() {
       Button('按住 说话')
         .type(ButtonType.Normal)
         .width('100%')
         .height(44)
+        .gesture(
+          GestureGroup(
+            GestureMode.Parallel,
+            // 第一个手势：长按手势
+            LongPressGesture()
+              .onAction(() => {
+                this.showVoice = true
+              })
+              .onActionEnd(() => {
+                this.showVoice = false
+              }),
+            // 第二个手势：拖动手势
+            PanGesture()
+              .onActionUpdate((event) => {
+                const globalX = event.fingerList[0].globalX
+                const globalY = event.fingerList[0].globalY
+                // 在下部拖动
+                if (globalY > this.screenHeight - 120) {
+                  this.gestureType = GestureGroupType.NONE
+                  return
+                }
+                // 在上部拖动
+                if (globalX < this.screenWidth / 2) {
+                  // 左边
+                  this.gestureType = GestureGroupType.DELETE
+                } else {
+                  // 右边
+                  this.gestureType = GestureGroupType.TEXT
+                }
+              })
+              .onActionEnd(() => {
+                this.gestureType = GestureGroupType.NONE
+              })
+          )
+        )
     }
     .width('100%')
     .height('100%')
@@ -93,6 +148,11 @@ struct GestureGroupPage {
     .justifyContent(FlexAlign.End)
     .bindContentCover($$this.showVoice, this.getVoiceContext(), {
       modalTransition: ModalTransition.NONE
+    })
+    .onAreaChange((oldArea, newArea) => {
+      // 获取宽高方法一
+      this.screenWidth = newArea.width as number
+      this.screenHeight = newArea.height as number
     })
   }
 }

@@ -11,9 +11,15 @@ struct AnimationPage {
           .width(this.imageWidth)
           .aspectRatio(1)
           .borderRadius(10)
+          .animation({
+            duration: 2000,
+            iterations: -1,
+            playMode: PlayMode.Alternate,
+          })
 
         Button('修改图片大小')
           .onClick(() => {
+            this.imageWidth = 80
           })
       }
       .width('100%')

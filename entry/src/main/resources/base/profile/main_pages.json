@@ -70,6 +70,7 @@
     "pages/LifecycleDemo/UIAbilityLifecycle",
     "pages/NavDemo/EntryAbPage",
     "pages/NavDemo/PayAbPage",
-    "pages/AnimationDemo/AnimationPage"
+    "pages/AnimationDemo/AnimationPage",
+    "pages/AnimationDemo/AnimateToPage"
   ]
 }

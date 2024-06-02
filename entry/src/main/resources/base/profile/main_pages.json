@@ -73,6 +73,7 @@
     "pages/AnimationDemo/AnimationPage",
     "pages/AnimationDemo/AnimateToPage",
     "pages/AnimationDemo/ImageAnimatorPage",
-    "pages/AnimationCutToDemo/ShowHidePage"
+    "pages/AnimationCutToDemo/ShowHidePage",
+    "pages/AnimationCutToDemo/ModalPage"
   ]
 }

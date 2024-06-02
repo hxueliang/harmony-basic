@@ -62,6 +62,15 @@ struct LongPressPage {
         .type(ButtonType.Normal)
         .width('100%')
         .height(44)
+        .gesture(
+          LongPressGesture()
+            .onAction(() => {
+              this.showVoice = true
+            })
+            .onActionEnd(() => {
+              this.showVoice = false
+            })
+        )
     }
     .width('100%')
     .height('100%')

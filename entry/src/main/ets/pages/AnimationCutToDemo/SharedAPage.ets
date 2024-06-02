@@ -10,6 +10,9 @@ struct SharedAPage {
           .width(180)
           .aspectRatio(1)
           .borderRadius(10)
+          .sharedTransition('mouse_id', {
+            duration: 300,
+          })
           .onClick(() => {
             router.pushUrl({
               url: 'pages/AnimationCutToDemo/SharedBPage'

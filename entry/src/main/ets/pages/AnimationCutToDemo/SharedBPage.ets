@@ -7,6 +7,7 @@ struct SharedBPage {
         .width('100%')
         .aspectRatio(1)
         .borderRadius(10)
+        .sharedTransition('mouse_id')
 
       List({ space: 10 }) {
         ForEach([1, 2, 3, 4, 5], (item: number) => {

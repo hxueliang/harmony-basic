@@ -75,6 +75,8 @@
     "pages/AnimationDemo/ImageAnimatorPage",
     "pages/AnimationCutToDemo/ShowHidePage",
     "pages/AnimationCutToDemo/ModalPage",
-    "pages/AnimationCutToDemo/ComponentInPage"
+    "pages/AnimationCutToDemo/ComponentInPage",
+    "pages/AnimationCutToDemo/SharedAPage",
+    "pages/AnimationCutToDemo/SharedBPage"
   ]
 }

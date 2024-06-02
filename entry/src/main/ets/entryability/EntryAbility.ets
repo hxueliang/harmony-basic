@@ -32,7 +32,7 @@ export default class EntryAbility extends UIAbility {
     // if (await TokenManager.getToken(this.context)) {
     //   url = 'pages/ApplicationState/PersistentStorageMain'
     // }
-    let url = 'pages/NavDemo/ModuleRouterNamePage'
+    let url = 'pages/NavDemo/EntryAbPage'
 
     windowStage.loadContent(url, (err, data) => {
       if (err.code) {

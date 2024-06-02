@@ -14,6 +14,13 @@ struct AnimateToPage {
 
         Button('修改图片大小')
           .onClick(() => {
+            animateTo({
+              duration: 2000,
+              iterations: -1,
+              playMode: PlayMode.Alternate
+            }, () => {
+              this.imageWidth = 80
+            })
           })
       }
       .width('100%')

@@ -1,15 +1,24 @@
+import { promptAction } from '@kit.ArkUI'
+
 @Entry
 @Component
 struct DouYin {
   @State
   list: VideoItem[] = allData
+  @State
+  activeIndex: number = 0
 
   build() {
     Swiper() {
-      ForEach(this.list, (item: VideoItem) => {
-        PlayVideo({ item })
+      ForEach(this.list, (item: VideoItem, index: number) => {
+        PlayVideo({
+          item,
+          index,
+          activeIndex: this.activeIndex
+        })
       })
     }
+    .index($$this.activeIndex)
     .cachedCount(3) // 预加载3张
     .loop(false) // 不循环
     .indicator(false) // 不显示小点
@@ -22,9 +31,35 @@ struct DouYin {
 @Component
 struct PlayVideo {
   item: VideoItem = new VideoItem()
+  index: number = 0
+  controller: VideoController = new VideoController()
+  @Prop
+  @Watch('changeActiveIndex')
+  activeIndex: number
+
+  changeActiveIndex() {
+    if (this.activeIndex === this.index) {
+      this.controller.start()
+    } else {
+      this.controller.pause()
+    }
+  }
 
   build() {
     Stack({ alignContent: Alignment.Bottom }) {
+      Column() {
+        Video({
+          src: this.item.videoUrl,
+          controller: this.controller,
+        })
+          .width('100%')
+          .aspectRatio(16 / 9)
+          .controls(false)
+      }
+      .width('100%')
+      .height('100%')
+      .justifyContent(FlexAlign.Center)
+      .backgroundColor(Color.Black)
 
       Text(this.item.title)
         .width('100%')

@@ -79,6 +79,7 @@
     "pages/AnimationCutToDemo/SharedAPage",
     "pages/AnimationCutToDemo/SharedBPage",
     "pages/GestureDemo/LongPressPage",
-    "pages/GestureDemo/GestureGroupPage"
+    "pages/GestureDemo/GestureGroupPage",
+    "pages/SandboxDemo/DownloadImagePage"
   ]
 }

@@ -36,12 +36,16 @@ struct PlayVideo {
   @Prop
   @Watch('changeActiveIndex')
   activeIndex: number
+  @State
+  playing: boolean = false
 
   changeActiveIndex() {
     if (this.activeIndex === this.index) {
       this.controller.start()
+      this.playing = true
     } else {
       this.controller.pause()
+      this.playing = false
     }
   }
 
@@ -55,6 +59,14 @@ struct PlayVideo {
           .width('100%')
           .aspectRatio(16 / 9)
           .controls(false)
+          .onClick(() => {
+            if (this.playing) {
+              this.controller.pause()
+            } else {
+              this.controller.start()
+            }
+            this.playing = !this.playing
+          })
       }
       .width('100%')
       .height('100%')

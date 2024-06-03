@@ -83,6 +83,7 @@
     "pages/SandboxDemo/DownloadImagePage",
     "pages/SandboxDemo/HybridHotLoadPage",
     "pages/SandboxDemo/HybridHotLoadWebPage",
-    "pages/NativeDemo/VideoPage"
+    "pages/NativeDemo/VideoPage",
+    "pages/Case/DouYin/DouYin"
   ]
 }

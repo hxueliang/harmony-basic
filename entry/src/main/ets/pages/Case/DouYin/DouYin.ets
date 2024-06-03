@@ -47,6 +47,7 @@ struct PlayVideo {
       this.controller.pause()
       this.playing = false
     }
+    return true
   }
 
   build() {
@@ -56,6 +57,7 @@ struct PlayVideo {
           src: this.item.videoUrl,
           controller: this.controller,
         })
+          .autoPlay(this.index === 0 && this.changeActiveIndex())
           .width('100%')
           .aspectRatio(16 / 9)
           .controls(false)

@@ -81,6 +81,7 @@
     "pages/GestureDemo/LongPressPage",
     "pages/GestureDemo/GestureGroupPage",
     "pages/SandboxDemo/DownloadImagePage",
-    "pages/SandboxDemo/HybridHotLoadPage"
+    "pages/SandboxDemo/HybridHotLoadPage",
+    "pages/SandboxDemo/HybridHotLoadWebPage"
   ]
 }

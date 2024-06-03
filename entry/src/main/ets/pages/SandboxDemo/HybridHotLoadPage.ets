@@ -1,5 +1,5 @@
-import { request } from '@kit.BasicServicesKit'
-import { promptAction } from '@kit.ArkUI'
+import { request, zlib } from '@kit.BasicServicesKit'
+import { promptAction, router } from '@kit.ArkUI'
 import { fileIo } from '@kit.CoreFileKit'
 
 @Entry
@@ -53,10 +53,19 @@ struct HybridHotLoadPage {
     })
     task.on('complete', () => {
       this.loading = false
-      promptAction.showToast({
-        message: '下载成功'
-      })
+      this.decompressFile()
     })
+  }
+
+  async decompressFile() {
+    try {
+      await zlib.decompressFile(getContext().filesDir + '/toutiao.zip', getContext().filesDir)
+      router.replaceUrl({
+        url: 'pages/SandboxDemo/HybridHotLoadWebPage'
+      })
+    } catch (err) {
+      console.log(err.message)
+    }
   }
 
   build() {

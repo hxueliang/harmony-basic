@@ -1,3 +1,7 @@
+import { request } from '@kit.BasicServicesKit'
+import { promptAction } from '@kit.ArkUI'
+import { fileIo } from '@kit.CoreFileKit'
+
 @Entry
 @Component
 struct HybridHotLoadPage {
@@ -24,6 +28,35 @@ struct HybridHotLoadPage {
   }
 
   async download() {
+    this.loading = true
+    const fileName = 'toutiao.zip'
+    const filesDir = getContext().filesDir
+    const filePath = filesDir + '/' + fileName
+    const hasFile = fileIo.listFileSync(filesDir).includes(fileName)
+
+    if (hasFile) {
+      fileIo.renameSync(filePath, filesDir + '/toutiao.bak.zip')
+    }
+    const task = await request.downloadFile(getContext(), {
+      url: 'https://gitee.com/shuiruohanyu/toutiao_net/raw/master/resources/toutiao.zip',
+      filePath
+    })
+    task.on('progress', (receivedSize, totalSize) => {
+      this.currentValue = receivedSize
+      this.totalValue = totalSize
+    })
+    task.on('fail', (err) => {
+      this.loading = false
+      promptAction.showToast({
+        message: err.toString()
+      })
+    })
+    task.on('complete', () => {
+      this.loading = false
+      promptAction.showToast({
+        message: '下载成功'
+      })
+    })
   }
 
   build() {
@@ -37,6 +70,8 @@ struct HybridHotLoadPage {
       .width('100%')
     }
     .height('100%')
-    .bindContentCover($$this.loading, this.loadingDialog)
+    .bindContentCover($$this.loading, this.loadingDialog, {
+      modalTransition: ModalTransition.NONE
+    })
   }
 }

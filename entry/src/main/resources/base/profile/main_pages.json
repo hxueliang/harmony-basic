@@ -80,6 +80,7 @@
     "pages/AnimationCutToDemo/SharedBPage",
     "pages/GestureDemo/LongPressPage",
     "pages/GestureDemo/GestureGroupPage",
-    "pages/SandboxDemo/DownloadImagePage"
+    "pages/SandboxDemo/DownloadImagePage",
+    "pages/SandboxDemo/HybridHotLoadPage"
   ]
 }

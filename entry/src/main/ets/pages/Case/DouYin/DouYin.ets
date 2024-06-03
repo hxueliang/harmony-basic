@@ -1,7 +1,42 @@
 @Entry
 @Component
 struct DouYin {
+  @State
+  list: VideoItem[] = allData
+
   build() {
+    Swiper() {
+      ForEach(this.list, (item: VideoItem) => {
+        PlayVideo({ item })
+      })
+    }
+    .cachedCount(3) // 预加载3张
+    .loop(false) // 不循环
+    .indicator(false) // 不显示小点
+    .vertical(true) // 竖直滑动
+    .width('100%')
+    .height('100%')
+  }
+}
+
+@Component
+struct PlayVideo {
+  item: VideoItem = new VideoItem()
+
+  build() {
+    Stack({ alignContent: Alignment.Bottom }) {
+
+      Text(this.item.title)
+        .width('100%')
+        .padding(20)
+        .fontSize(16)
+        .fontColor(Color.White)
+        .lineHeight(24)
+        .maxLines(3)
+        .textOverflow({
+          overflow: TextOverflow.Ellipsis
+        })
+    }
   }
 }
 

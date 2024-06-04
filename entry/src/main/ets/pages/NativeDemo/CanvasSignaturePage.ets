@@ -6,9 +6,11 @@ struct CanvasSignaturePage {
   canvasHeight: number = 0
 
   clear() {
+    this.pen.clearRect(0, 0, this.canvasWidth, this.canvasHeight)
   }
 
   confirm() {
+    // Todo: canvas生成图片
   }
 
   build() {
@@ -25,6 +27,21 @@ struct CanvasSignaturePage {
         .onAreaChange((_, newArea) => {
           this.canvasWidth = newArea.width as number
           this.canvasHeight = newArea.height as number
+        })
+        .onTouch(event => {
+          const x = event.touches[0].x
+          const y = event.touches[0].y
+
+          if (event.type === TouchType.Down) {
+            this.pen.beginPath()
+            this.pen.lineWidth = 2
+            this.pen.moveTo(x, y)
+          } else if (event.type === TouchType.Move) {
+            this.pen.lineTo(x, y)
+            this.pen.stroke()
+          } else if (event.type === TouchType.Up) {
+            this.pen.closePath()
+          }
         })
 
         Row({ space: 10 }) {

@@ -86,6 +86,7 @@
     "pages/NativeDemo/VideoPage",
     "pages/Case/DouYin/DouYin",
     "pages/NativeDemo/CanvasPage",
-    "pages/NativeDemo/CanvasSignaturePage"
+    "pages/NativeDemo/CanvasSignaturePage",
+    "pages/DFX/AppCrashEvent"
   ]
 }

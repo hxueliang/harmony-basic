@@ -88,6 +88,7 @@
     "pages/NativeDemo/CanvasPage",
     "pages/NativeDemo/CanvasSignaturePage",
     "pages/DFX/AppCrashEvent",
-    "pages/DFX/ReportData"
+    "pages/DFX/ReportData",
+    "pages/Notification/BasicTextNotification"
   ]
 }

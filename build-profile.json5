@@ -43,6 +43,10 @@
           ]
         }
       ]
+    },
+    {
+      "name": "gridexchange",
+      "srcPath": "./feature/gridexchange"
     }
   ]
 }

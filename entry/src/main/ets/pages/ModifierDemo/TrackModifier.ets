@@ -8,16 +8,35 @@ struct TrackModifier {
     age: 18,
     sex: '男',
   })
+  @State
+  isShow: boolean = false
+
+  @Builder
+  popUI() {
+    Column() {
+      Row() {
+        Text('user.id_card不能助于UI')
+        Text('但可以用于ArkTs')
+        // Text(this.user.id_card.toString()) // Error: Illegal usage of not @Track'ed property 'id_card' on UI!
+      }
+    }
+  }
 
   build() {
     Row() {
       Column({ space: 20 }) {
         Row() {
           Text('身份证：')
-          // Text(this.user.id_card.toString())
+          // Text(this.user.id_card.toString()) // Error: Illegal usage of not @Track'ed property 'id_card' on UI!
         }
+        .bindSheet($$this.isShow, this.popUI, {
+          height: '50%',
+          maskColor: Color.Gray
+        })
         .onClick(() => {
-          // this.user.id_card++
+          this.user.id_card++
+          console.log('x_log', this.user.id_card)
+          this.isShow = true
         })
 
         Row() {

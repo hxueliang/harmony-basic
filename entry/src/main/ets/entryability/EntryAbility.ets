@@ -34,7 +34,7 @@ export default class EntryAbility extends UIAbility {
     // if (await TokenManager.getToken(this.context)) {
     //   url = 'pages/ApplicationState/PersistentStorageMain'
     // }
-    let url = 'pages/ModifierDemo/ConcurrentModifier'
+    let url = 'pages/ModifierDemo/TrackModifier2'
 
     windowStage.loadContent(url, (err, data) => {
       if (err.code) {

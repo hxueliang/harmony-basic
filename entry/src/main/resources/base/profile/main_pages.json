@@ -91,6 +91,7 @@
     "pages/DFX/ReportData",
     "pages/Notification/BasicTextNotification",
     "pages/CasesHarmonyos/GridExchange/GridExchange",
+    "pages/ModifierDemo/TrackModifier2",
     "pages/ModifierDemo/ConcurrentModifier"
   ]
 }

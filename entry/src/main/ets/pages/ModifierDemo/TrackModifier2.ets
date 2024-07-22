@@ -20,7 +20,7 @@ class LogNotTrack {
 
 @Entry
 @Component
-struct AddLog {
+struct AddLog { // 官方直接cv过来，未配置
   @State logTrack: LogTrack = new LogTrack('Hello');
   @State logNotTrack: LogNotTrack = new LogNotTrack('你好');
 

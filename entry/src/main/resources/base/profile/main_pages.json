@@ -90,6 +90,7 @@
     "pages/DFX/AppCrashEvent",
     "pages/DFX/ReportData",
     "pages/Notification/BasicTextNotification",
-    "pages/CasesHarmonyos/GridExchange/GridExchange"
+    "pages/CasesHarmonyos/GridExchange/GridExchange",
+    "pages/ModifierDemo/ConcurrentModifier"
   ]
 }

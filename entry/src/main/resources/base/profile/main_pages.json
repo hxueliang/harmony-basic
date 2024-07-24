@@ -94,6 +94,7 @@
     "pages/ModifierDemo/TrackModifier2",
     "pages/ModifierDemo/ConcurrentModifier",
     "pages/OtherDemo/KeyboardAvoidance",
-    "pages/ProfilerDemo/LaunchProfiler"
+    "pages/ProfilerDemo/LaunchProfiler",
+    "pages/StyleDemo/FourColumnList"
   ]
 }

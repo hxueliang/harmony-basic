@@ -93,6 +93,7 @@
     "pages/CasesHarmonyos/GridExchange/GridExchange",
     "pages/ModifierDemo/TrackModifier2",
     "pages/ModifierDemo/ConcurrentModifier",
-    "pages/OtherDemo/KeyboardAvoidance"
+    "pages/OtherDemo/KeyboardAvoidance",
+    "pages/ProfilerDemo/LaunchProfiler"
   ]
 }

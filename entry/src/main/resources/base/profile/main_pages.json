@@ -98,6 +98,7 @@
     "pages/StyleDemo/FourColumnList",
     "pages/StyleDemo/DblClickTabBar",
     "pages/StyleDemo/CeilingTabsList",
-    "pages/BaseComponents/RelativeComponent"
+    "pages/BaseComponents/RelativeComponent",
+    "pages/BaseComponents/RelativeComponent2"
   ]
 }

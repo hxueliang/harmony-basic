@@ -97,6 +97,7 @@
     "pages/ProfilerDemo/LaunchProfiler",
     "pages/StyleDemo/FourColumnList",
     "pages/StyleDemo/DblClickTabBar",
-    "pages/StyleDemo/CeilingTabsList"
+    "pages/StyleDemo/CeilingTabsList",
+    "pages/BaseComponents/RelativeComponent"
   ]
 }

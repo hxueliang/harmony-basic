@@ -99,6 +99,7 @@
     "pages/StyleDemo/DblClickTabBar",
     "pages/StyleDemo/CeilingTabsList",
     "pages/BaseComponents/RelativeComponent",
-    "pages/BaseComponents/RelativeComponent2"
+    "pages/BaseComponents/RelativeComponent2",
+    "pages/BaseComponents/RelativeComponent3"
   ]
 }

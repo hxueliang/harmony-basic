@@ -13,7 +13,18 @@ interface GoodItem {
   id: number
 }
 
-export {
-  JobRole,
-  GoodItem,
+interface BtnType {
+  label: string
+  code: string
+  color?: Color | string
+  autoClose?: boolean
+  callback: (type: string) => void
 }
+
+interface OptionsType {
+  title: string,
+  btnList: BtnType[]
+}
+
+export {
+  JobRole, GoodItem, BtnType, OptionsType, }

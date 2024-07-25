@@ -21,6 +21,9 @@ export default class EntryAbility extends UIAbility {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
+    // 缓存windowStage
+    AppStorage.setOrCreate('windowStage', windowStage);
+
     // 应用全屏
     const win = windowStage.getMainWindowSync()
     win.setWindowLayoutFullScreen(true)
@@ -34,7 +37,7 @@ export default class EntryAbility extends UIAbility {
     // if (await TokenManager.getToken(this.context)) {
     //   url = 'pages/ApplicationState/PersistentStorageMain'
     // }
-    let url = 'pages/ModifierDemo/TrackModifier2'
+    let url = 'pages/StyleDemo/MainWinPage'
 
     windowStage.loadContent(url, (err, data) => {
       if (err.code) {

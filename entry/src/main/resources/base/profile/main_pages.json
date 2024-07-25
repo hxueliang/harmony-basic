@@ -101,6 +101,8 @@
     "pages/BaseComponents/RelativeComponent",
     "pages/BaseComponents/RelativeComponent2",
     "pages/BaseComponents/RelativeComponent3",
-    "pages/BaseComponents/RelativeComponent4"
+    "pages/BaseComponents/RelativeComponent4",
+    "pages/StyleDemo/MainWinPage",
+    "pages/StyleDemo/SubWinPage"
   ]
 }

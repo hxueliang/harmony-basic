@@ -96,6 +96,7 @@
     "pages/OtherDemo/KeyboardAvoidance",
     "pages/ProfilerDemo/LaunchProfiler",
     "pages/StyleDemo/FourColumnList",
-    "pages/StyleDemo/DblClickTabBar"
+    "pages/StyleDemo/DblClickTabBar",
+    "pages/StyleDemo/CeilingTabsList"
   ]
 }

@@ -100,6 +100,7 @@
     "pages/StyleDemo/CeilingTabsList",
     "pages/BaseComponents/RelativeComponent",
     "pages/BaseComponents/RelativeComponent2",
-    "pages/BaseComponents/RelativeComponent3"
+    "pages/BaseComponents/RelativeComponent3",
+    "pages/BaseComponents/RelativeComponent4"
   ]
 }

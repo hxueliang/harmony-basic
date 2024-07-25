@@ -95,6 +95,7 @@
     "pages/ModifierDemo/ConcurrentModifier",
     "pages/OtherDemo/KeyboardAvoidance",
     "pages/ProfilerDemo/LaunchProfiler",
-    "pages/StyleDemo/FourColumnList"
+    "pages/StyleDemo/FourColumnList",
+    "pages/StyleDemo/DblClickTabBar"
   ]
 }

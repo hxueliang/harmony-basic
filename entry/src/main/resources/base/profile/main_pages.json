@@ -103,6 +103,7 @@
     "pages/BaseComponents/RelativeComponent3",
     "pages/BaseComponents/RelativeComponent4",
     "pages/StyleDemo/MainWinPage",
-    "pages/StyleDemo/SubWinPage"
+    "pages/StyleDemo/SubWinPage",
+    "pages/ModifierDemo/StateUpdateFlow"
   ]
 }

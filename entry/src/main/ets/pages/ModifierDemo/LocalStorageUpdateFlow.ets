@@ -57,6 +57,15 @@ struct LinkChildLocalStorage {
           console.log(`LinkChild: before value change value ${this.testNum}`);
           this.testNum = this.testNum + 1
           console.log(`LinkChild: after value change value ${this.testNum}`);
+          /**
+           * LinkChild: before value change value 1
+           * Parent: testNumChange value 2
+           * Sibling: testNumChange value 2
+           * LinkLinkChild: testNum value 2
+           * PropLinkChild: testNumGrand value 2  注意!!与@Provide区别
+           * LinkChild: testNumChange value 2
+           * LinkChild: after value change value 2
+           */
         })
       Text(`LinkChild: ${this.testNum}`)
       LinkLinkChildLocalStorage({ /* empty */ })

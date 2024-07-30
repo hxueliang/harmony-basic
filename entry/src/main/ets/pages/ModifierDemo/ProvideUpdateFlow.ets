@@ -3,7 +3,7 @@ struct LinkLinkChildProvide {
   @Consume @Watch("testNumChange") testNum: number;
 
   testNumChange(propName: string): void {
-    console.log(`LinkLinkChild: testNum value ${this.testNum}`);
+    console.log(`LinkLinkChild: testNumChange value ${this.testNum}`);
   }
 
   build() {
@@ -57,6 +57,15 @@ struct LinkChildProvide {
           console.log(`LinkChild: before value change value ${this.testNum}`);
           this.testNum = this.testNum + 1
           console.log(`LinkChild: after value change value ${this.testNum}`);
+          /**
+           * LinkChild: before value change value 1
+           * Parent: testNumChange value 2
+           * Sibling: testNumChange value 2
+           * LinkLinkChild: testNumChange value 2  注意!!与@State区别
+           * LinkChild: testNumChange value 2  注意!!与@State区别
+           * LinkChild: after value change value 2
+           * PropLinkChild: testNumGrand value 2
+           */
         })
       Text(`LinkChild: ${this.testNum}`)
       LinkLinkChildProvide({ /* empty */ })

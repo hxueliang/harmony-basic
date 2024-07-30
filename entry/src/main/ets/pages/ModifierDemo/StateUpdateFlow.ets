@@ -59,6 +59,16 @@ struct LinkChild_ {
           console.log(`LinkChild: before value change value ${this.testNum}`);
           this.testNum = this.testNum + 1
           console.log(`LinkChild: after value change value ${this.testNum}`);
+          /**
+           * LinkChild: before value change value 1     Link更新前
+           * Parent: testNumChange value 2              父组件Link更新
+           * Sibling: testNumChange value 2             触发事件节点的兄弟组件树Link更新
+           * LinkChild: testNumChange value 2           触发事件节点Link更新
+           * LinkLinkChild: testNumGrand value 2        触发事件节点子树Link更新
+           * LinkChild: after value change value 2      Link更新后
+           * PropLinkChild: testNumGrand value 2        触发事件节点子树Prop更新
+           */
+
         })
       Text(`LinkChild: ${this.testNum}`)
 

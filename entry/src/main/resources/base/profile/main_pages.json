@@ -104,6 +104,7 @@
     "pages/BaseComponents/RelativeComponent4",
     "pages/StyleDemo/MainWinPage",
     "pages/StyleDemo/SubWinPage",
-    "pages/ModifierDemo/StateUpdateFlow"
+    "pages/ModifierDemo/StateUpdateFlow",
+    "pages/ModifierDemo/ProvideUpdateFlow"
   ]
 }

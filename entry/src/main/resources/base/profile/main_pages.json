@@ -107,6 +107,8 @@
     "pages/ModifierDemo/StateUpdateFlow",
     "pages/ModifierDemo/ProvideUpdateFlow",
     "pages/ModifierDemo/LocalStorageUpdateFlow",
-    "pages/ModifierDemo/AppStorageUpdateFlow"
+    "pages/ModifierDemo/AppStorageUpdateFlow",
+    "pages/NavDemo/PageReturnParamsA",
+    "pages/NavDemo/PageReturnParamsB"
   ]
 }

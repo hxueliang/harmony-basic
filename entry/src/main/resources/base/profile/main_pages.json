@@ -105,6 +105,7 @@
     "pages/StyleDemo/MainWinPage",
     "pages/StyleDemo/SubWinPage",
     "pages/ModifierDemo/StateUpdateFlow",
-    "pages/ModifierDemo/ProvideUpdateFlow"
+    "pages/ModifierDemo/ProvideUpdateFlow",
+    "pages/ModifierDemo/LocalStorageUpdateFlow"
   ]
 }

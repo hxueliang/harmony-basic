@@ -109,6 +109,7 @@
     "pages/ModifierDemo/LocalStorageUpdateFlow",
     "pages/ModifierDemo/AppStorageUpdateFlow",
     "pages/NavDemo/PageReturnParamsA",
-    "pages/NavDemo/PageReturnParamsB"
+    "pages/NavDemo/PageReturnParamsB",
+    "pages/OtherDemo/SignatureBoardPage"
   ]
 }

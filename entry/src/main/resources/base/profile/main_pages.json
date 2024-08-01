@@ -110,6 +110,8 @@
     "pages/ModifierDemo/AppStorageUpdateFlow",
     "pages/NavDemo/PageReturnParamsA",
     "pages/NavDemo/PageReturnParamsB",
-    "pages/OtherDemo/SignatureBoardPage"
+    "pages/OtherDemo/SignatureBoardPage",
+    "pages/Test/TestPage",
+    "pages/LifecycleDemo/AboutToReusePage"
   ]
 }

@@ -112,6 +112,7 @@
     "pages/NavDemo/PageReturnParamsB",
     "pages/OtherDemo/SignatureBoardPage",
     "pages/Test/TestPage",
-    "pages/LifecycleDemo/AboutToReusePage"
+    "pages/LifecycleDemo/AboutToReusePage",
+    "pages/BaseComponents/GridCachedCountPage"
   ]
 }

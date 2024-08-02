@@ -113,6 +113,7 @@
     "pages/OtherDemo/SignatureBoardPage",
     "pages/Test/TestPage",
     "pages/LifecycleDemo/AboutToReusePage",
-    "pages/BaseComponents/GridCachedCountPage"
+    "pages/BaseComponents/GridCachedCountPage",
+    "pages/OtherDemo/SmartPastingPage"
   ]
 }

@@ -71,8 +71,12 @@ function recognitionInfo(txt: string) {
 @Entry
 @Component
 struct SmartPastingPage {
-  @State textAreaValue: string = `客户姓名：大大;性别：男；客户电话：13812345678，带看人姓名：牛德华,经纪人电话:13412341234
-  带看项目：天上人奸；经纪人身份证号：44013812345678x`
+  /**
+   * 复制以下文案
+   客户姓名：大大;性别：男；客户电话：13812345678，带看人姓名：牛德华,经纪人电话:13412341234
+   带看项目:天上人奸；经纪人身份证号：44013812345678x
+   */
+  @State textAreaValue: string = ``
   @State formData: Record<string, string> = {}
 
   build() {

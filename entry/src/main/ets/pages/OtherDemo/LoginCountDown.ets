@@ -1,6 +1,6 @@
 import { router } from '@kit.ArkUI'
 
-const TOTAL_COUNT = 6
+const TOTAL_COUNT = 60
 
 @Entry
 @Component
@@ -25,7 +25,7 @@ struct LoginCountDown {
   startTimer() {
     this.timerId = setInterval(() => {
       this.count--
-      if (this.count === 0) {
+      if (this.count < 0) {
         clearTimeout(this.timerId)
         this.count = TOTAL_COUNT
       }
@@ -48,8 +48,12 @@ struct LoginCountDown {
 
   build() {
     Row() {
-      Column({ space: 5 }) {
-        Button(`获取验证码（${this.count}）`)
+      Column({ space: 10 }) {
+        TextInput({ placeholder: '请输入手机号' })
+          .height(40)
+        Button(`获取验证码（${this.count}s）`)
+          .enabled(this.count === TOTAL_COUNT)
+          .width('100%')
           .onClick(() => {
             this.startTimer()
           })
@@ -62,6 +66,7 @@ struct LoginCountDown {
           })
       }
       .width('100%')
+      .padding(20)
     }
     .height('100%')
   }

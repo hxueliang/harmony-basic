@@ -19,14 +19,15 @@ struct LoginCountDown {
   }
 
   aboutToDisappear(): void {
-    clearTimeout(this.timerId)
+    clearInterval(this.timerId)
   }
 
   startTimer() {
     this.timerId = setInterval(() => {
       this.count--
+      this.isBack = false
       if (this.count < 0) {
-        clearTimeout(this.timerId)
+        clearInterval(this.timerId)
         this.count = TOTAL_COUNT
       }
     }, 1000)
@@ -35,7 +36,7 @@ struct LoginCountDown {
   pauseTimer() {
     if (!this.isPaused) {
       this.isPaused = true;
-      clearTimeout(this.timerId)
+      clearInterval(this.timerId)
     }
   }
 
@@ -60,8 +61,9 @@ struct LoginCountDown {
         Button('跳页面')
           .onClick(() => {
             router.pushUrl({ url: 'pages/OtherDemo/KeyboardAvoidance' })
-            clearTimeout(this.timerId)
+            clearInterval(this.timerId)
             this.isBack = true
+            this.isPaused = false
             this.count = TOTAL_COUNT
           })
       }

@@ -114,6 +114,7 @@
     "pages/Test/TestPage",
     "pages/LifecycleDemo/AboutToReusePage",
     "pages/BaseComponents/GridCachedCountPage",
-    "pages/OtherDemo/SmartPastingPage"
+    "pages/OtherDemo/SmartPastingPage",
+    "pages/OtherDemo/LoginCountDown"
   ]
 }

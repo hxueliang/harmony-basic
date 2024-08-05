@@ -1,4 +1,4 @@
-import { YxhSwiper } from './components'
+import { YxhSwiper, YxhCardNav } from './components'
 
 @Entry
 @Component
@@ -6,7 +6,8 @@ export struct HomeContent {
   build() {
     Column() {
       YxhSwiper().height(240)
-      
+
+      YxhCardNav()
     }
   }
 }

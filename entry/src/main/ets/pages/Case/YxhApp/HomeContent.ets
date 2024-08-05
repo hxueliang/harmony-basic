@@ -5,7 +5,7 @@ import { YxhSwiper, YxhCardNav } from './components'
 export struct HomeContent {
   build() {
     Column() {
-      YxhSwiper().height(240)
+      YxhSwiper()
 
       YxhCardNav()
     }

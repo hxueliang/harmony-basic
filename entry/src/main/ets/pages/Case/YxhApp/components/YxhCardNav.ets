@@ -63,10 +63,12 @@ export struct YxhCardNav {
           left: index === 0 ? 16 : 0,
           right: index === this.list.length - 1 ? 16 : 0,
           top: 10,
+          bottom: 10,
         })
       })
     }
     .listDirection(Axis.Horizontal)
+    .scrollBar(BarState.Off)
     .position({
       y: 200
     })

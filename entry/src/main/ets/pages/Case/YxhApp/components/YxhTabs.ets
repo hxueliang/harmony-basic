@@ -1,41 +1,14 @@
-const DOOR_BAR_INDEX_2 = 2
-const RADIAN_OFFSET_2 = 0.32
-const IMAGE_BOX_WIDTH_2 = 50
+import { DOOR_BAR_INDEX, RADIAN_OFFSET, IMAGE_BOX_WIDTH } from '../constants'
 
-@Entry
 @Component
-struct BuilderModifierCase {
+export struct YxhTabs {
   private context: CanvasRenderingContext2D = new CanvasRenderingContext2D(
     new RenderingContextSettings(true)
   )
-  @State currentIndex: number = 0
-  @State tabBarList: TabBarInterface[] = [{
-    icon: $r("app.media.ic_public_home"),
-    selectIcon: $r('app.media.ic_public_home_fill'),
-    name: 'home',
-    title: '首页',
-  }, {
-    icon: $r('app.media.ic_public_houses'),
-    selectIcon: $r('app.media.ic_public_houses_fill'),
-    name: 'houses',
-    title: '新盘',
-  }, {
-    icon: $r('app.media.ic_public_key'),
-    selectIcon: $r("app.media.ic_public_key_filled"),
-    name: 'door',
-    title: '一键开门',
-  }, {
-    icon: $r('app.media.ic_public_shop'),
-    selectIcon: $r('app.media.ic_public_shop_fill'),
-    name: 'shop',
-    title: '商城',
-  }, {
-    icon: $r('app.media.ic_public_my'),
-    selectIcon: $r('app.media.ic_public_my_fill'),
-    name: 'my',
-    title: '我的',
-  }]
-  @State doorBarItem: TabBarInterface = this.tabBarList[DOOR_BAR_INDEX_2]
+  @Prop tabBarList: TabBarInterface[] = []
+  @Link currentIndex: number
+  @BuilderParam YxhTabContent: () => void
+  @State doorBarItem: TabBarInterface = this.tabBarList[DOOR_BAR_INDEX]
 
   @Builder
   getTabBarItem(item: TabBarInterface, index: number) {
@@ -61,11 +34,11 @@ struct BuilderModifierCase {
         ForEach(this.tabBarList, (item: TabBarInterface, index) => {
           TabContent() {
             Column() {
-              Text(index + '-' + this.currentIndex)
-              Text()
-              Text(item.title)
+              this.YxhTabContent()
             }
-          }.tabBar(this.getTabBarItem(item, index))
+            .height('100%')
+          }
+          .tabBar(this.getTabBarItem(item, index))
           .border({
             width: { bottom: 1 },
             color: $r('app.color.top_border_color')
@@ -86,11 +59,11 @@ struct BuilderModifierCase {
             // 画圆弧
             this.context.beginPath();
             this.context.arc(
-              IMAGE_BOX_WIDTH_2 / 2,
-              IMAGE_BOX_WIDTH_2 / 2 + LINE_WIDTH,
-              IMAGE_BOX_WIDTH_2 / 2,
-              3.14 + RADIAN_OFFSET_2,
-              6.28 - RADIAN_OFFSET_2
+              IMAGE_BOX_WIDTH / 2,
+              IMAGE_BOX_WIDTH / 2 + LINE_WIDTH,
+              IMAGE_BOX_WIDTH / 2,
+              3.14 + RADIAN_OFFSET,
+              6.28 - RADIAN_OFFSET
             );
             this.context.stroke();
 
@@ -102,11 +75,11 @@ struct BuilderModifierCase {
 
             // 右边补短横线
             this.context.beginPath();
-            this.context.moveTo(IMAGE_BOX_WIDTH_2 - 1, LINE_OFFSET);
-            this.context.lineTo(IMAGE_BOX_WIDTH_2, LINE_OFFSET);
+            this.context.moveTo(IMAGE_BOX_WIDTH - 1, LINE_OFFSET);
+            this.context.lineTo(IMAGE_BOX_WIDTH, LINE_OFFSET);
             this.context.stroke();
           })
-        Image(this.currentIndex === DOOR_BAR_INDEX_2 ? this.doorBarItem.selectIcon : this.doorBarItem.icon)
+        Image(this.currentIndex === DOOR_BAR_INDEX ? this.doorBarItem.selectIcon : this.doorBarItem.icon)
           .width(40)
           .aspectRatio(1)
           .backgroundColor(Color.Orange)
@@ -114,17 +87,17 @@ struct BuilderModifierCase {
           .padding(8)
           .margin({ top: 5 })
       }
-      .width(IMAGE_BOX_WIDTH_2)
+      .width(IMAGE_BOX_WIDTH)
       .aspectRatio(1)
       .margin({ bottom: 24 })
       .onClick(() => {
-        this.currentIndex = DOOR_BAR_INDEX_2
+        this.currentIndex = DOOR_BAR_INDEX
       })
     }
   }
 }
 
-interface TabBarInterface {
+export interface TabBarInterface {
   icon: ResourceStr
   selectIcon: ResourceStr
   title: string

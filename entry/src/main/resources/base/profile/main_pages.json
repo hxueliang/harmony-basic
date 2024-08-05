@@ -115,6 +115,7 @@
     "pages/LifecycleDemo/AboutToReusePage",
     "pages/BaseComponents/GridCachedCountPage",
     "pages/OtherDemo/SmartPastingPage",
-    "pages/OtherDemo/LoginCountDown"
+    "pages/OtherDemo/LoginCountDown",
+    "pages/Case/YxhApp/IndexPage"
   ]
 }

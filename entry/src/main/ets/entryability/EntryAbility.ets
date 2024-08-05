@@ -37,7 +37,7 @@ export default class EntryAbility extends UIAbility {
     // if (await TokenManager.getToken(this.context)) {
     //   url = 'pages/ApplicationState/PersistentStorageMain'
     // }
-    let url = 'pages/OtherDemo/LoginCountDown'
+    let url = 'pages/Case/YxhApp/IndexPage'
 
     windowStage.loadContent(url, (err, data) => {
       if (err.code) {

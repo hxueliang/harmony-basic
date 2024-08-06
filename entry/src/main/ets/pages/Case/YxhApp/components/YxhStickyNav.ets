@@ -28,6 +28,7 @@ export struct YxhStickyNav {
   @Builder
   getTabListItem(item: HousesInfo) {
     RelativeContainer() {
+      // 图片
       Image(item.imgUrl)
         .width(140)
         .height(100)
@@ -37,6 +38,8 @@ export struct YxhStickyNav {
           left: { anchor: "__container__", align: HorizontalAlign.Start }
         })
         .id("imgUrl")
+
+      // 项目名
       Text(item.name)
         .fontSize(18)
         .fontWeight(500)
@@ -47,6 +50,8 @@ export struct YxhStickyNav {
         })
         .offset({ x: NAME_X })
         .id('name')
+
+      // 广州市
       Text(`${item.city} | ${item.area}`)
         .fontColor(Color.Gray)
         .fontSize(CITY_FONT_SIZE)
@@ -56,6 +61,8 @@ export struct YxhStickyNav {
         })
         .offset({ x: NAME_X, y: NAME_Y })
         .id('city')
+
+      // 地址
       Text(item.addr)
         .fontColor(Color.Gray)
         .fontSize(CITY_FONT_SIZE)
@@ -65,6 +72,8 @@ export struct YxhStickyNav {
         })
         .offset({ x: NAME_X, y: NAME_Y + CITY_HEIGHT })
         .id('addr')
+
+      // 标签列表
       List({ space: 5 }) {
         ForEach(item.labelList, (item: string) => {
           ListItem() {
@@ -84,6 +93,7 @@ export struct YxhStickyNav {
       .offset({ x: NAME_X, y: NAME_Y + 2 * CITY_HEIGHT })
       .id('label')
 
+      // 推荐金标准 和 按钮
       Row({ space: 10 }) {
         Text(item.goldStandard)
           .fontSize(CITY_FONT_SIZE)
@@ -94,6 +104,7 @@ export struct YxhStickyNav {
           .maxLines(2)
           .padding({ left: 16, right: 16, top: 12, bottom: 12 })
           .layoutWeight(1)
+        
         Button('去推荐')
           .backgroundColor('#f29a38')
           .fontSize(CITY_FONT_SIZE)

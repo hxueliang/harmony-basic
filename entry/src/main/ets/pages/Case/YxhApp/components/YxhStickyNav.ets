@@ -160,10 +160,11 @@ export struct YxhStickyNav {
     Tabs({ index: $$this.currentIndex }) {
       TabContent() {
         List({ space: 30 }) {
-          ForEach(housesInfoList, (item: HousesInfo) => {
+          ForEach(housesInfoList, (item: HousesInfo, index: number) => {
             ListItem() {
               this.getTabListItem(item)
             }
+            .padding({ bottom: housesInfoList.length - 1 === index ? 20 : 0 })
           }, (item: HousesInfo) => item.name)
         }
         .width("100%")

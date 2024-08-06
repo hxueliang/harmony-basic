@@ -1,5 +1,6 @@
 import { YxhTabs } from './components'
 import { HomeContent } from './HomeContent'
+import { NewContent } from './NewContent'
 
 @Entry
 @Component
@@ -11,7 +12,7 @@ struct MainPage {
     if (this.currentIndex === 0) {
       HomeContent()
     } else if (this.currentIndex === 1) {
-      Text('新盘')
+      NewContent()
     }
   }
 

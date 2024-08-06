@@ -10,8 +10,14 @@ export struct HomeContent {
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
       Row() {
-        Text(`广州市 | 请登录`)
-          .fontColor(this.showTopNavBg ? Color.Black : Color.White)
+        Row() {
+          Image(this.showTopNavBg ? $r('app.media.ic_yxh_location_color') : $r('app.media.ic_yxh_location'))
+            .width(24)
+          Text(`广州市 | `)
+            .fontColor(this.showTopNavBg ? Color.Black : Color.White)
+          Text(`请登录`)
+            .fontColor(this.showTopNavBg ? Color.Black : Color.White)
+        }
 
         Row({ space: 10 }) {
           Image(this.showTopNavBg ? $r('app.media.ic_yxh_service_color') : $r('app.media.ic_yxh_service'))

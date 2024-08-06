@@ -1,3 +1,11 @@
+import { housesInfoList, HousesInfo } from '../mock'
+
+const NAME_X = 16
+const NAME_Y = 10
+const CITY_HEIGHT = 10
+const CITY_FONT_SIZE = 14
+
+@Preview
 @Component
 export struct YxhStickyNav {
   @State currentIndex: number = 0
@@ -9,14 +17,6 @@ export struct YxhStickyNav {
     }
   }
 
-  @Styles
-  listCard() {
-    .backgroundColor(Color.Pink)
-    .height(72)
-    .width("100%")
-    .borderRadius(12)
-  }
-
   @Builder
   getTabBarItem(title: string, index: number) {
     Text(title)
@@ -25,26 +25,110 @@ export struct YxhStickyNav {
       .fontSize(16)
   }
 
+  @Builder
+  getTabListItem(item: HousesInfo) {
+    RelativeContainer() {
+      Image(item.imgUrl)
+        .width(140)
+        .height(100)
+        .borderRadius(6)
+        .alignRules({
+          top: { anchor: "__container__", align: VerticalAlign.Top },
+          left: { anchor: "__container__", align: HorizontalAlign.Start }
+        })
+        .id("imgUrl")
+      Text(item.name)
+        .fontSize(18)
+        .fontWeight(500)
+        .fontColor(Color.Black)
+        .alignRules({
+          top: { anchor: "__container__", align: VerticalAlign.Top },
+          left: { anchor: "imgUrl", align: HorizontalAlign.End }
+        })
+        .offset({ x: NAME_X })
+        .id('name')
+      Text(`${item.city} | ${item.area}`)
+        .fontColor(Color.Gray)
+        .fontSize(CITY_FONT_SIZE)
+        .alignRules({
+          top: { anchor: "name", align: VerticalAlign.Bottom },
+          left: { anchor: "imgUrl", align: HorizontalAlign.End }
+        })
+        .offset({ x: NAME_X, y: NAME_Y })
+        .id('city')
+      Text(item.addr)
+        .fontColor(Color.Gray)
+        .fontSize(CITY_FONT_SIZE)
+        .alignRules({
+          top: { anchor: "city", align: VerticalAlign.Bottom },
+          left: { anchor: "imgUrl", align: HorizontalAlign.End }
+        })
+        .offset({ x: NAME_X, y: NAME_Y + CITY_HEIGHT })
+        .id('addr')
+      List({ space: 5 }) {
+        ForEach(item.labelList, (item: string) => {
+          ListItem() {
+            Text(item)
+              .fontSize(CITY_FONT_SIZE)
+              .padding({ left: 4, right: 4, top: 1, bottom: 1 })
+              .fontColor(Color.Gray)
+              .backgroundColor('#f5f5f5')
+          }
+        })
+      }
+      .listDirection(Axis.Horizontal)
+      .alignRules({
+        top: { anchor: "addr", align: VerticalAlign.Bottom },
+        left: { anchor: "imgUrl", align: HorizontalAlign.End }
+      })
+      .offset({ x: NAME_X, y: NAME_Y + 2 * CITY_HEIGHT })
+      .id('label')
+
+      Row({ space: 10 }) {
+        Text(item.goldStandard)
+          .fontSize(CITY_FONT_SIZE)
+          .borderRadius(6)
+          .backgroundColor('#fef9f5')
+          .fontColor('#f29b39')
+          .textOverflow({ overflow: TextOverflow.Ellipsis })
+          .maxLines(2)
+          .padding({ left: 16, right: 16, top: 12, bottom: 12 })
+          .layoutWeight(1)
+        Button('去推荐')
+          .backgroundColor('#f29a38')
+          .fontSize(CITY_FONT_SIZE)
+      }
+      .alignRules({
+        bottom: { anchor: "__container__", align: VerticalAlign.Bottom },
+        left: { anchor: "__container__", align: HorizontalAlign.Start }
+      })
+      .id("goldStandard")
+    }
+    .width('100%')
+    .height(176)
+    .padding({ left: 16, right: 16 })
+  }
+
   build() {
 
     // Tabs
     Tabs({ index: $$this.currentIndex }) {
       TabContent() {
-        List({ space: 10 }) {
-          ForEach(this.arr, (item: number) => {
+        List({ space: 30 }) {
+          ForEach(housesInfoList, (item: HousesInfo) => {
             ListItem() {
-              Text("item" + item).fontSize(16)
-            }.listCard()
-          }, (item: string) => item)
+              this.getTabListItem(item)
+            }
+          }, (item: HousesInfo) => item.name)
         }
         .width("100%")
+        .divider({ strokeWidth: 1, color: '#eee' })
         .edgeEffect(EdgeEffect.Spring) // 边缘效应，设置为回弹
         // 调用来设置嵌套的滚动选项。
         .nestedScroll({
           scrollForward: NestedScrollMode.PARENT_FIRST, // 向前滚动时：父级可滚动组件优先级滚动响应
           scrollBackward: NestedScrollMode.SELF_FIRST // 向后滚动时：自已优先级滚动响应
         })
-        .padding({ left: 10, right: 10 })
       }.tabBar(this.getTabBarItem('好房推介', 0))
 
       TabContent() {

@@ -13,7 +13,7 @@ export struct YxhSwiper {
     }
     .autoPlay(true)
     .width('100%')
-    .height(240)
+    .height(340)
     .indicator(
       Indicator.dot()
         .bottom(30)

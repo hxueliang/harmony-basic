@@ -70,7 +70,7 @@ export struct YxhCardNav {
     .listDirection(Axis.Horizontal)
     .scrollBar(BarState.Off)
     .position({
-      y: 200
+      y: 300
     })
   }
 }

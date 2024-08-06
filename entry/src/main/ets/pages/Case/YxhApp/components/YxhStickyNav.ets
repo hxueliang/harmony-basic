@@ -186,11 +186,11 @@ export struct YxhStickyNav {
       TabContent() {
       }.tabBar(this.getTabBarItem('越秀养老', 3))
     }
-    .shadow({ radius: 5, color: Color.Gray })
-    .margin({ top: 126 })
+    .border({ width: { top: 12 }, color: '#ccc' })
+    .margin({ top: 134 })
     .vertical(false)
     .backgroundColor(Color.White)
-    .height("100%") // 设置 Tabs 的高度为 100%
+    .height("86%") // 设置 Tabs 的高度为 100%
     .bindContentCover($$this.showGoldExplain, this.getGoldExplainContext(), {
       modalTransition: ModalTransition.NONE
     })

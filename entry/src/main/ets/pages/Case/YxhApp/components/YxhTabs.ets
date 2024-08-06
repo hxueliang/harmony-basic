@@ -44,7 +44,7 @@ export struct YxhTabs {
             color: $r('app.color.top_border_color')
           })
         })
-      }
+      }.scrollable(false)
 
       Stack({ alignContent: Alignment.Top }) {
         Canvas(this.context)

@@ -195,9 +195,4 @@ export struct YxhStickyNav {
       modalTransition: ModalTransition.NONE
     })
   }
-
-  @Builder
-  testHead() {
-    Text('吸顶').width('100%').height(40).backgroundColor(Color.Black).zIndex(999)
-  }
 }

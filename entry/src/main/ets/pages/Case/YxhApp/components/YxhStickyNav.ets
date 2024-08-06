@@ -10,6 +10,8 @@ const CITY_FONT_SIZE = 14
 export struct YxhStickyNav {
   @State currentIndex: number = 0
   @State arr: number[] = []
+  @State showGoldExplain: boolean = false
+  @State textGoldExplain: string = ''
 
   aboutToAppear() {
     for (let i = 0; i < 30; i++) {
@@ -23,6 +25,35 @@ export struct YxhStickyNav {
       .fontColor(this.currentIndex === index ? '#ed612b' : Color.Gray)
       .fontWeight(500)
       .fontSize(16)
+  }
+
+  @Builder
+  getGoldExplainContext() {
+    Row() {
+      Column() {
+        Text('推荐金说明')
+          .height(60)
+          .fontSize(20)
+          .fontWeight(500)
+        Text(this.textGoldExplain)
+          .height(60)
+          .padding({ left: 20, right: 20 })
+        Text('知道了')
+          .fontColor('#ed612b')
+          .height(80)
+          .onClick(() => {
+            this.showGoldExplain = false
+          })
+      }
+      .width('100%')
+      .backgroundColor(Color.White)
+      .borderRadius(8)
+    }
+    .width('100%')
+    .height('100%')
+    .padding(20)
+    .backgroundColor('rgba(0, 0, 0, 0.3)')
+    .justifyContent(FlexAlign.Center)
   }
 
   @Builder
@@ -104,7 +135,10 @@ export struct YxhStickyNav {
           .maxLines(2)
           .padding({ left: 16, right: 16, top: 12, bottom: 12 })
           .layoutWeight(1)
-        
+          .onClick(() => {
+            this.showGoldExplain = true
+            this.textGoldExplain = item.goldExplain
+          })
         Button('去推荐')
           .backgroundColor('#f29a38')
           .fontSize(CITY_FONT_SIZE)
@@ -156,6 +190,9 @@ export struct YxhStickyNav {
     .vertical(false)
     .backgroundColor(Color.White)
     .height("100%") // 设置 Tabs 的高度为 100%
+    .bindContentCover($$this.showGoldExplain, this.getGoldExplainContext(), {
+      modalTransition: ModalTransition.NONE
+    })
   }
 
   @Builder

@@ -49,7 +49,7 @@ export struct YxhTabs {
       Stack({ alignContent: Alignment.Top }) {
         Canvas(this.context)
           .height('80%')
-          .backgroundColor(Color.White)
+          .backgroundColor(Color.Transparent)
           .onReady(() => {
             const LINE_WIDTH = 1
             const LINE_OFFSET = 17.5

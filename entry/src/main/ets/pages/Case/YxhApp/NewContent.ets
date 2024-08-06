@@ -7,7 +7,7 @@ export struct NewContent {
   build() {
     Column() {
       Web({
-        src: 'https://fangbao-oss.yuexiuproperty.cn/dist/index.html#/project?source=h5',
+        src: 'https://fangbao-oss.yuexiuproperty.cn/dist/index.html#/project',
         controller: this.controller
       })
         .domStorageAccess(true)

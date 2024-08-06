@@ -6,7 +6,7 @@ export struct YxhSwiper {
   build() {
     Swiper() {
       ForEach(homeAdData.data, (item: HomeAdItemModel) => {
-        Image(`${item.imgUrl}?x-oss-process=image/resize,m_lfit,h_208,w_320`)
+        Image(item.imgUrl)
           .width('100%')
           .height('100%')
       })

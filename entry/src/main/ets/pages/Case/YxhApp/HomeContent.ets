@@ -1,3 +1,5 @@
+import { curves } from '@kit.ArkUI';
+
 import { YxhSwiper, YxhCardNav, YxhStickyNav, YxhTopNav } from './components'
 
 @Entry
@@ -25,12 +27,16 @@ export struct HomeContent {
       .width('100%')
       .height('100%')
       .onScroll((x, y) => {
-        if (y > 1) {
-          this.showTopNavBg = true
+        if (y > 1 && !this.showTopNavBg) {
+          animateTo({ curve: curves.springMotion() }, () => {
+            this.showTopNavBg = true
+          })
         }
       })
       .onScrollEdge((side) => {
-        this.showTopNavBg = !!side
+        animateTo({ curve: curves.springMotion() }, () => {
+          this.showTopNavBg = !!side
+        })
       })
     }
   }

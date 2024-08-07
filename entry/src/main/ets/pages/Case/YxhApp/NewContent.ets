@@ -12,7 +12,7 @@ export struct NewContent {
       })
         .domStorageAccess(true)
         .width('100%')
-        .height('130%')
+        .height('115%')
         .onAppear(() => {
           this.controller
         })

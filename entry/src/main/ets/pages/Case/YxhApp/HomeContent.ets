@@ -5,7 +5,6 @@ import { YxhSwiper, YxhCardNav, YxhStickyNav } from './components'
 export struct HomeContent {
   scroller = new Scroller()
   @State showTopNavBg: boolean = false
-  @State tag: number = 0
 
   build() {
     Stack({ alignContent: Alignment.TopStart }) {
@@ -13,6 +12,7 @@ export struct HomeContent {
         Row() {
           Image(this.showTopNavBg ? $r('app.media.ic_yxh_location_color') : $r('app.media.ic_yxh_location'))
             .width(24)
+            .padding({ right: 3 })
           Text(`广州市 | `)
             .fontColor(this.showTopNavBg ? Color.Black : Color.White)
           Text(`请登录`)
@@ -49,7 +49,6 @@ export struct HomeContent {
       .width('100%')
       .height('100%')
       .onScroll((x, y) => {
-        this.tag = y
         if (y > 1) {
           this.showTopNavBg = true
         }

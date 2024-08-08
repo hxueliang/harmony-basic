@@ -1,10 +1,11 @@
+import { MyBuilderFunction } from '../../../builder'
+
 @Component
 struct HmPanel {
   @State heightPanel: number = 300
   @State bgPanel: ResourceColor = '#ccc'
-
   @BuilderParam
-  header: () => void
+  header: () => void = MyBuilderFunction
 
   build() {
     Column() {

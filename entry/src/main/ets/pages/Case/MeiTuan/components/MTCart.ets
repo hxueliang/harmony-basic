@@ -2,7 +2,6 @@ import { FoodItem } from '../models'
 import { CartStore } from '../utils'
 import MTCartItem from './MTCartItem'
 
-@Preview
 @Component
 struct MTCart {
   @Consume

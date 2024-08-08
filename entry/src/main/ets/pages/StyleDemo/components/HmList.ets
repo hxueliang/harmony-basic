@@ -1,10 +1,12 @@
 import { GoodItem } from '../models'
 
+import { MyBuilderFunction } from '../../../builder'
+
 @Component
 struct HmList {
   @State list: object[] = []
   @BuilderParam
-  renderItem: (item: object) => void
+  renderItem: (item: object) => void = MyBuilderFunction
 
   build() {
     List({ space: 12 }) {

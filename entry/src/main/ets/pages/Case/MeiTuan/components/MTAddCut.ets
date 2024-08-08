@@ -13,7 +13,6 @@ function textStyle() {
   .borderRadius(2)
 }
 
-@Preview
 @Component
 struct MTAddCut {
   @Consume

@@ -1,3 +1,5 @@
+import { MyBuilderFunction } from '../../builder'
+
 @Entry
 @Component
 struct BuilderParamModifierDialog {
@@ -74,8 +76,8 @@ struct BuilderParamModifierDialog {
 
 @Component
 struct ModelDialog {
-  @BuilderParam header: () => void
-  @BuilderParam body: () => void
+  @BuilderParam header: () => void = MyBuilderFunction
+  @BuilderParam body: () => void = MyBuilderFunction
 
   build() {
     Column() {

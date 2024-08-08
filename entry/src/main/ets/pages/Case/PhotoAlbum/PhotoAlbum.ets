@@ -1,3 +1,5 @@
+import { MyBuilderFunction } from '../../../builder'
+
 @Entry
 @Component
 struct PhotoAlbum {
@@ -170,7 +172,9 @@ struct PhotoAlbumPopup {
 @CustomDialog
 struct PreviewPhoto {
   @State selectIndex: number = 0
-  controller: CustomDialogController
+  controller: CustomDialogController = new CustomDialogController({
+    builder: MyBuilderFunction(),
+  })
   urls: string[] = []
 
   build() {

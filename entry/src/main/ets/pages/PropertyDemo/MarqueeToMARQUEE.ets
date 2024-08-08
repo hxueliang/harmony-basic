@@ -19,6 +19,8 @@ struct MarqueeToMARQUEE {
   }
 }
 
+// 排查Marquee关键字，使用Text的跑马灯模式(TextOverflow.MARQUEE)替代。
+
 @Component
 struct MarqueeA {
   start: boolean = true

@@ -117,6 +117,7 @@
     "pages/OtherDemo/SmartPastingPage",
     "pages/OtherDemo/LoginCountDown",
     "pages/Case/YxhApp/IndexPage",
-    "pages/PropertyDemo/MarqueeToMARQUEE"
+    "pages/PropertyDemo/MarqueeToMARQUEE",
+    "pages/CasesHarmonyos/C01AddressExchangeView"
   ]
 }

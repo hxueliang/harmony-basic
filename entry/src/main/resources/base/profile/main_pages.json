@@ -116,6 +116,7 @@
     "pages/BaseComponents/GridCachedCountPage",
     "pages/OtherDemo/SmartPastingPage",
     "pages/OtherDemo/LoginCountDown",
-    "pages/Case/YxhApp/IndexPage"
+    "pages/Case/YxhApp/IndexPage",
+    "pages/PropertyDemo/MarqueeToMARQUEE"
   ]
 }

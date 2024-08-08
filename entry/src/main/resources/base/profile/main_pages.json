@@ -118,6 +118,7 @@
     "pages/OtherDemo/LoginCountDown",
     "pages/Case/YxhApp/IndexPage",
     "pages/PropertyDemo/MarqueeToMARQUEE",
-    "pages/CasesHarmonyos/C01AddressExchangeView"
+    "pages/CasesHarmonyos/C01AddressExchangeView",
+    "pages/CasesHarmonyos/C02TabView"
   ]
 }

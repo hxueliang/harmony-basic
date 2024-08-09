@@ -1,3 +1,6 @@
+/**
+ * 1.地址交换动画案例
+ */
 import { curves } from '@kit.ArkUI'
 
 @Entry

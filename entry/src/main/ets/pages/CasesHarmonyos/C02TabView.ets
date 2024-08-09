@@ -1,3 +1,6 @@
+/**
+ * 2.自定义TabBar页签案例
+ */
 import { promptAction } from '@kit.ArkUI';
 
 @Entry

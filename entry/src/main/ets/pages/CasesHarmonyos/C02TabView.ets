@@ -9,38 +9,15 @@ export struct C02TabView {
   build() {
     Column() {
       Tabs({ index: this.selectedIndex, barPosition: BarPosition.End, controller: this.controller }) {
-        TabContent() {
-          List() {
-            ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (item: number) => {
-              ListItem() {
-                Text('首页' + item)
-                  .fontSize(40)
-                  .padding(30)
-                  .width('100%')
-                  .textAlign(TextAlign.Center)
-                  .onClick(() => {
-                    promptAction.showToast({ message: item.toString() })
-                  })
-              }
-            })
-          }
-        }
+        HomeCom()
 
-        TabContent() {
-          Text('新盘').fontSize(30)
-        }
+        NewCom()
 
-        TabContent() {
-          Text('一键开门').fontSize(30)
-        }
+        OneKeyCom()
 
-        TabContent() {
-          Text('商城').fontSize(30)
-        }
+        ShopCom()
 
-        TabContent() {
-          Text('我的').fontSize(30)
-        }
+        MyCom()
       }
       .tabsStyle()
       .onChange((index: number) => {
@@ -51,6 +28,85 @@ export struct C02TabView {
       CustomTabBar({ selectedIndex: $selectedIndex })
     }.width('100%')
     .height('100%')
+  }
+}
+
+@Component
+struct HomeCom {
+  aboutToAppear(): void {
+    console.log('x_log', '首页')
+  }
+
+  build() {
+    TabContent() {
+      List() {
+        ForEach([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], (item: number) => {
+          ListItem() {
+            Text('首页' + item)
+              .fontSize(40)
+              .padding(30)
+              .width('100%')
+              .textAlign(TextAlign.Center)
+              .onClick(() => {
+                promptAction.showToast({ message: item.toString() })
+              })
+          }
+        })
+      }
+    }
+  }
+}
+
+@Component
+struct NewCom {
+  aboutToAppear(): void {
+    console.log('x_log', '新盘')
+  }
+
+  build() {
+    TabContent() {
+      Text('新盘').fontSize(30)
+    }
+  }
+}
+
+@Component
+struct ShopCom {
+  aboutToAppear(): void {
+    console.log('x_log', '商城')
+  }
+
+  build() {
+    TabContent() {
+      Text('商城').fontSize(30)
+    }
+
+  }
+}
+
+@Component
+struct OneKeyCom {
+  aboutToAppear(): void {
+    console.log('x_log', '一键开门')
+  }
+
+  build() {
+    TabContent() {
+      Text('一键开门').fontSize(30)
+    }
+  }
+}
+
+@Component
+struct MyCom {
+  aboutToAppear(): void {
+    console.log('x_log', '我的')
+  }
+
+  build() {
+    TabContent() {
+      Text('我的').fontSize(30)
+    }
   }
 }
 

@@ -90,7 +90,7 @@
     "pages/DFX/AppCrashEvent",
     "pages/DFX/ReportData",
     "pages/Notification/BasicTextNotification",
-    "pages/CasesHarmonyos/C105GridExchange",
+    "pages/CasesHarmonyos/C105GridExchange/C105GridExchange",
     "pages/ModifierDemo/TrackModifier2",
     "pages/ModifierDemo/ConcurrentModifier",
     "pages/OtherDemo/KeyboardAvoidance",
@@ -118,7 +118,7 @@
     "pages/OtherDemo/LoginCountDown",
     "pages/Case/YxhApp/IndexPage",
     "pages/PropertyDemo/MarqueeToMARQUEE",
-    "pages/CasesHarmonyos/C01AddressExchangeView",
-    "pages/CasesHarmonyos/C02TabView"
+    "pages/CasesHarmonyos/C01AddressExchangeView/C01AddressExchangeView",
+    "pages/CasesHarmonyos/C02TabView/C02TabView"
   ]
 }

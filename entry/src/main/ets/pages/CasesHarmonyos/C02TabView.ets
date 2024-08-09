@@ -18,6 +18,8 @@ export struct C02TabView {
         ShopCom()
 
         MyCom()
+
+        TabContent()
       }
       .tabsStyle()
       .onChange((index: number) => {

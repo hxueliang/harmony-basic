@@ -8,7 +8,8 @@
   "dependencies": {
     "@ohos/axios": "^2.2.0",
     "@ohos/library": "file:../library",
-    "@hxl/gridexchange": "file:../feature/gridexchange"
+    "@hxl/gridexchange": "file:../feature/gridexchange",
+    "@hxl/functionalscenes": "file:../feature/functionalscenes"
   },
   "devDependencies": {},
   "dynamicDependencies": {}

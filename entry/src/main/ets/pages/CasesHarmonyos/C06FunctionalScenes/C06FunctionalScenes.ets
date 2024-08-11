@@ -1,3 +1,7 @@
+/**
+ * 主页瀑布流实现案例
+ */
+
 import { router } from '@kit.ArkUI'
 
 @Entry

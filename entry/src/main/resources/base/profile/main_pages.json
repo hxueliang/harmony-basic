@@ -123,6 +123,8 @@
     "pages/CasesHarmonyos/C03ModalWindowLogin/C03ModalWindowLogin",
     "pages/CasesHarmonyos/C05SlideToHideAndDisplace/C05SlideToHideAndDisplace",
     "pages/CasesHarmonyos/C06FunctionalScenes/C06FunctionalScenes",
-    "pages/OtherDemo/StartAd"
+    "pages/OtherDemo/StartAd",
+    "pages/AbilityDemo/FirstAbilityPage",
+    "pages/AbilityDemo/SecondAbilityPage"
   ]
 }

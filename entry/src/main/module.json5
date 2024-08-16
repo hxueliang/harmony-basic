@@ -46,6 +46,15 @@
         "label": "$string:PayAbility_label",
         "startWindowIcon": "$media:startIcon",
         "startWindowBackground": "$color:start_window_background"
+      },
+      {
+        "name": "SecondAbility",
+        "srcEntry": "./ets/secondability/SecondAbility.ets",
+        "description": "$string:secondability_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:secondability_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background"
       }
     ]
   }

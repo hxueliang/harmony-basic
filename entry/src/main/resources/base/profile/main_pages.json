@@ -122,6 +122,7 @@
     "pages/CasesHarmonyos/C02TabView/C02TabView",
     "pages/CasesHarmonyos/C03ModalWindowLogin/C03ModalWindowLogin",
     "pages/CasesHarmonyos/C05SlideToHideAndDisplace/C05SlideToHideAndDisplace",
-    "pages/CasesHarmonyos/C06FunctionalScenes/C06FunctionalScenes"
+    "pages/CasesHarmonyos/C06FunctionalScenes/C06FunctionalScenes",
+    "pages/OtherDemo/StartAd"
   ]
 }

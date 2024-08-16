@@ -2,6 +2,8 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import window from '@ohos.window';
 import { AbilityConstant, Want } from '@kit.AbilityKit';
 import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+
+import { AdStore, getStartAd, OPEN_SUB_WINDOW_KEY } from '../utils';
 // import { KeyboardAvoidMode } from '@kit.ArkUI';
 
 import { TokenManager } from '../pages/ApplicationState/utils/token';
@@ -20,6 +22,8 @@ export default class EntryAbility extends UIAbility {
   async onWindowStageCreate(windowStage: window.WindowStage): Promise<void> {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
+
+    await showStartAd(windowStage, this.context)
 
     // 缓存windowStage
     AppStorage.setOrCreate('windowStage', windowStage);
@@ -98,7 +102,8 @@ function startApm() {
           // 开发者可以获取到崩溃应用的前后台状态
           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.foreground=${eventInfo.params['foreground']}`);
           // 开发者可以获取到崩溃应用的版本信息
-          hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_version=${eventInfo.params['bundle_version']}`);
+          hilog.info(0x0000, 'testTag',
+            `HiAppEvent eventInfo.params.bundle_version=${eventInfo.params['bundle_version']}`);
           // 开发者可以获取到崩溃应用的包名
           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.bundle_name=${eventInfo.params['bundle_name']}`);
           // 开发者可以获取到崩溃应用的进程id
@@ -106,12 +111,15 @@ function startApm() {
           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uid=${eventInfo.params['uid']}`);
           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.uuid=${eventInfo.params['uuid']}`);
           // 开发者可以获取到崩溃事件发生的异常类型、异常原因和异常调用栈
-          hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.exception=${JSON.stringify(eventInfo.params['exception'])}`);
+          hilog.info(0x0000, 'testTag',
+            `HiAppEvent eventInfo.params.exception=${JSON.stringify(eventInfo.params['exception'])}`);
           // 开发者可以获取到崩溃事件发生时日志信息
           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.hilog.size=${eventInfo.params['hilog'].length}`);
           // 开发者可以获取到崩溃事件发生时的故障日志文件
-          hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
-          hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.log_over_limit=${eventInfo.params['log_over_limit']}`);
+          hilog.info(0x0000, 'testTag',
+            `HiAppEvent eventInfo.params.external_log=${JSON.stringify(eventInfo.params['external_log'])}`);
+          hilog.info(0x0000, 'testTag',
+            `HiAppEvent eventInfo.params.log_over_limit=${eventInfo.params['log_over_limit']}`);
           // 开发者可以获取到崩溃事件的自定义数据test_data
           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo.params.test_data=${eventInfo.params['test_data']}`);
         }
@@ -171,4 +179,18 @@ function reportUserAction() {
       test: 12
     }
   })
+}
+
+/**
+ * 打开启动广告
+ * @param windowStage
+ * @param ctx
+ */
+async function showStartAd(windowStage: window.WindowStage, ctx: Context) {
+  const adStore = new AdStore(ctx)
+  const ad = await getStartAd() // 获取广告数据
+  await adStore.setStartAd(ad) // 写入首选项
+  const win = await windowStage.createSubWindow(OPEN_SUB_WINDOW_KEY) // 创建子窗口
+  await win.showWindow()
+  win.setUIContent('pages/OtherDemo/StartAd')
 }

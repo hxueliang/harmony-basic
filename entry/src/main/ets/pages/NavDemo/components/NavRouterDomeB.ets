@@ -21,6 +21,7 @@ struct NavRouterDomeB {
         .columnsGap(10)
         .padding(10)
       }
+      .title('BBB')
     }
   }
 }

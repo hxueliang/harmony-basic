@@ -137,6 +137,7 @@
     "pages/BaseComponents/ImageAnimatorPageB",
     "pages/BaseComponents/LoadingProgressPage",
     "pages/BaseComponents/MarqueePage",
-    "pages/BaseComponents/NavigationPage"
+    "pages/BaseComponents/NavigationPage",
+    "pages/BaseComponents/PatternLockPage"
   ]
 }

@@ -140,6 +140,7 @@
     "pages/BaseComponents/NavigationPage",
     "pages/BaseComponents/PatternLockPage",
     "pages/BaseComponents/ProgressPage",
-    "pages/BaseComponents/QRCodePage"
+    "pages/BaseComponents/QRCodePage",
+    "pages/BaseComponents/RadioPage"
   ]
 }

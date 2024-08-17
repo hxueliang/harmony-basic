@@ -128,6 +128,7 @@
     "pages/AbilityDemo/SecondAbilityPage",
     "pages/BaseComponents/BlankPage",
     "pages/BaseComponents/ButtonPage",
-    "pages/BaseComponents/CheckboxPage"
+    "pages/BaseComponents/CheckboxPage",
+    "pages/BaseComponents/DataPanelPage"
   ]
 }

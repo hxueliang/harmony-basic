@@ -131,6 +131,7 @@
     "pages/BaseComponents/CheckboxPage",
     "pages/BaseComponents/DataPanelPage",
     "pages/BaseComponents/DatePickerPage",
-    "pages/BaseComponents/DividerPage"
+    "pages/BaseComponents/DividerPage",
+    "pages/BaseComponents/GaugePage"
   ]
 }

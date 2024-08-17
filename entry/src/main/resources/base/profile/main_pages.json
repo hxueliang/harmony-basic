@@ -126,6 +126,7 @@
     "pages/OtherDemo/StartAd",
     "pages/AbilityDemo/FirstAbilityPage",
     "pages/AbilityDemo/SecondAbilityPage",
-    "pages/BaseComponents/BlankPage"
+    "pages/BaseComponents/BlankPage",
+    "pages/BaseComponents/ButtonPage"
   ]
 }

@@ -141,6 +141,7 @@
     "pages/BaseComponents/PatternLockPage",
     "pages/BaseComponents/ProgressPage",
     "pages/BaseComponents/QRCodePage",
-    "pages/BaseComponents/RadioPage"
+    "pages/BaseComponents/RadioPage",
+    "pages/BaseComponents/RatingPage"
   ]
 }

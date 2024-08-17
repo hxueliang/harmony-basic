@@ -135,6 +135,7 @@
     "pages/BaseComponents/GaugePage",
     "pages/BaseComponents/ImagePage",
     "pages/BaseComponents/ImageAnimatorPageB",
-    "pages/BaseComponents/LoadingProgressPage"
+    "pages/BaseComponents/LoadingProgressPage",
+    "pages/BaseComponents/MarqueePage"
   ]
 }

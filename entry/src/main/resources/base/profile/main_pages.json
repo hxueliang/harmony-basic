@@ -133,6 +133,7 @@
     "pages/BaseComponents/DatePickerPage",
     "pages/BaseComponents/DividerPage",
     "pages/BaseComponents/GaugePage",
-    "pages/BaseComponents/ImagePage"
+    "pages/BaseComponents/ImagePage",
+    "pages/BaseComponents/ImageAnimatorPageB"
   ]
 }

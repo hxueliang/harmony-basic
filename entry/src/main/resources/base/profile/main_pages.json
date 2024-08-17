@@ -129,6 +129,7 @@
     "pages/BaseComponents/BlankPage",
     "pages/BaseComponents/ButtonPage",
     "pages/BaseComponents/CheckboxPage",
-    "pages/BaseComponents/DataPanelPage"
+    "pages/BaseComponents/DataPanelPage",
+    "pages/BaseComponents/DatePickerPage"
   ]
 }

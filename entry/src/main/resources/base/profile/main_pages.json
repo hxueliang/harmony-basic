@@ -138,6 +138,7 @@
     "pages/BaseComponents/LoadingProgressPage",
     "pages/BaseComponents/MarqueePage",
     "pages/BaseComponents/NavigationPage",
-    "pages/BaseComponents/PatternLockPage"
+    "pages/BaseComponents/PatternLockPage",
+    "pages/BaseComponents/ProgressPage"
   ]
 }

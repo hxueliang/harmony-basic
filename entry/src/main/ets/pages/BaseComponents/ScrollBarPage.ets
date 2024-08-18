@@ -32,9 +32,9 @@ struct ScrollBarPage {
         state: BarState.Auto
       }) {
         Text()
-          .width(28)
+          .width(26)
           .height(100)
-          .margin({ left: 1 })
+          .margin({ left: 2 })
           .borderRadius(10)
           .backgroundColor('#c0c0c0')
       }.width(30).backgroundColor('#ededed')

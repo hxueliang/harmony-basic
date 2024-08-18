@@ -142,6 +142,7 @@
     "pages/BaseComponents/ProgressPage",
     "pages/BaseComponents/QRCodePage",
     "pages/BaseComponents/RadioPage",
-    "pages/BaseComponents/RatingPage"
+    "pages/BaseComponents/RatingPage",
+    "pages/BaseComponents/RichTextPage"
   ]
 }

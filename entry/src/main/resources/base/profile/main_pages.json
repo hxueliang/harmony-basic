@@ -146,6 +146,7 @@
     "pages/BaseComponents/RichTextPage",
     "pages/BaseComponents/ScrollBarPage",
     "pages/BaseComponents/SearchPage",
-    "pages/BaseComponents/SliderPage"
+    "pages/BaseComponents/SliderPage",
+    "pages/BaseComponents/SelectPage"
   ]
 }

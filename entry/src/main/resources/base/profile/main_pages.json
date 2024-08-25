@@ -147,6 +147,7 @@
     "pages/BaseComponents/ScrollBarPage",
     "pages/BaseComponents/SearchPage",
     "pages/BaseComponents/SliderPage",
-    "pages/BaseComponents/SelectPage"
+    "pages/BaseComponents/SelectPage",
+    "pages/BaseComponents/SpanPage"
   ]
 }

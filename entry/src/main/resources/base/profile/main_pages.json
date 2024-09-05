@@ -148,6 +148,7 @@
     "pages/BaseComponents/SearchPage",
     "pages/BaseComponents/SliderPage",
     "pages/BaseComponents/SelectPage",
-    "pages/BaseComponents/SpanPage"
+    "pages/BaseComponents/SpanPage",
+    "pages/PermissionDemo/CopyAndPaste"
   ]
 }

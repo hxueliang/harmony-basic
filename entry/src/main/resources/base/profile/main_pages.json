@@ -149,6 +149,7 @@
     "pages/BaseComponents/SliderPage",
     "pages/BaseComponents/SelectPage",
     "pages/BaseComponents/SpanPage",
-    "pages/PermissionDemo/CopyAndPaste"
+    "pages/PermissionDemo/CopyAndPaste",
+    "pages/Case/SaveAlbum/SaveAlbum"
   ]
 }

@@ -150,6 +150,7 @@
     "pages/BaseComponents/SelectPage",
     "pages/BaseComponents/SpanPage",
     "pages/PermissionDemo/CopyAndPaste",
-    "pages/Case/SaveAlbum/SaveAlbum"
+    "pages/Case/SaveAlbum/SaveAlbum",
+    "pages/Case/Screenshot/Screenshot"
   ]
 }

@@ -1,10 +1,16 @@
+import { image } from '@kit.ImageKit';
+import { componentSnapshot } from '@kit.ArkUI';
+
 @Entry
 @Component
 struct Screenshot {
+  @State snapshotImage: image.PixelMap | null = null
+  @State showSnap: boolean = false
+
   @Builder
   getSnapContent() {
     Column() {
-      Image('')
+      Image(this.snapshotImage)
         .width('100%')
         .objectFit(ImageFit.Auto)
         .borderRadius(6)
@@ -15,6 +21,7 @@ struct Screenshot {
     .justifyContent(FlexAlign.Center)
     .backgroundColor('rgba(0,0,0,0.5)')
     .onClick(() => {
+      this.showSnap = false
     })
 
   }
@@ -27,6 +34,10 @@ struct Screenshot {
       .fillColor(Color.Black)
       .margin({ right: 10 })
       .onClick(async () => {
+        this.snapshotImage = await componentSnapshot.get('page')
+        this.showSnap = !this.showSnap // 显示截屏
+        // Todo: 截屏音效
+        // Todo: 保存到相册
       })
   }
 
@@ -50,5 +61,9 @@ struct Screenshot {
     .width('100%')
     .padding({ top: 50 })
     .backgroundColor(Color.White)
+    .id('page')
+    .bindContentCover($$this.showSnap, this.getSnapContent(), {
+      modalTransition: ModalTransition.NONE
+    })
   }
 }

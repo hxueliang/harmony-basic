@@ -1,3 +1,8 @@
+/**
+ * 官方文档
+ * https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/js-apis-photoaccesshelper-V5#showassetscreationdialog12
+ */
+
 import { http } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import util from '@ohos.util';
@@ -15,31 +20,28 @@ struct SaveAlbum {
   url2: string =
     "https://upfile-drcn.platform.hicloud.com/ptTJ5B1eJ6k-d45UmOTF0Q.FYlVoBLGO3P9jZfjPUtqh2Cry9mQBzJButWu-okMhg2Xsd4zaoBTVAAsA08DPk1Vn7VFa1Mpl1Dp112CNKhEBjd4a9kP2NCKrQUpgq0HP_E3uqofnQ.6099200.png";
 
-  aboutToAppear(): void {
-    setTimeout(() => {
-      this.downloadAndSave(this.url1, "jpg")
-    }, 4000)
-  }
-
   build() {
-    Column() {
+    Column({ space: 30 }) {
+      Text('保存到相册').fontSize(30)
       Column() {
         Text(this.url1)
         Button("保存").onClick(() => {
-          this.downloadAndSave(this.url1, "jpg")
+          this.downloadAndSave(this.url1)
         })
       }.margin({ top: 15, bottom: 15 })
 
       Column() {
         Text(this.url2)
         Button("保存").onClick(() => {
-          this.downloadAndSave(this.url2, "png");
+          this.downloadAndSave(this.url2);
         })
       }.margin({ top: 15, bottom: 15 })
     }.justifyContent(FlexAlign.Center).alignItems(HorizontalAlign.Center).height('100%').width('100%')
   }
 
-  downloadAndSave(url: string, type: string) {
+  downloadAndSave(url: string) {
+    const arr = url.split('.')
+    const type = arr[arr.length -1]
     httpDownload(url, type).then((result: DownloadResult) => {
       if (result.isSuccess) {
         promptAction.showToast({ message: "下载成功" })

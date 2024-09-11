@@ -10,7 +10,7 @@
     },
     {
       "name": "EntryAbility_label",
-      "value": "label"
+      "value": "HmBs"
     },
     {
       "name": "PayAbility_desc",
@@ -18,7 +18,7 @@
     },
     {
       "name": "PayAbility_label",
-      "value": "label"
+      "value": "HmBs"
     },
     {
       "name": "secondability_desc",
@@ -26,7 +26,7 @@
     },
     {
       "name": "secondability_label",
-      "value": "label"
+      "value": "HmBs"
     }
   ]
 }

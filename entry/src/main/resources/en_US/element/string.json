@@ -27,6 +27,10 @@
     {
       "name": "secondability_label",
       "value": "HmBs"
+    },
+    {
+      "name": "test_resource_string",
+      "value": "show $r string"
     }
   ]
 }

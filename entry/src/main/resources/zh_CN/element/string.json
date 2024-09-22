@@ -27,6 +27,10 @@
     {
       "name": "secondability_label",
       "value": "HmBs"
+    },
+    {
+      "name": "test_resource_string",
+      "value": "展示$r引的字符串"
     }
   ]
 }

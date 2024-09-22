@@ -151,6 +151,7 @@
     "pages/BaseComponents/SpanPage",
     "pages/PermissionDemo/CopyAndPaste",
     "pages/Case/SaveAlbum/SaveAlbum",
-    "pages/Case/Screenshot/Screenshot"
+    "pages/Case/Screenshot/Screenshot",
+    "pages/OtherDemo/GetStringByName"
   ]
 }

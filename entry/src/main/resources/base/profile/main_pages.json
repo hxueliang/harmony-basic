@@ -152,6 +152,9 @@
     "pages/PermissionDemo/CopyAndPaste",
     "pages/Case/SaveAlbum/SaveAlbum",
     "pages/Case/Screenshot/Screenshot",
-    "pages/OtherDemo/GetStringByName"
+    "pages/OtherDemo/GetStringByName",
+    "pages/Case/AntiScreenshot/LoginPage",
+    "pages/Case/AntiScreenshot/CodePage",
+    "pages/Case/AntiScreenshot/MainPage"
   ]
 }

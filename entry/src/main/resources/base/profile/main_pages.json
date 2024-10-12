@@ -155,6 +155,7 @@
     "pages/OtherDemo/GetStringByName",
     "pages/Case/AntiScreenshot/LoginPage",
     "pages/Case/AntiScreenshot/CodePage",
-    "pages/Case/AntiScreenshot/MainPage"
+    "pages/Case/AntiScreenshot/MainPage",
+    "pages/Case/ClipShape/ClipShape"
   ]
 }

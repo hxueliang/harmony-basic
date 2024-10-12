@@ -1,7 +1,7 @@
 {
   "app": {
-    "bundleName": "com.example.harmonybasic",
-    "patchVersionCode": 2000005,
+    "bundleName": "com.example.harmony.basic",
+    "patchVersionCode": 2000052,
     "versionCode": 1000000
   },
   "module": {

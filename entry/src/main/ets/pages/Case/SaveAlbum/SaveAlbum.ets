@@ -85,12 +85,6 @@ function saveSandbox(imageBuffer: ArrayBuffer, imgType: string, imageName: strin
   })
 }
 
-interface DownloadResult {
-  isSuccess: boolean,
-  msg: string,
-  imageInfo: IReturnImage
-}
-
 async function httpDownload(imgUrl: string): Promise<ArrayBuffer> {
   return new Promise((resolve, reject) => {
     http.createHttp().request(imgUrl, async (error: BusinessError, data: http.HttpResponse) => { // 下载失败
@@ -208,6 +202,20 @@ function getCharCodeFromBase64(char: string): number {
 export function isBase64ImageString(str: string): boolean {
   const base64Regex = /^data:image\/[a-z]+;base64,([A-Za-z0-9+/=]+)$/;
   return base64Regex.test(str);
+}
+
+/**
+ * 下载返回类型
+ */
+interface DownloadResult {
+  /** 是否成功 */
+  isSuccess: boolean;
+
+  /** 返回消息 */
+  msg: string;
+
+  /** 图片信息 */
+  imageInfo: IReturnImage;
 }
 
 /**

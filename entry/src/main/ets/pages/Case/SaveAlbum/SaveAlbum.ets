@@ -23,26 +23,26 @@ struct SaveAlbum {
   build() {
     Column({ space: 30 }) {
       Text('保存到相册').fontSize(30)
-      Column() {
-        Text(this.url1)
+      Flex() {
+        TextInput({ text: this.url1 })
         Button("保存").onClick(() => {
           this.downloadAndSave(this.url1)
         })
-      }.margin({ top: 15, bottom: 15 })
+      }
 
-      Column() {
-        Text(this.url2)
+      Flex() {
+        TextInput({ text: this.url2 })
         Button("保存").onClick(() => {
           this.downloadAndSave(this.url2);
         })
-      }.margin({ top: 15, bottom: 15 })
+      }
 
-      Column() {
+      Flex() {
         TextInput({ text: this.base64Image })
         Button("保存").onClick(() => {
           this.downloadAndSave(this.base64Image);
         })
-      }.margin({ top: 15, bottom: 15 })
+      }
     }.justifyContent(FlexAlign.Center).alignItems(HorizontalAlign.Center).height('100%').width('100%')
   }
 

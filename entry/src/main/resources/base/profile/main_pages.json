@@ -156,6 +156,7 @@
     "pages/Case/AntiScreenshot/LoginPage",
     "pages/Case/AntiScreenshot/CodePage",
     "pages/Case/AntiScreenshot/MainPage",
-    "pages/Case/ClipShape/ClipShape"
+    "pages/Case/ClipShape/ClipShape",
+    "pages/BaseComponents/StepperPage"
   ]
 }

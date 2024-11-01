@@ -157,6 +157,7 @@
     "pages/Case/AntiScreenshot/CodePage",
     "pages/Case/AntiScreenshot/MainPage",
     "pages/Case/ClipShape/ClipShape",
-    "pages/BaseComponents/StepperPage"
+    "pages/BaseComponents/StepperPage",
+    "pages/Case/RecognizeQr/Index"
   ]
 }

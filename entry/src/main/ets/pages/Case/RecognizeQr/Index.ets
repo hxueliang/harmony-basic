@@ -1,8 +1,8 @@
 /**
  * 识别图中二维码
+ * https://developer.huawei.com/consumer/cn/doc/harmonyos-references-V5/scan-imagedecode-V5#section9221156204617
  */
 
-import { promptAction } from '@kit.ArkUI'
 import { saveSandbox } from './saveSandbox'
 import { RecognizeQr } from './RecognizeQr'
 
@@ -22,7 +22,7 @@ struct Index {
         .onClick(async () => {
           const res = await saveSandbox(base64Image)
           const res2 = await RecognizeQr(res.imageInfo.localUrl)
-          promptAction.showToast({ message: res2.originalValue })
+          AlertDialog.show({ message: res2.originalValue })
         })
     }.width(150)
   }

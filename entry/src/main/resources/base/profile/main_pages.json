@@ -161,6 +161,7 @@
     "pages/Case/RecognizeQr/Index",
     "pages/BaseComponents/TextPage",
     "pages/BaseComponents/TextAreaPage",
-    "pages/BaseComponents/TextClockPage"
+    "pages/BaseComponents/TextClockPage",
+    "pages/BaseComponents/TextInputPage"
   ]
 }

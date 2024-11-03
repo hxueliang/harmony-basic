@@ -1,6 +1,6 @@
 import { detectBarcode, scanBarcode, scanCore } from '@kit.ScanKit';
 
-export function RecognizeQr(uri: string) {
+export function recognizeQr(uri: string) {
   return new Promise(
     async (
       resolve: (res: scanBarcode.ScanResult) => void,

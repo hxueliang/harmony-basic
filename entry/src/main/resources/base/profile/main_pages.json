@@ -160,6 +160,7 @@
     "pages/BaseComponents/StepperPage",
     "pages/Case/RecognizeQr/Index",
     "pages/BaseComponents/TextPage",
-    "pages/BaseComponents/TextAreaPage"
+    "pages/BaseComponents/TextAreaPage",
+    "pages/BaseComponents/TextClockPage"
   ]
 }

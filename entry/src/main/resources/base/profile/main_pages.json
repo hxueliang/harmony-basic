@@ -165,6 +165,7 @@
     "pages/BaseComponents/TextInputPage",
     "pages/BaseComponents/TextPickerPage",
     "pages/BaseComponents/TextTimerPage",
-    "pages/BaseComponents/TimePickerPage"
+    "pages/BaseComponents/TimePickerPage",
+    "pages/BaseComponents/TogglePage"
   ]
 }

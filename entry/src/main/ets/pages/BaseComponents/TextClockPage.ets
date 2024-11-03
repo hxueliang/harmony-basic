@@ -7,6 +7,7 @@ struct TextClockPage {
 
       TextClock().margin(20).fontSize(30).format('yyyy/MM/dd HH:mm:ss')
     }
+    .margin({ top: 100 })
     .height('100%')
     .width('100%')
   }

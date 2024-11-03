@@ -159,6 +159,7 @@
     "pages/Case/ClipShape/ClipShape",
     "pages/BaseComponents/StepperPage",
     "pages/Case/RecognizeQr/Index",
-    "pages/BaseComponents/TextPage"
+    "pages/BaseComponents/TextPage",
+    "pages/BaseComponents/TextAreaPage"
   ]
 }

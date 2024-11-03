@@ -163,6 +163,7 @@
     "pages/BaseComponents/TextAreaPage",
     "pages/BaseComponents/TextClockPage",
     "pages/BaseComponents/TextInputPage",
-    "pages/BaseComponents/TextPickerPage"
+    "pages/BaseComponents/TextPickerPage",
+    "pages/BaseComponents/TextTimerPage"
   ]
 }

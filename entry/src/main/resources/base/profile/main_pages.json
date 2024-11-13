@@ -167,6 +167,7 @@
     "pages/BaseComponents/TextTimerPage",
     "pages/BaseComponents/TimePickerPage",
     "pages/BaseComponents/TogglePage",
-    "pages/BaseComponents/WebPage"
+    "pages/BaseComponents/WebPage",
+    "pages/ContainerComponents/RowColPage"
   ]
 }

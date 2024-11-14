@@ -3,24 +3,24 @@
 struct RowColPage {
   build() {
     Column({ space: 30 }) {
-      Row() {
+      Row({ space: 5 }) {
         ItemCom(1)
         ItemCom(2)
         ItemCom(3)
       }
       .width('100%')
-      .height(300)
+      .height(250)
       .backgroundColor(Color.Gray)
       .justifyContent(FlexAlign.Start)
       .alignItems(VerticalAlign.Center)
 
-      Column() {
+      Column({ space: 5 }) {
         ItemCom(1)
         ItemCom(2)
         ItemCom(3)
       }
       .width('100%')
-      .height(300)
+      .height(350)
       .justifyContent(FlexAlign.Start)
       .alignItems(HorizontalAlign.Center)
       .backgroundColor(Color.Grey)

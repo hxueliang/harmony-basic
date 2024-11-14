@@ -168,6 +168,7 @@
     "pages/BaseComponents/TimePickerPage",
     "pages/BaseComponents/TogglePage",
     "pages/BaseComponents/WebPage",
-    "pages/ContainerComponents/RowColPage"
+    "pages/ContainerComponents/RowColPage",
+    "pages/ContainerComponents/RowColSplitPage"
   ]
 }

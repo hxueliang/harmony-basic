@@ -170,6 +170,7 @@
     "pages/BaseComponents/WebPage",
     "pages/ContainerComponents/RowColPage",
     "pages/ContainerComponents/RowColSplitPage",
-    "pages/ContainerComponents/FlexPage"
+    "pages/ContainerComponents/FlexPage",
+    "pages/ContainerComponents/GridPage"
   ]
 }

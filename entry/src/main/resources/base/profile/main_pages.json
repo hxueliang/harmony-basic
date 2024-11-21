@@ -172,6 +172,7 @@
     "pages/ContainerComponents/RowColSplitPage",
     "pages/ContainerComponents/FlexPage",
     "pages/ContainerComponents/GridPage",
-    "pages/ContainerComponents/GridRowColPage"
+    "pages/ContainerComponents/GridRowColPage",
+    "pages/ContainerComponents/ListItemGroupPage"
   ]
 }

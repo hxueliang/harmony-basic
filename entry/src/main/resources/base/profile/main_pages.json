@@ -173,6 +173,7 @@
     "pages/ContainerComponents/FlexPage",
     "pages/ContainerComponents/GridPage",
     "pages/ContainerComponents/GridRowColPage",
-    "pages/ContainerComponents/ListItemGroupPage"
+    "pages/ContainerComponents/ListItemGroupPage",
+    "pages/Case/TransitionPopup/TransitionPopupPage"
   ]
 }

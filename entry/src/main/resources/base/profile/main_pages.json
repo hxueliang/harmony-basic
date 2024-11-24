@@ -174,6 +174,7 @@
     "pages/ContainerComponents/GridPage",
     "pages/ContainerComponents/GridRowColPage",
     "pages/ContainerComponents/ListItemGroupPage",
-    "pages/Case/TransitionPopup/TransitionPopupPage"
+    "pages/Case/TransitionPopup/TransitionPopupPage",
+    "pages/ContainerComponents/AlphabetIndexerPage"
   ]
 }

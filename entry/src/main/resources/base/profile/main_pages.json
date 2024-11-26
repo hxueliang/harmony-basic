@@ -176,6 +176,7 @@
     "pages/ContainerComponents/ListItemGroupPage",
     "pages/Case/TransitionPopup/TransitionPopupPage",
     "pages/ContainerComponents/AlphabetIndexerPage",
-    "pages/StyleDemo/WrapBuilderPage"
+    "pages/StyleDemo/WrapBuilderPage",
+    "pages/StyleDemo/StatusBarPage"
   ]
 }

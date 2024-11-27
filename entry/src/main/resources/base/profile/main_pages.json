@@ -178,6 +178,7 @@
     "pages/ContainerComponents/AlphabetIndexerPage",
     "pages/StyleDemo/WrapBuilderPage",
     "pages/StyleDemo/StatusBarPage",
-    "pages/ContainerComponents/BadgePage"
+    "pages/ContainerComponents/BadgePage",
+    "pages/ContainerComponents/CounterPage"
   ]
 }

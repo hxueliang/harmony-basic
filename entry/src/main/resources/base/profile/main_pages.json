@@ -179,6 +179,9 @@
     "pages/StyleDemo/WrapBuilderPage",
     "pages/StyleDemo/StatusBarPage",
     "pages/ContainerComponents/BadgePage",
-    "pages/ContainerComponents/CounterPage"
+    "pages/ContainerComponents/CounterPage",
+    "pages/ContainerComponents/Navigator/NavigatorPage",
+    "pages/ContainerComponents/Navigator/DetailPage",
+    "pages/ContainerComponents/Navigator/BackPage"
   ]
 }

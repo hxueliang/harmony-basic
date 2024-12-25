@@ -41,7 +41,7 @@ export default class EntryAbility extends UIAbility {
     // if (await TokenManager.getToken(this.context)) {
     //   url = 'pages/ApplicationState/PersistentStorageMain'
     // }
-    let url = 'pages/Case/ClipShape/ClipShapeCircle'
+    let url = 'pages/CasesHarmonyos/C06FunctionalScenes/C06FunctionalScenes'
 
     windowStage.loadContent(url, (err, data) => {
       if (err.code) {

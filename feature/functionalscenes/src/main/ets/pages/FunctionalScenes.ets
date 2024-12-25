@@ -151,6 +151,7 @@ export struct FunctionalScenes {
     .padding({ bottom: $r('app.integer.functional_scenes_water_flow_padding_bottom') })
     .height('100%')
     .backgroundColor("#F1F1F1")
+    .margin({ top: 50 })
   }
 }
 

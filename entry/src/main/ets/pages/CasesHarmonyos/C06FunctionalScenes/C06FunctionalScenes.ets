@@ -34,5 +34,6 @@ struct C06FunctionalScenes {
     }
     .height('100%')
     .width('100%')
+    .margin({ top: 50 })
   }
 }

@@ -184,6 +184,7 @@
     "pages/ContainerComponents/Navigator/DetailPage",
     "pages/ContainerComponents/Navigator/BackPage",
     "pages/Case/ClipShape/ClipShapeCircle",
-    "pages/ContainerComponents/PanelPage"
+    "pages/ContainerComponents/PanelPage",
+    "pages/ContainerComponents/RefreshPage"
   ]
 }

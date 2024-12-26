@@ -183,6 +183,7 @@
     "pages/ContainerComponents/Navigator/NavigatorPage",
     "pages/ContainerComponents/Navigator/DetailPage",
     "pages/ContainerComponents/Navigator/BackPage",
-    "pages/Case/ClipShape/ClipShapeCircle"
+    "pages/Case/ClipShape/ClipShapeCircle",
+    "pages/ContainerComponents/PanelPage"
   ]
 }

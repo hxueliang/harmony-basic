@@ -186,6 +186,7 @@
     "pages/Case/ClipShape/ClipShapeCircle",
     "pages/ContainerComponents/PanelPage",
     "pages/ContainerComponents/RefreshPage",
-    "pages/ContainerComponents/RelativeContainerPage"
+    "pages/ContainerComponents/RelativeContainerPage",
+    "pages/ContainerComponents/ScrollPage"
   ]
 }

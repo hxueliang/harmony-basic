@@ -41,7 +41,7 @@ export default class EntryAbility extends UIAbility {
     // if (await TokenManager.getToken(this.context)) {
     //   url = 'pages/ApplicationState/PersistentStorageMain'
     // }
-    let url = 'pages/ContainerComponents/RefreshPage'
+    let url = 'pages/ContainerComponents/RelativeContainerPage'
 
     windowStage.loadContent(url, (err, data) => {
       if (err.code) {

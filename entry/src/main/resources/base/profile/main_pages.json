@@ -190,6 +190,7 @@
     "pages/ContainerComponents/ScrollPage",
     "pages/ContainerComponents/SideBarContainerPage",
     "pages/ContainerComponents/StackPage",
-    "pages/ContainerComponents/SwiperPage"
+    "pages/ContainerComponents/SwiperPage",
+    "pages/ContainerComponents/TabsPage"
   ]
 }

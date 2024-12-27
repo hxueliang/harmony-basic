@@ -189,6 +189,7 @@
     "pages/ContainerComponents/RelativeContainerPage",
     "pages/ContainerComponents/ScrollPage",
     "pages/ContainerComponents/SideBarContainerPage",
-    "pages/ContainerComponents/StackPage"
+    "pages/ContainerComponents/StackPage",
+    "pages/ContainerComponents/SwiperPage"
   ]
 }

@@ -5,7 +5,7 @@ struct ScrollPage {
 
   build() {
     Scroll() {
-      Column() {
+      Column({ space: 10 }) {
         ForEach(this.numberArray, (item: number) => {
           Text(item + '')
             .width('90%')
@@ -16,12 +16,12 @@ struct ScrollPage {
             .textAlign(TextAlign.Center)
             .margin({ top: 10 })
         }, (item: number) => item.toString())
-      }.width('100%')
+      }.width('100%').backgroundColor('#f0f0f0')
     }
     .scrollable(ScrollDirection.Vertical)
     .scrollBar(BarState.On)
     .scrollBarColor(Color.Gray)
-    .scrollBarWidth(40)
+    .scrollBarWidth(8)
     .edgeEffect(EdgeEffect.None)
     .onScroll((xOffset: number, yOffset: number) => {
       console.log('hxl onScroll', xOffset, yOffset)

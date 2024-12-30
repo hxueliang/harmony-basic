@@ -191,6 +191,7 @@
     "pages/ContainerComponents/SideBarContainerPage",
     "pages/ContainerComponents/StackPage",
     "pages/ContainerComponents/SwiperPage",
-    "pages/ContainerComponents/TabsPage"
+    "pages/ContainerComponents/TabsPage",
+    "pages/OtherDemo/VideoDemoPage"
   ]
 }

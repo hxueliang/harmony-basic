@@ -196,6 +196,7 @@
     "pages/DrawingComponents/CirclePage",
     "pages/DrawingComponents/EllipsePage",
     "pages/DrawingComponents/LinePage",
-    "pages/DrawingComponents/PolylinePage"
+    "pages/DrawingComponents/PolylinePage",
+    "pages/DrawingComponents/PolygonPage"
   ]
 }

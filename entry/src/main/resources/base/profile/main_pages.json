@@ -200,6 +200,7 @@
     "pages/DrawingComponents/PolygonPage",
     "pages/DrawingComponents/PathPage",
     "pages/DrawingComponents/RectPage",
-    "pages/DrawingComponents/ShapePage"
+    "pages/DrawingComponents/ShapePage",
+    "pages/OtherDemo/CanvasPageB"
   ]
 }

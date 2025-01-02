@@ -193,6 +193,7 @@
     "pages/ContainerComponents/SwiperPage",
     "pages/ContainerComponents/TabsPage",
     "pages/OtherDemo/VideoDemoPage",
-    "pages/DrawingComponents/CirclePage"
+    "pages/DrawingComponents/CirclePage",
+    "pages/DrawingComponents/EllipsePage"
   ]
 }

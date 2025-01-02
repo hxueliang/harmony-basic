@@ -198,6 +198,7 @@
     "pages/DrawingComponents/LinePage",
     "pages/DrawingComponents/PolylinePage",
     "pages/DrawingComponents/PolygonPage",
-    "pages/DrawingComponents/PathPage"
+    "pages/DrawingComponents/PathPage",
+    "pages/DrawingComponents/RectPage"
   ]
 }

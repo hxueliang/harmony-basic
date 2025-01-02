@@ -194,6 +194,7 @@
     "pages/ContainerComponents/TabsPage",
     "pages/OtherDemo/VideoDemoPage",
     "pages/DrawingComponents/CirclePage",
-    "pages/DrawingComponents/EllipsePage"
+    "pages/DrawingComponents/EllipsePage",
+    "pages/DrawingComponents/LinePage"
   ]
 }

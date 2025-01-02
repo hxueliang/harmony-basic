@@ -192,6 +192,7 @@
     "pages/ContainerComponents/StackPage",
     "pages/ContainerComponents/SwiperPage",
     "pages/ContainerComponents/TabsPage",
-    "pages/OtherDemo/VideoDemoPage"
+    "pages/OtherDemo/VideoDemoPage",
+    "pages/DrawingComponents/CirclePage"
   ]
 }

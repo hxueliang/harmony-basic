@@ -195,6 +195,7 @@
     "pages/OtherDemo/VideoDemoPage",
     "pages/DrawingComponents/CirclePage",
     "pages/DrawingComponents/EllipsePage",
-    "pages/DrawingComponents/LinePage"
+    "pages/DrawingComponents/LinePage",
+    "pages/DrawingComponents/PolylinePage"
   ]
 }

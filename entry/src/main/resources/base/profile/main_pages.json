@@ -201,6 +201,7 @@
     "pages/DrawingComponents/PathPage",
     "pages/DrawingComponents/RectPage",
     "pages/DrawingComponents/ShapePage",
-    "pages/OtherDemo/CanvasPageB"
+    "pages/OtherDemo/CanvasPageB",
+    "pages/Case/Calc/CalcPage"
   ]
 }

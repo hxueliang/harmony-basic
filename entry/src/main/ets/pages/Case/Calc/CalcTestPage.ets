@@ -2,7 +2,7 @@ import { Calculator } from './Calculator'
 
 @Entry
 @Component
-struct CalcPage {
+struct CalcTestPage {
   build() {
     Column() {
       Button('测试recursiveCompute').onClick(() => {
